@@ -4,8 +4,8 @@
 # Library System 
  > Your author list below should include links to all members GitHub (remove existing author).
  > Authors: [Andrew Tee] (https://github.com/atee001)
- > Authors: [Rohan Behera] (https://github.com/rohanbehera03)
- > Authors: [Cameron Tsai] (https://github.com/CJT578078)
+ > [Rohan Behera] (https://github.com/rohanbehera03)
+ > [Cameron Tsai] (https://github.com/CJT578078)
  > 
  > Why is it important or interesting to us? 
  > The ability to catagorize thousands of books is interesting as we are able to track a huge amount of data. This is a real life application of how software can benefit
