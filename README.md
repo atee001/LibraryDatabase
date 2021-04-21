@@ -4,14 +4,14 @@
  >  
 ## Project Description
  > * Why is it important or interesting to you?
- > 
- > The ability to catagorize thousands of books is interesting as we are able to track a huge amount of data. This is a real life application of how software can benefit someone's life. A typical library catalog allows users to search for books by title, author, ISBN number, publisher, etc. For our project we will be developing a simple library database where the user can checkout books, find new books based on recommendations, and manage their account balance. 
+ >   * The ability to catagorize thousands of books is interesting as we are able to track a huge amount of data. This is a real life application of how software can benefit someone's life. A typical library catalog allows users to search for books by title, author, ISBN number, publisher, etc. For our project we will be developing a simple library database where the user can checkout books, find new books based on recommendations, and manage their account balance. 
  > 
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
  >   * We plan to use C++, vim as a text editor, and Linux as the Operating System. The user will be able to interact with the program through a terminal window using a set of predefined commands.
  >   
  > * What will be the input/output of your project?
- >   * Input: Search query for books, funds, inputing books. Output: Account information, displaying books, availibility of books.
+ >   * Input: Search query for books, funds, inputing books. 
+ >   * Output: Account information, displaying books, availibility of books.
  > 
  > * What are the two design patterns you will be using? For each design pattern you must explain in 4-5 sentences:
  >   * We can use the composite pattern in the library system by using Book Class as an interface. Each book has a genre with a subgenre such as fiction who's leaf is science fiction. By using composite we can treat a composite of genre objects as a single genre object. The client class would be a user class which should have a function to display each user's books. Composite can be useful in recommending books based on which genres the user visits. The composite pattern will allow a single book to be treated a selection of books so functions such as displayBook() will be easier instead of using a loop. 
