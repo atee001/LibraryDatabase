@@ -1,52 +1,21 @@
- > As you complete each section you **must** remove the prompt text. Every *turnin* of this project includes points for formatting of this README so keep it clean and keep it up to date. 
- > Prompt text is any lines beginning with "\>"
- > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
 # Library System 
  > Authors: 
  > [Andrew Tee] (https://github.com/atee001) [Rohan Behera] (https://github.com/rohanbehera03) [Cameron Tsai] (https://github.com/CJT578078)
- > 
- > Why is it important or interesting to us? 
- > The ability to catagorize thousands of books is interesting as we are able to track a huge amount of data. This is a real life application of how software can benefit
- > someone's life. Cameron reads a lot of light novels.  
- > What languages/tools/technologies do you plan to use? 
- > We plan to use C++, vim as a text editor, and Linux as the Operating System.  
- > What will be the input/output of your project?
- > Input: Search querie for books, funds, inputing books.
- > Output: Account information, displaying books, availibility of books. 
- > What are the two design patterns you will be using? For each design pattern you must explain in 4-5 sentences:
- > 
- > We can use the composite pattern in the library system by using Book Class as an interface. Each book has a genre with a subgenre such as fiction who's leaf is science fiction. By using composite we can treat a composite of genre objects as a single genre object. The client class would be a user class which should have a function to display each user's books. Composite can be useful in recommending books based on which genres the user visits. The composite pattern will allow a single book to be treated a selection of books so functions such as displayBook() will be easier instead of using a loop. 
- > We plan on using visitor pattern as our second design pattern. Each visitor has certain priviledges for example administrative users can edit/remove/add books while a customer cannot. We will use a visitor class which has to accept the visitor object and decides what the user can access. The visitor object can only access certain operations. The problem we can fix is basic security for who has permissions. 
- > 
  >  
-
- > You will be forming a group of **THREE** students and working on an interesting project. A list of proposed project ideas that have been successful in previous quarters is given in the project specifications link on iLearn. You can select an idea from the list, start thinking about the features you will implement, what design patterns can help you implement them, and why. If you want to propose your own original idea, you will have to contact an instructor to discuss the project and obtain written permission before you submit your project proposal. Your project needs to implement two design patterns.The project work should be divided almost equally among team members and each member is expected to work on at least one design pattern (more than one partner may work on a pattern) and some of its test cases. You can of course help each other, but it needs to be clear who will be responsible for which patterns and for which features.
- 
- > ## Expectations
- > * Incorporate **at least two** distinct design patterns. You need to include at least *one* design pattern that we will teach this session:
- >   * Composite, Strategy, Abstract Factory, Visitor, or Decorator
- > * All design patterns need to be linked together (it can't be two distinct projects)
- > * Your project should be implemented in C++. If you wish to choose anoher programming language (e.g. Java, Python), please discuss with your lab TA to obtain permission.
- > * You can incorporate additional technologies/tools but they must be approved (in writing) by the instructor or the TA.
- > * Each member of the group **must** be committing code regularly and make sure their code is correctly attributed to them. We will be checking attributions to determine if there was equal contribution to the project.
-> * All project phases are to be submitted to this GitHub repository. You should modify this README file to reflect the different phases of the project. In addition, you should regularly hold sprint meetings with your group.
-
 ## Project Description
- > Your project description should summarize the project you are proposing. Be sure to include
  > * Why is it important or interesting to you?
- > The ability to catagorize thousands of books is interesting as we are able to track a huge amount of data. This is a real life application of how software can benefit someone's life. Cameron reads a lot of light novels.
+ > The ability to catagorize thousands of books is interesting as we are able to track a huge amount of data. This is a real life application of how software can benefit someone's life. A typical library catalog allows users to search for books by title, author, ISBN number, publisher, etc. For our project we will be developing a simple library database where the user can checkout books, find new books based on recommendations, and manage their account balance. 
+ > 
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
- >   * We plan to use C++, vim as a text editor, and Linux as the Operating System.
+ >   * We plan to use C++, vim as a text editor, and Linux as the Operating System. The user will be able to interact with the program through a terminal window using a set of predefined commands.
+ >   
  > * What will be the input/output of your project?
  > Input: Search query for books, funds, inputing books.
  > Output: Account information, displaying books, availibility of books.
+ > 
  > * What are the two design patterns you will be using? For each design pattern you must explain in 4-5 sentences:
  >   * We can use the composite pattern in the library system by using Book Class as an interface. Each book has a genre with a subgenre such as fiction who's leaf is science fiction. By using composite we can treat a composite of genre objects as a single genre object. The client class would be a user class which should have a function to display each user's books. Composite can be useful in recommending books based on which genres the user visits. The composite pattern will allow a single book to be treated a selection of books so functions such as displayBook() will be easier instead of using a loop. 
  >   * We plan on using visitor pattern as our second design pattern. Each visitor has certain priviledges for example administrative users can edit/remove/add books while a customer cannot. We will use a visitor class which has to accept the visitor object and decides what the user can access. The visitor object can only access certain operations. The problem we can fix is basic security for who has permissions. 
- >   * Why you picked this pattern and what feature you will implement with it
- >   * What problem you anticipate encountering when implementing your project that you will solve using the design pattern
- >   * Why the chosen design pattern will lead to a good solution to that problem
- > * This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
 
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to 
