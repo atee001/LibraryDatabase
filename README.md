@@ -8,10 +8,10 @@
  > Authors: [Cameron Tsai] (https://github.com/CJT578078)
  > 
  > Why is it important or interesting to us? 
- > The ability to catagorize thousands of books is interesting as we are able to track a huge amount of data. This is a real life application of how software can benefit
- > someone's life. Cameron reads a lot of light novels.  
+ > The ability to catagorize thousands of books is interesting as we are able to track a huge amount of data. This is a real life application of how software can benefit someone's life. Our project represents a simple library system where the user can checkout books, find new books based on recommendations, and manage their account balance. 
+  
  > What languages/tools/technologies do you plan to use? 
- > We plan to use C++, vim as a text editor, and Linux as the Operating System.  
+ > We plan to use C++, vim as a text editor, and Linux as the Operating System. The user will be able to interact with the program through a terminal window using a set of predefined commands. 
  > What will be the input/output of your project?
  > Input: Search querie for books, funds, inputing books.
  > Output: Account information, displaying books, availibility of books. 
