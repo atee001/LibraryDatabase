@@ -3,9 +3,7 @@
  > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
 # Library System 
  > Your author list below should include links to all members GitHub (remove existing author).
- > Authors: [Andrew Tee] (https://github.com/atee001)
- > [Rohan Behera] (https://github.com/rohanbehera03)
- > [Cameron Tsai] (https://github.com/CJT578078)
+ > Authors: < [Andrew Tee] (https://github.com/atee001) [Rohan Behera] (https://github.com/rohanbehera03) [Cameron Tsai] (https://github.com/CJT578078)
  > 
  > Why is it important or interesting to us? 
  > The ability to catagorize thousands of books is interesting as we are able to track a huge amount of data. This is a real life application of how software can benefit
