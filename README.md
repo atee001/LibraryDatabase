@@ -30,6 +30,7 @@
 > * All project phases are to be submitted to this GitHub repository. You should modify this README file to reflect the different phases of the project. In addition, you should regularly hold sprint meetings with your group.
 
 ## Project Description
+ > ## Phase I
  > Your project description should summarize the project you are proposing. Be sure to include
  > * Why is it important or interesting to you?
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
