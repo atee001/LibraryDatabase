@@ -14,8 +14,8 @@
     * Output: Account information, displaying books, availibility of books.
   
   * What are the two design patterns you will be using? For each design pattern you must explain in 4-5 sentences:
-    * We can use the composite pattern in the library system by using Book Class as an interface. Each book has a genre with a subgenre such as fiction who's leaf is science fiction. By using composite we can treat a composite of genre objects as a single genre object. The client class would be a user class which should have a function to display each user's books. Composite can be useful in recommending books based on which genres the user visits. The composite pattern will allow a single book to be treated a selection of books so functions such as displayBook() will be easier instead of using a loop. 
-    * We plan on using visitor pattern as our second design pattern. Each visitor has certain priviledges for example administrative users can edit/remove/add books while a customer cannot. We will use a visitor class which has to accept the visitor object and decides what the user can access. The visitor object can only access certain operations. The problem we can fix is basic security for who has permissions. 
+    * We can use the composite pattern in the library system by using Book Class as an interface. Each book has a genre with a subgenre such as fiction who's leaf is science fiction. By using composite we can treat a composite of genre objects as a single genre object. The composite pattern will allow a single book to be treated a selection of books so functions such as displayBook() will be easier instead of using a loop. 
+    * We will use the Strategy Pattern for our search query algorithm. The user can choose dynamically which search strategy to use. For example a user can search by author, genre, title and ISBN. The strategy dynamically chosen will set the search algorithm just like in lab05 with the select algorithm.  
 
   ## Phase II
   In addition to completing the "Class Diagram" section below, you will need to 
