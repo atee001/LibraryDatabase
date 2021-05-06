@@ -1,3 +1,4 @@
+
 # Library System 
   Authors: 
   [Andrew Tee](https://github.com/atee001) [Rohan Behera](https://github.com/rohanbehera03) [Cameron Tsai](https://github.com/CJT578078)
@@ -18,6 +19,7 @@
     * We will use the Strategy Pattern for our search query algorithm. The user can choose dynamically which search strategy to use. For example a user can search by author, genre, title and ISBN. The strategy dynamically chosen will set the search algorithm just like in lab05 with the select algorithm.  
 
   ## Phase II
+  ![Screenshot (339)](https://user-images.githubusercontent.com/80326381/117356595-c6331380-ae68-11eb-877c-be491d53a5ed.png)
   In addition to completing the "Class Diagram" section below, you will need to 
   * Set up your GitHub project board as a Kanban board for the project. It should have columns that map roughly to 
     * Backlog, TODO, In progress, In testing, Done
