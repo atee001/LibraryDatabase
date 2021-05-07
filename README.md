@@ -29,7 +29,8 @@
     * Create smaller development tasks as issues and assign them to team members. Place these in the `TODO` column.
     * These cards should represent roughly 7 days worth of development time for your team, taking you until your first meeting with the TA
 ## Class Diagram
-  ![Screenshot (343)](https://user-images.githubusercontent.com/80326381/117390824-b258d300-aea3-11eb-9f06-c62bf9768559.png)
+  ![Screenshot (344)](https://user-images.githubusercontent.com/80326381/117396600-1e8d0400-aeaf-11eb-926d-39a5c4304ba4.png)
+
 
  
 ## Phase III
