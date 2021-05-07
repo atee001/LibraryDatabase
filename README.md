@@ -29,7 +29,8 @@
     * Create smaller development tasks as issues and assign them to team members. Place these in the `TODO` column.
     * These cards should represent roughly 7 days worth of development time for your team, taking you until your first meeting with the TA
 ## Class Diagram
-  ![Screenshot (341)](https://user-images.githubusercontent.com/80326381/117356753-f7abdf00-ae68-11eb-9694-cf61487f485a.png)
+  ![Screenshot (343)](https://user-images.githubusercontent.com/80326381/117390824-b258d300-aea3-11eb-9f06-c62bf9768559.png)
+
  
 ## Phase III
   You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
