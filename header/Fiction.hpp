@@ -16,7 +16,7 @@ class Fiction: public BookComponent {
 	public:
 		void display();
 		void AddBook(BookComponent* book);
-		void Remove(BookComponent* book);
+		void RemoveBook(BookComponent* book);
 
 
 };
