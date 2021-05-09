@@ -13,7 +13,7 @@ class Librarian : public Person {
 		//BookComponent* book;
 
 	public:
-	
+		Librarian(string name, string pass);
 
 
 
