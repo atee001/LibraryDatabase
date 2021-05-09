@@ -1,7 +1,7 @@
 #ifndef LIBRARYSYSTEM_BOOK_H
 #define LIBRARYSYSTEM_BOOK_H
 
-#include "BookComponent.h"
+#include "BookComponent.hpp"
 
 class book: public BookComponent {
 private:
