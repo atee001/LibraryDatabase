@@ -11,7 +11,11 @@ private:
     bool checkout;
 public:
 
-    virtual void display() = 0;
+    void display(){
+        cout << "Title: " << title << endl;
+        cout << "Author: " << author << endl;
+        cout << "Genre: " << genre << endl << endl;
+    }
 
     void setTitle (const string& nameOfBook) {
         title = nameOfBook;
