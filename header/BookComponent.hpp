@@ -1,6 +1,6 @@
 
 
-#pragma onnce
+#pragma once
 
 #include <iostream>
 #include <bits/stdc++.h>
@@ -11,7 +11,7 @@ class BookComponent {
 	private:
 
 	public:
-		virtual void display();
+		virtual void display() = 0;
 		virtual void AddBook(BookComponent* book);
 		virtual RemoveBook(BookComponent* book);
 	
