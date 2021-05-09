@@ -11,33 +11,29 @@ private:
     bool checkout;
 public:
 
-    void display() {
-        cout << "Title: " << title << endl;
-        cout << "Author: " << author << endl;
-        cout << "Genre: " << genre << endl << endl;
-    }
+    virtual void display() = 0;
 
-    string setTitle(string nameOfBook) {
+    void setTitle (const string& nameOfBook) {
         title = nameOfBook;
     }
 
-    string setAuthor(string nameOfAuthor) {
+    void setAuthor (const string& nameOfAuthor) {
         author = nameOfAuthor;
     }
 
-    string setGenre(string nameOfGenre) {
+    void setGenre (const string& nameOfGenre) {
         genre = nameOfGenre;
     }
 
-    string getTitle() {
+    string getTitle const() {
         return title;
     }
 
-    string getAuthor() {
+    string getAuthor const() {
         return author;
     }
 
-    string getGenre() {
+    string getGenre const() {
         return genre;
     }
 };
