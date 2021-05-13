@@ -1,9 +1,11 @@
 #ifndef LIBRARYSYSTEM_BOOK_H
 #define LIBRARYSYSTEM_BOOK_H
 
+
 #include <iostream>
 #include <string>
 using namespace std;
+
 
 class Book {
 private:
@@ -14,7 +16,7 @@ private:
     int isbn;
 
 public:
-
+  
     void display();
     void setTitle(const string& nameOfBook);
     void setAuthor(const string& nameOfAuthor);
@@ -24,8 +26,6 @@ public:
     string getAuthor const();
     string getGenre const();
     int getIsbn const();
-
-
 };
 
 class NonFiction : public Book {

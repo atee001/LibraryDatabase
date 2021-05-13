@@ -18,6 +18,8 @@ class User: public Person {
  
    public:
   
+    User(string name, string pass);
+	
     double getBalance() {
         return balance;
       }
