@@ -19,7 +19,7 @@ public:
     string setTitle(string nameOfBook);
     string setAuthor(string nameOfAuthor);
     string setGenre(string nameOfGenre);
-    int setIsbn(string isbnNum);
+    int setIsbn(int isbnNum);
     string getTitle();
     string getAuthor();
     string getGenre();
