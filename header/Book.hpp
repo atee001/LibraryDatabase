@@ -16,14 +16,14 @@ private:
 public:
 
     void display();
-    string setTitle(string nameOfBook);
-    string setAuthor(string nameOfAuthor);
-    string setGenre(string nameOfGenre);
+    void setTitle(const string& nameOfBook);
+    void setAuthor(const string& nameOfAuthor);
+    void setGenre(const string& nameOfGenre);
     int setIsbn(int isbnNum);
-    string getTitle();
-    string getAuthor();
-    string getGenre();
-    int getIsbn();
+    string getTitle const();
+    string getAuthor const();
+    string getGenre const();
+    int getIsbn const();
 
 
 };
