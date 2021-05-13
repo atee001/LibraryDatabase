@@ -19,7 +19,7 @@ public:
     void setTitle(const string& nameOfBook);
     void setAuthor(const string& nameOfAuthor);
     void setGenre(const string& nameOfGenre);
-    int setIsbn(int isbnNum);
+    void setIsbn(const int& isbnNum);
     string getTitle const();
     string getAuthor const();
     string getGenre const();
