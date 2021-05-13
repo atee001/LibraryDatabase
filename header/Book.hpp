@@ -1,43 +1,49 @@
 #ifndef LIBRARYSYSTEM_BOOK_H
 #define LIBRARYSYSTEM_BOOK_H
 
-#include "BookComponent.h"
+#include <iostream>
+#include <string>
+using namespace std;
 
-class book: public BookComponent {
+class Book {
 private:
     string title;
     string author;
     string genre;
-    bool checkout;
+    string type;
+    int isbn;
+
 public:
 
-    virtual void display() = 0;
+    void display();
+    string setTitle(string nameOfBook);
+    string setAuthor(string nameOfAuthor);
+    string setGenre(string nameOfGenre);
+    int setIsbn(int isbnNum);
+    string getTitle();
+    string getAuthor();
+    string getGenre();
+    int getIsbn();
 
-    void setTitle (const string& nameOfBook) {
-        title = nameOfBook;
-    }
 
-    void setAuthor (const string& nameOfAuthor) {
-        author = nameOfAuthor;
-    }
-
-    void setGenre (const string& nameOfGenre) {
-        genre = nameOfGenre;
-    }
-
-    string getTitle const() {
-        return title;
-    }
-
-    string getAuthor const() {
-        return author;
-    }
-
-    string getGenre const() {
-        return genre;
-    }
 };
 
+class NonFiction : public Book {
+
+};
+
+class Biographies : NonFiction {
+
+};
+
+class Science : NonFiction {
+
+};
+
+class travelGuides : NonFiction {
+
+};
 
 #endif //LIBRARYSYSTEM_BOOK_H
+
 
