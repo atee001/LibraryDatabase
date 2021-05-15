@@ -1,12 +1,24 @@
+
 #include "../header/BookRepository.hpp"
-#include <iostream>
+using namespace std;
+BookRepository::BookRepository() {
+    return;
+}
 
-void BookRepository::display() {
+void BookRepository::display(Book* book) {
+    map<BookItem, Book>::iterator it = bookList.begin();
+    while(it != bookList.end()) {
+        Book b = it->second;
+        b.display();
+    }
 
+    cout << endl;
 }
 
 void BookRepository::AddBook(Book* book) {
-    bookTitles.emplace(book->getTitle(), &book);
+
+    bookTitles.insert(pair<string, Book>(book->getTitle(), *book));
+ 
 }
 
 void BookRepository::RemoveBook(Book* book) {
@@ -18,8 +30,10 @@ Book* BookRepository::GetBook(Book* book) {
     if (it == bookTitles.end()) {
         return nullptr;
     } else {
-        Book foundBook = it->second;
-        return &foundBook;
+
+        Book* ptr = new Book();
+        *ptr = it->second;
+        return ptr;
     }
 }
 

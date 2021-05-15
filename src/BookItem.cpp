@@ -1,8 +1,10 @@
 
 #include "../header/BookItem.hpp"
 
-BookItem::BookItem(Book book, Date checkOutDate, Date dueDate)  {
-    this->book = book;
+BookItem::BookItem() {
+
+}
+BookItem::BookItem(Date checkOutDate, Date dueDate)  {
     this->checkoutDate = checkOutDate;
     this->dueDate = dueDate;
 }
@@ -17,10 +19,9 @@ Date BookItem::getCheckoutDate() {
     return checkoutDate;
 }
 
-
-void BookItem::setDueDate(Date dueDate) {
-    dueDate.setDay(dueDate.getDay());
-    dueDate.setMonth(dueDate.getMonth());
-    dueDate.setYear(dueDate.getYear());
+void BookItem::setDueDate(Date dDate) {
+    dueDate.setDay(dDate.getDay());
+    dueDate.setMonth(dDate.getMonth());
+    dueDate.setYear(dDate.getYear());
 }
 

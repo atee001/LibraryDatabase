@@ -1,40 +1,58 @@
 
 #include "../header/Book.hpp"
 
+Book::Book() {
+
+}
 void Book::display() {
-    cout << "Title: " << title << endl;
-    cout << "Author: " << author << endl;
-    cout << "Genre: " << genre << endl << endl;
+    cout << "Title: " << title << "Author: " << author << "Genre: " << genre << "ISBN: " << isbn << endl;
 }
 
-void Book::setTitle(const string& aTitle) {
+string Book::setTitle(const string& aTitle) {
     title = aTitle;
 }
 
-void Book::setAuthor(const string& aAuthor) {
+string Book::setAuthor(const string& aAuthor) {
     author = aAuthor;
 }
 
-void Book::setGenre(const string& aGenre) {
+string Book::setGenre(const string& aGenre) {
     genre = aGenre;
 }
 
-void Book::setIsbn(const int& isbnNum) {
+long Book::setISBN(const long& isbnNum) {
     isbn = isbnNum;
 }
-string Book::getTitle const() {
+
+const string Book::getTitle() {
     return title;
 }
 
-string Book::getAuthor const() {
+const string Book::getAuthor()  {
     return author;
 }
 
-string Book::getGenre const() {
+const string Book::getGenre()  {
     return genre;
 }
 
-int Book::getIsbn const() {
+const long Book:: getISBN() {
     return isbn;
 }
+
+NonFiction::NonFiction() {
+    type = "Nonfiction";
+}
+
+Biographies::Biographies() {
+    type = "Biographies";
+}
+
+Science::Science() {
+    type = "Science";
+}
+
+travelGuides::travelGuides() {
+    type = "Travel Guides";
+
 
