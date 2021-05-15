@@ -35,7 +35,7 @@ const string Book::getGenre()  {
     return genre;
 }
 
-const long Book:: getIsbn() {
+const long Book:: getISBN() {
     return isbn;
 }
 
