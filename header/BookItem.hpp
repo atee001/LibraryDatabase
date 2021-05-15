@@ -1,16 +1,15 @@
 
-#ifndef LIBRARYSYSTEM_BOOKITEM_H
-#define LIBRARYSYSTEM_BOOKITEM_H
-#include "Book.h"
-#include "Date.h"
+#ifndef LIBRARYSYSTEM_BOOKITEM_HPP
+#define LIBRARYSYSTEM_BOOKITEM_HPP
+#include "Date.hpp"
 
 class BookItem : public Date {
 private:
-    Book book;
     Date checkoutDate;
     Date dueDate;
 public:
-    BookItem(Book book, Date checkOutDate, Date dueDate);
+    BookItem();
+    BookItem(Date checkOutDate, Date dueDate);
     Date getCheckoutDate();
     void setCheckoutDate(Date checkoutDate);
     Date getDueDate();
@@ -18,4 +17,4 @@ public:
 };
 
 
-#endif //LIBRARYSYSTEM_BOOKITEM_H
+#endif //LIBRARYSYSTEM_BOOKITEM_HPP
