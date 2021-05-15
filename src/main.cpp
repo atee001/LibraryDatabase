@@ -4,7 +4,7 @@
 #include "../header/Person.hpp"
 using namespace std;
 
-Person* begin(fstream&, const string&);
+Person* begin(fstream &, const string&);
 bool corr_name(fstream&, const string&, const string&, string&);
 bool corr_pass(fstream&, const string&, string&);
 
@@ -15,16 +15,15 @@ int main(int argc, char* argv[]){
    exit(1);
  }
 
- fstream f(argv[1]);
+ fstream f(argv[1], ios::in | ios::out | ios::app);
 
  if(!f){
    cerr << "Input file not found" << endl;
    exit(1);
  }
-
- f.close();
+ 
  string filename = argv[1];
- Person* p = begin(f, filename);
+ Person* p = begin(f,filename);
  cout << "Welcome " << p->getName() << endl;
  delete p;
  return 0;
@@ -43,15 +42,14 @@ Person* begin(fstream& f, const string& filename){
   cin.ignore();
 
   if(ans == "Y" ||  ans == "y" || ans == "YES" || ans == "Yes"){
-
+    
     cout << "Enter your full name with first and last seperated by a space: ";
     getline(cin, name);
     cout << "Enter a password: ";
-    cin >> pass;
-    f.open(filename,ios::app);
+    getline(cin, pass);
     f << name << "|" << pass << endl;
 
-  }
+}
 
   else{
 
@@ -110,7 +108,6 @@ Person* begin(fstream& f, const string& filename){
 bool corr_name(fstream& f, const string& filename, const string& name, string& corrPass){
 
   string user;
-  f.open(filename, ios::in);
 
   while(getline(f, user)){
 
