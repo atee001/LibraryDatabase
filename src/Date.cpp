@@ -1,4 +1,6 @@
-#include "Date.hpp"
+
+#include "../header/Date.hpp"
+
 
 Date::Date() {
 
@@ -33,3 +35,4 @@ int Date::getYear() {
 void Date::setYear(int y) {
     year = y;
 }
+

@@ -1,4 +1,5 @@
-#include "BookRepository.hpp"
+
+#include "../header/BookRepository.hpp"
 using namespace std;
 BookRepository::BookRepository() {
     return;
@@ -12,11 +13,12 @@ void BookRepository::display(Book* book) {
     }
 
     cout << endl;
-
 }
 
 void BookRepository::AddBook(Book* book) {
+
     bookTitles.insert(pair<string, Book>(book->getTitle(), *book));
+ 
 }
 
 void BookRepository::RemoveBook(Book* book) {
@@ -28,8 +30,10 @@ Book* BookRepository::GetBook(Book* book) {
     if (it == bookTitles.end()) {
         return nullptr;
     } else {
+
         Book* ptr = new Book();
         *ptr = it->second;
         return ptr;
     }
 }
+

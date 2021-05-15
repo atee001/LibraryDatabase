@@ -16,5 +16,5 @@ public:
     void setDueDate(Date dueDate);
 };
 
-
 #endif //LIBRARYSYSTEM_BOOKITEM_HPP
+

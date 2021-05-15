@@ -1,4 +1,5 @@
-#include "BookItem.hpp"
+
+#include "../header/BookItem.hpp"
 
 BookItem::BookItem() {
 
@@ -18,9 +19,9 @@ Date BookItem::getCheckoutDate() {
     return checkoutDate;
 }
 
-
 void BookItem::setDueDate(Date dDate) {
     dueDate.setDay(dDate.getDay());
     dueDate.setMonth(dDate.getMonth());
     dueDate.setYear(dDate.getYear());
 }
+

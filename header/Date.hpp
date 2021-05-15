@@ -1,5 +1,7 @@
+
 #ifndef DATE_HPP
 #define DATE_HPP
+
 
 #include <iostream>
 using namespace std;
@@ -7,9 +9,11 @@ using namespace std;
 class Date {
 public:
 
+
     Date();
     Date(int d, int m, int y);
     void printDate();
+
     int getDay();
     void setDay(int day);
     int getMonth();
@@ -23,7 +27,6 @@ private:
     int year;
 };
 
-
-
 #endif //DATE_HPP
+
 
