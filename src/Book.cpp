@@ -7,34 +7,35 @@ void Book::display() {
     cout << "Title: " << title << "Author: " << author << "Genre: " << genre << "ISBN: " << isbn << endl;
 }
 
-string Book::setTitle(string aTitle) {
+string Book::setTitle(const string& aTitle) {
     title = aTitle;
 }
 
-string Book::setAuthor(string aAuthor) {
+string Book::setAuthor(const string& aAuthor) {
     author = aAuthor;
 }
 
-string Book::setGenre(string aGenre) {
+string Book::setGenre(const string& aGenre) {
     genre = aGenre;
 }
 
-long Book::setIsbn(long isbnNum) {
+long Book::setISBN(const long& isbnNum) {
     isbn = isbnNum;
 }
-string Book::getTitle() {
+
+const string Book::getTitle() {
     return title;
 }
 
-string Book::getAuthor() {
+const string Book::getAuthor()  {
     return author;
 }
 
-string Book::getGenre() {
+const string Book::getGenre()  {
     return genre;
 }
 
-int Book::getIsbn() {
+const long Book:: getIsbn() {
     return isbn;
 }
 
