@@ -12,22 +12,22 @@ private:
     string title;
     string author;
     string genre;
-    int isbn;
+    long isbn;
     
 protected:
     string type;
-
-public:  
+public:
     Book();
     void display();
-    void setTitle(const string& nameOfBook);
-    void setAuthor(const string& nameOfAuthor);
-    void setGenre(const string& nameOfGenre);
-    void setIsbn(const long& isbnNum);
+    string setTitle(const string& nameOfBook);
+    string setAuthor(const string& nameOfAuthor);
+    string setGenre(const string& nameOfGenre);
+    long setISBN(const long &isbnNum);
     const string getTitle();
     const string getAuthor();
     const string getGenre();
-    const int getIsbn();
+    const long getISBN();
+
 };
 
 class NonFiction : public Book {
