@@ -6,7 +6,7 @@ ADD_SUBDIRECTORY(googletest)
 
 ADD_EXECUTABLE(driver
     src/main.cpp
-    user.txt
+
 )
 
 ADD_EXECUTABLE(test
