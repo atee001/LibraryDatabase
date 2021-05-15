@@ -24,10 +24,10 @@ public:
     void setAuthor(const string& nameOfAuthor);
     void setGenre(const string& nameOfGenre);
     void setIsbn(const long& isbnNum);
-    string getTitle const();
-    string getAuthor const();
-    string getGenre const();
-    int getIsbn const();
+    const string getTitle();
+    const string getAuthor();
+    const string getGenre();
+    const int getIsbn();
 };
 
 class NonFiction : public Book {
