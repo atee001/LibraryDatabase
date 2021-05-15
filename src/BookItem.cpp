@@ -1,5 +1,5 @@
 
-#include "../header/BookItem.h"
+#include "../header/BookItem.hpp"
 
 BookItem::BookItem(Book book, Date checkOutDate, Date dueDate)  {
     this->book = book;
