@@ -54,5 +54,23 @@ Science::Science() {
 
 travelGuides::travelGuides() {
     type = "Travel Guides";
+}
+
+Fiction::Fiction() {
+    type = "Fiction";
+}
+
+Fantasy::Fantasy() {
+    type = "Fantasy";
+}
+
+Romance::Romance() {
+    type = "Romance";
+}
+
+Mystery::Mystery() {
+    type = "Mystery"
+}
+
 
 
