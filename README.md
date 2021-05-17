@@ -29,7 +29,8 @@
     * Create smaller development tasks as issues and assign them to team members. Place these in the `TODO` column.
     * These cards should represent roughly 7 days worth of development time for your team, taking you until your first meeting with the TA
 ## Class Diagram
-  [Final Project New.pdf](https://github.com/cs100/final-project-rbehe002_atee001_-ctsai081/files/6474607/Final.Project.New.pdf)
+  [Final.Project.New (1).pdf](https://github.com/cs100/final-project-rbehe002_atee001_-ctsai081/files/6497335/Final.Project.New.1.pdf)
+
 
 
 
