@@ -15,8 +15,7 @@
     * Output: Account information, displaying books, availibility of books.
   
   * What are the two design patterns you will be using? For each design pattern you must explain in 4-5 sentences:
-    * We can use the composite pattern in the library system by using Book Class as an interface. Each book has a genre with a subgenre such as fiction who's leaf is science fiction. By using composite we can treat a composite of genre objects as a single genre object. The composite pattern will allow a single book to be treated a selection of books so functions such as displayBook() will be easier instead of using a loop. 
-    * We will use the Strategy Pattern for our search query algorithm. The user can choose dynamically which search strategy to use. For example a user can search by author, genre, title and ISBN. The strategy dynamically chosen will set the search algorithm just like in lab05 with the select algorithm.  
+    * We will use strategy and composite for the searchQuery. The composite pattern is the searchOR and searchAND which contains an aggregate of the interface SearchStrat. The strategy pattern is the searchByAuthor, searchByGenre, and searchByTitle. The SearchAND and SearchOR is considered a composite the class consists a composite of Search interface pointers. The leafs are the SearchByAuthor, SearchByGenre, and SearchByTitle. The strategy pattern is allowing the user to dynamically choose which searchStrategy they want. 
 
   ## Phase II
 ## Class Diagram
