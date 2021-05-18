@@ -19,21 +19,8 @@
     * We will use the Strategy Pattern for our search query algorithm. The user can choose dynamically which search strategy to use. For example a user can search by author, genre, title and ISBN. The strategy dynamically chosen will set the search algorithm just like in lab05 with the select algorithm.  
 
   ## Phase II
-  In addition to completing the "Class Diagram" section below, you will need to 
-  * Set up your GitHub project board as a Kanban board for the project. It should have columns that map roughly to 
-    * Backlog, TODO, In progress, In testing, Done
-    * You can change these or add more if you'd like, but we should be able to identify at least these.
-  * There is no requirement for automation in the project board but feel free to explore those options.
-  * Create an "Epic" (note) for each feature and each design pattern and assign them to the appropriate team member. Place these in the `Backlog` column
-  * Complete your first *sprint planning* meeting to plan out the next 7 days of work.
-    * Create smaller development tasks as issues and assign them to team members. Place these in the `TODO` column.
-    * These cards should represent roughly 7 days worth of development time for your team, taking you until your first meeting with the TA
 ## Class Diagram
-  [Final.Project.New (1).pdf](https://github.com/cs100/final-project-rbehe002_atee001_-ctsai081/files/6497335/Final.Project.New.1.pdf)
-
-
-
-
+[Final Project New (2).pdf](https://github.com/cs100/final-project-rbehe002_atee001_-ctsai081/files/6499256/Final.Project.New.2.pdf)
  
 ## Phase III
   You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
