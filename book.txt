@@ -1,27 +1,27 @@
 //Title | Author * Genre / ISBN
 
-Night Outing|Robert Bask*Romance/0000000000001
-The Break of Dawn|Lenna Stuart*Romance/0000000000002
-Twilight|Ben Dover*Romance/0000000000003
-The Great Escape|Robert Bask*Romance/0000000000004
-Kiss|May Potter*Romance/0000000000005
-Everytime We Touch|Robert Bask*Romance/0000000000006
-Back To You|Lenna Stuart*Romance/0000000000007
-Blow Me One Last Kiss|Lenna Petterson*Romance/0000000000008
-Experiment XXX|Peter Blake*Science/0000000000009
-The Alien From Mars|Ethan West*Science/0000000000010
-Terminator|Andrew Simmer*Science/0000000000011
-Rise of The Machine|Larry Bolt*Science/0000000000012
-Back To The Future|Tom Bert*Science/0000000000013
-Jump To The Past|Tom Bert*Science/0000000000014
-Deus Ex Machina|Shawn Kim*Science/0000000000015
-Mutant Ninja Turtles|Austin Jackson*Science/0000000000016
-The Death of John Burney|Christen Miles*Mystery/0000000000017
-The Clock Strikes 12|Gina Stevens*Mystery/0000000000018
-Sherlock|Sam Myre*Mystery/0000000000019
-Serial Killer|Eric Mario*Mystery/0000000000020
-Spree|Yami Yugi*Mystery/0000000000021
-Who Did It?|Ben Ten*Mystery/0000000000022
-Mystery of The Glove|Jim Slim*Mystery/0000000000023
-They Who Lay In The Lake|Jo Mama*Mystery/0000000000024
-Rusted Dagger|Jo Mama*Mystery/0000000000025
+Night Outing | Robert Bask * Romance / 0000000000001
+The Break of Dawn | Lenna Stuart * Romance/0000000000002
+Twilight | Ben Dover * Romance / 0000000000003
+The Great Escape | Robert Bask * Romance / 0000000000004
+Kiss | May Potter * Romance / 0000000000005
+Everytime We Touch | Robert Bask * Romance / 0000000000006
+Back To You | Lenna Stuart * Romance / 0000000000007
+Blow Me One Last Kiss | Lenna Petterson * Romance / 0000000000008
+Experiment XXX | Peter Blake * Science / 0000000000009
+The Alien From Mars | Ethan West * Science / 0000000000010
+Terminator | Andrew Simmer * Science / 0000000000011
+Rise of The Machine | Larry Bolt * Science / 0000000000012
+Back To The Future | Tom Bert * Science / 0000000000013
+Jump To The Past | Tom Bert * Science / 0000000000014
+Deus Ex Machina | Shawn Kim * Science / 0000000000015
+Mutant Ninja Turtles | Austin Jackson * Science / 0000000000016
+The Death of John Burney | Christen Miles * Mystery / 0000000000017
+The Clock Strikes 12 | Gina Stevens * Mystery / 0000000000018
+Sherlock | Sam Myre * Mystery / 0000000000019
+Serial Killer | Eric Mario * Mystery / 0000000000020
+Spree | Yami Yugi * Mystery / 0000000000021
+Who Did It? | Ben Ten * Mystery / 0000000000022
+Mystery of The Glove | Jim Slim * Mystery / 0000000000023
+They Who Lay In The Lake | Jo Mama * Mystery / 0000000000024
+Rusted Dagger | Jo Mama * Mystery / 0000000000025
