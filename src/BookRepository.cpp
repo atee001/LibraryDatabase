@@ -1,5 +1,6 @@
 
 #include "../header/BookRepository.hpp"
+
 using namespace std;
 BookRepository::BookRepository() {
     return;
@@ -17,7 +18,7 @@ void BookRepository::display(Book* book) {
 
 void BookRepository::AddBook(Book* book) {
 
-    bookTitles.insert(pair<string, Book>(book->getTitle(), *book));
+    bookTitles.insert(pair<string, Book>(book->getTitle(), book));
  
 }
 
@@ -36,4 +37,64 @@ Book* BookRepository::GetBook(Book* book) {
         return ptr;
     }
 }
+void BookRepository::populate() {//Title | Author * Genre / ISBN
+	
+	string word = "";
+	string Title = "";
+	string Author = "";
+	string Genre = "";
+	string ISBN = "";
 
+	int count = 0;
+	
+	ifstream infile("book.txt");
+      
+	while(infile >> word) {
+		if(word != "|" && count == 0) {
+			Title += word;
+		}
+		else {
+			count++;
+		}
+		if(count == 1 && word != "*") {
+			Author += word;
+		}
+		else {
+			count++;
+		}
+		if(count == 2 && word != "/") {
+			Genre += word;
+		}
+		else {
+			count++;
+		}
+		if(count == 3 && word != "\n") {
+			ISBN += word;
+		}
+		else {
+			count = 0;
+
+			Book* newBook = new Book();
+
+			newBook->setTitle(Title);
+			newBook->setAuthor(Author);
+			newBook->setGenre(Genre);
+			newBook->setISBN(ISBN);
+
+			Title = "";
+			Author = "";
+			Genre = "";
+			ISBN = "";
+
+			AddBook(newBook);
+			bookAuthors.insert(pair<string, Book*>(newBook->getAuthor(), newBook));
+			bookGenres.insert(pair<string, Book*>(newBook->getGenre(), newBook));
+			bookList.insert(pair<BookItem, Book*>(*newBook, newBook));
+
+		}
+
+
+	}
+
+
+}
