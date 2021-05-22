@@ -1,27 +1,37 @@
-
 #include "../header/Book.hpp"
 
 Book::Book() {
 
 }
+
+Book::Book(const Book &book) {
+    title = book.title;
+    author = book.author;
+    genre = book.genre;
+    isbn = book.isbn;
+
+}
 void Book::display() {
-    cout << "Title: " << title << "Author: " << author << "Genre: " << genre << "ISBN: " << isbn << endl;
+    cout << "Title: " << title << endl;
+    cout << "Author: " << author << endl;
+    cout << "Genre: " << genre << endl;
+    cout << "ISBN: " << isbn << endl;
 }
 
-string Book::setTitle(const string& aTitle) {
+void Book::setTitle(const string& aTitle) {
     title = aTitle;
 }
 
-string Book::setAuthor(const string& aAuthor) {
+void Book::setAuthor(const string& aAuthor) {
     author = aAuthor;
 }
 
-string Book::setGenre(const string& aGenre) {
+void Book::setGenre(const string& aGenre) {
     genre = aGenre;
 }
 
-long Book::setISBN(const long& isbnNum) {
-    isbn = isbnNum;
+void Book::setISBN(const string& isbnCode) {
+    isbn = isbnCode;
 }
 
 const string Book::getTitle() {
@@ -36,7 +46,7 @@ const string Book::getGenre()  {
     return genre;
 }
 
-const long Book:: getISBN() {
+const string Book:: getISBN() {
     return isbn;
 }
 
@@ -54,5 +64,4 @@ Science::Science() {
 
 travelGuides::travelGuides() {
     type = "Travel Guides";
-
-
+}
