@@ -1,9 +1,13 @@
-
 #include "../header/Date.hpp"
-
 
 Date::Date() {
 
+}
+
+Date::Date(Date &d) {
+    month = d.getMonth();
+    day = d.getDay();
+    year = d.getYear();
 }
 
 Date::Date(int d, int m, int y) {
@@ -35,4 +39,3 @@ int Date::getYear() {
 void Date::setYear(int y) {
     year = y;
 }
-
