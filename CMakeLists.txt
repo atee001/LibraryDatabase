@@ -9,6 +9,11 @@ ADD_EXECUTABLE(driver
 
 )
 
+ADD_EXECUTABLE(bookRepository
+    src/BookRepositoryTest.cpp
+  
+)
+
 ADD_EXECUTABLE(test
     test.cpp
 )
