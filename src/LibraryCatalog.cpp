@@ -1,4 +1,4 @@
-#include "../header/LibraryCatalog.h"
+#include "../header/LibraryCatalog.hpp"
 #include <ostream>
 using namespace std;
 
