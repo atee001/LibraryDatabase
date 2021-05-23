@@ -1,32 +1,30 @@
 #ifndef LIBRARYSYSTEM_BOOK_HPP
 #define LIBRARYSYSTEM_BOOK_HPP
 
-
 #include <iostream>
 #include <string>
-#include "BookItem.hpp"
 using namespace std;
 
-class Book : public BookItem {
-private:
+class Book {
+protected:
     string title;
     string author;
     string genre;
-    long isbn;
-    
+    string isbn;
 protected:
     string type;
 public:
     Book();
+    Book(const Book &book);
     void display();
-    string setTitle(const string& nameOfBook);
-    string setAuthor(const string& nameOfAuthor);
-    string setGenre(const string& nameOfGenre);
-    long setISBN(const long &isbnNum);
+    void setTitle(const string& nameOfBook);
+    void setAuthor(const string& nameOfAuthor);
+    void setGenre(const string& nameOfGenre);
+    void setISBN(const string& isbnCode);
     const string getTitle();
     const string getAuthor();
     const string getGenre();
-    const long getISBN();
+    const string getISBN();
 
 };
 
@@ -74,5 +72,3 @@ public:
 
 
 #endif //LIBRARYSYSTEM_BOOK_HPP
-
-
