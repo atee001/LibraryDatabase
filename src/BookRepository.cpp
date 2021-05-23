@@ -5,7 +5,7 @@ using namespace std;
 
 
 BookRepository::BookRepository() {
-    
+
 }
 
 void BookRepository::AddBookByTitle(Book* book) {
@@ -19,7 +19,6 @@ void BookRepository::AddBookByAuthor(Book* book) {
 void BookRepository::AddBookByGenre(Book* book) {
     bookGenres[book->getGenre()] = book;
 }
-
 
 void BookRepository::CheckOut(Book* book, Date checkOutDate) {
     BookItem *bookItem = new BookItem();
@@ -40,7 +39,6 @@ void BookRepository::CheckOut(Book* book, Date checkOutDate) {
     bookItem->setGenre(book->getGenre());
     bookItem->setISBN(book->getISBN());
     bookList[bookItem] = book;
-
 }
 
 void BookRepository::RemoveBook(Book* book) {
@@ -68,60 +66,6 @@ Book* BookRepository::GetBook(Book* book) {
              return NULL;
     }
 }
-void BookRepository::populate() {//Title | Author * Genre / ISBN
-	
-	string word = "";
-	string Title = "";
-	string Author = "";
-	string Genre = "";
-	string ISBN = "";
-
-	int count = 0;
-	
-	ifstream infile("book.txt");
-      
-	while(infile >> word) {
-		if(word != "|" && count == 0) {
-			Title += word;
-		}
-		else {
-			count++;
-		}
-		if(count == 1 && word != "*") {
-			Author += word;
-		}
-		else {
-			count++;
-		}
-		if(count == 2 && word != "/") {
-			Genre += word;
-		}
-		else {
-			count++;
-		}
-		if(count == 3 && word != "\n") {
-			ISBN += word;
-		}
-		else {
-			count = 0;
-
-			Book* newBook = new Book();
-
-			newBook->setTitle(Title);
-			newBook->setAuthor(Author);
-			newBook->setGenre(Genre);
-			newBook->setISBN(ISBN);
-
-			Title = "";
-			Author = "";
-			Genre = "";
-			ISBN = "";
-
-			AddBook(newBook);
-			bookAuthors.insert(pair<string, Book*>(newBook->getAuthor(), newBook));
-			bookGenres.insert(pair<string, Book*>(newBook->getGenre(), newBook));
-			bookList.insert(pair<BookItem, Book*>(*newBook, newBook));
-
 
 void BookRepository::populate() {//Title | Author * Genre / ISBN
 
@@ -181,8 +125,7 @@ void BookRepository::populate() {//Title | Author * Genre / ISBN
             bookList[bookItem] = newBook;
 
         }
-        
+
     }
-    
 
 }
