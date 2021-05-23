@@ -4,6 +4,8 @@ Book::Book() {
 
 }
 
+Book::Book(const string& t, const string& a, const string& g, const int& i) : title(t), author(a), genre(g), isbn(i) {}
+
 Book::Book(const Book &book) {
     title = book.title;
     author = book.author;
@@ -65,3 +67,23 @@ Science::Science() {
 travelGuides::travelGuides() {
     type = "Travel Guides";
 }
+
+
+Fiction::Fiction() {
+    type = "Fiction";
+}
+
+Fantasy::Fantasy() {
+    type = "Fantasy";
+}
+
+Romance::Romance() {
+    type = "Romance";
+}
+
+Mystery::Mystery() {
+    type = "Mystery"
+}
+
+
+

@@ -48,4 +48,27 @@ public:
     travelGuides();
 };
 
+class Fiction : public Book {
+public: 
+    Fiction();
+};
+
+class Fantasy : public Fiction {
+public:
+    Fantasy();
+};
+
+class Romance : public Fiction {
+public: 
+    Romance();
+};
+
+class Mystery : public Fiction {
+public:
+    Mystery();
+};
+
+
+
+
 #endif //LIBRARYSYSTEM_BOOK_HPP
