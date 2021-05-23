@@ -15,6 +15,7 @@ protected:
     string type;
 public:
     Book();
+    Book(const string&, const string&, const string&, const string&);
     Book(const Book &book);
     void display();
     void setTitle(const string& nameOfBook);
