@@ -11,7 +11,7 @@ vector<Book*> SearchAND::search(const BookRepository* b){
                 
             anded.emplace_back(it);
             
-            break;
+
                 
         }
             
