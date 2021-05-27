@@ -8,7 +8,7 @@ vector<Book*> SearchContains::search(const BookRepository* b){ //verifies it's a
     
     else if (searchBY == "Genre"&& (b->getMapGenre().find(searchQuery) != b->getMapGenre().end())) return b->getMapGenre().second;
     
-    else vector<string>();
+    else return vector<string>();
         
     
 }
