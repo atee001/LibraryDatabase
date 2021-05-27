@@ -1,0 +1,15 @@
+#pragma once
+#include "SearchStrat.hpp"
+
+class SearchContains : public SearchStrat {
+
+  string searchBy;
+  string searchQuery;
+
+  public:
+    
+    SearchContains(const string& searchBy, const string& searchQuery) : searchBy(searchBy), searchQuery(searchQuery){}
+    vector<Book*> search(const BookRepository*);
+
+};
+

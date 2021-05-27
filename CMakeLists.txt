@@ -9,14 +9,22 @@ ADD_EXECUTABLE(driver
 
 )
 
-ADD_EXECUTABLE(bookRepository
-    src/BookRepositoryTest.cpp
+#ADD_EXECUTABLE(bookRepository
+#    src/BookRepositoryTest.cpp
   
+#)
+ADD_EXECUTABLE(SearchDriver
+ 	src/SearchAND.cpp
+	src/SearchOR.cpp
+	src/SearchContains.cpp
+	src/SearchQueryTest.cpp
+
+
 )
 
-add_executable(LibrarySystem src/BookRepositoryTest.cpp header/Book.hpp src/BookRepository.cpp
-        header/BookRepository.hpp src/Book.cpp src/BookItem.cpp header/BookItem.hpp src/Date.cpp
-        header/Date.hpp header/User.hpp header/Person.hpp src/LibraryCatalog.cpp header/LibraryCatalog.h)
+ADD_EXECUTABLE(LibrarySystem src/BookRepositoryTest.cpp src/BookRepository.cpp
+        src/Book.cpp src/BookItem.cpp src/Date.cpp
+        src/LibraryCatalog.cpp )
 
-TARGET_LINK_LIBRARIES(test gtest)
-TARGET_COMPILE_DEFINITIONS(test PRIVATE gtest_disable_pthreads=ON)
+#TARGET_LINK_LIBRARIES(test gtest)
+#TARGET_COMPILE_DEFINITIONS(test PRIVATE gtest_disable_pthreads=ON)
