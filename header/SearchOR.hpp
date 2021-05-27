@@ -1,19 +1,18 @@
+#include "BookRepository.hpp"
 #include "SearchStrat.hpp"
 #pragma once
 
-class SearchAND : public SearchStrat {
+class SearchOR : public SearchStrat{
 
-  private:
-	
   SearchStrat* lhs;
   SearchStrat* rhs;
 
   public:
-    ~SearchAND(){
+    ~SearchOR(){
         delete lhs;
         delete rhs;
     }
-    SearchAND(SearchStrat* lhs, SearchStrat* rhs) : lhs(lhs), rhs(rhs){}
+    SearchOR(SearchStrat* lhs, SearchStrat* rhs) : lhs(lhs), rhs(rhs){}
     vector<Book*> search(const BookRepository*);
 
 };

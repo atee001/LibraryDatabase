@@ -9,15 +9,15 @@ BookRepository::BookRepository() {
 }
 
 void BookRepository::AddBookByTitle(Book* book) {
-    bookTitles[book->getTitle()] = book;
+    bookTitles[book->getTitle()].push_back(book;
 }
 
 void BookRepository::AddBookByAuthor(Book* book) {
-    bookAuthors[book->getAuthor()] = book;
+    bookAuthors[book->getAuthor()].push_back(book);
 }
 
 void BookRepository::AddBookByGenre(Book* book) {
-    bookGenres[book->getGenre()] = book;
+    bookGenres[book->getGenre()].push_book(book);
 }
 
 void BookRepository::CheckOut(Book* book, Date checkOutDate) {
@@ -56,7 +56,7 @@ void BookRepository::display(Book* book) {
     cout << endl;
 }
 
-Book* BookRepository::GetBook(Book* book) {
+vector<Book*> BookRepository::GetBook(Book* book) {
     map<string, Book*>::iterator it = bookTitles.find(book->getTitle());
      while (it != bookTitles.end()) {
          string title = it->first;
