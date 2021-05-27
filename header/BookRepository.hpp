@@ -1,6 +1,6 @@
 #ifndef LIBRARYSYSTEM_BOOKREPOSITORY_HPP
 #define LIBRARYSYSTEM_BOOKREPOSITORY_HPP
-
+#include <vector>
 #include <iostream>
 #include <map>
 #include <utility>
@@ -8,6 +8,8 @@
 #include <algorithm>
 #include <string>
 #include "BookItem.hpp"
+#include <fstream>
+using namespace std;
 
 class BookRepository  {
 public:
@@ -22,9 +24,9 @@ public:
     Book* GetBook(Book* book);
     const int DUE_DATE = 60; //A user can checkout a book for up to 60 days by default.
 private:
-    map<string, Book*> bookTitles;
-    map<string, Book*> bookAuthors;
-    map<string, Book*> bookGenres;
+    map<string, vector<Book*>> bookTitles;
+    map<string, vector<Book*>> bookAuthors;
+    map<string, vector<Book*>> bookGenres;
     map<BookItem*, Book*> bookList;
 };
 

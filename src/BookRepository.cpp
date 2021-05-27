@@ -1,7 +1,7 @@
-#include <fstream>
+
 #include "../header/BookRepository.hpp"
 
-using namespace std;
+
 
 
 BookRepository::BookRepository() {
@@ -9,15 +9,15 @@ BookRepository::BookRepository() {
 }
 
 void BookRepository::AddBookByTitle(Book* book) {
-    bookTitles[book->getTitle()] = book;
+    bookTitles[book->getTitle()].push_back(book;
 }
 
 void BookRepository::AddBookByAuthor(Book* book) {
-    bookAuthors[book->getAuthor()] = book;
+    bookAuthors[book->getAuthor()].push_back(book);
 }
 
 void BookRepository::AddBookByGenre(Book* book) {
-    bookGenres[book->getGenre()] = book;
+    bookGenres[book->getGenre()].push_back(book);
 }
 
 void BookRepository::CheckOut(Book* book, Date checkOutDate) {
