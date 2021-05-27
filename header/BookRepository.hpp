@@ -22,10 +22,12 @@ public:
     void CheckOut(Book* book, Date checkOutDate);
     void RemoveBook(Book* book);
     void populate();
-    Book* GetBookByAuthor(string bookAuthor) const;
-    Book* GetBookByTitle(string bookTitle) const;
-    Book* GetBookByGenre(string bookGenre) const;
-
+   // Book* GetBookByAuthor(string bookAuthor) const;
+    //Book* GetBookByTitle(string bookTitle) const;
+   // Book* GetBookByGenre(string bookGenre) const; 
+    map<string, vector<Book*>> getMapAuthor() const;
+    map<string, vector<Book*>> getMapTitle() const;
+    map<string, vector<Book*>> getMapGenre() const;
     const int DUE_DATE = 60; //A user can checkout a book for up to 60 days by default.
 private:
     map<string, vector<Book*>> bookTitles;

@@ -8,6 +8,22 @@ BookRepository::BookRepository() {
 
 }
 
+map<string, vector<Book*>> BookRepository::getMapAuthor() const{
+
+	return this->bookAuthors;
+}
+
+map<string, vector<Book*>> BookRepository::getMapTitle() const{
+
+	return this->bookTitles;
+
+}
+
+map<string, vector<Book*>> BookRepository::getMapGenre() const{
+
+	return this->bookGenres;
+}
+
 BookRepository::BookRepository(BookRepository& bookRepository) {
     bookRepository.bookTitles = bookRepository.bookTitles;
     bookRepository.bookAuthors = bookRepository.bookAuthors;
@@ -15,15 +31,15 @@ BookRepository::BookRepository(BookRepository& bookRepository) {
     bookRepository.bookList = bookRepository.bookList;
 }
 void BookRepository::AddBookByTitle(Book* book) {
-    bookTitles[book->getTitle()].push_back(book;
+    bookTitles[book->getTitle()].push_back(book);
 }
 
 void BookRepository::AddBookByAuthor(Book* book) {
     bookAuthors[book->getAuthor()].push_back(book);
 }
 
-void BookRepository::AddBookByGenre(Book* book) 
-    bookGenres[book->getGenre()].push_book(book);
+void BookRepository::AddBookByGenre(Book* book){ 
+    bookGenres[book->getGenre()].push_back(book);
 
 }
 
