@@ -12,6 +12,7 @@
 class BookRepository  {
 public:
     BookRepository();
+    BookRepository(BookRepository& bookRepository);
     void display(Book* book);
     void AddBookByTitle(Book* book);
     void AddBookByAuthor(Book* book);
@@ -19,7 +20,10 @@ public:
     void CheckOut(Book* book, Date checkOutDate);
     void RemoveBook(Book* book);
     void populate();
-    Book* GetBook(Book* book);
+    Book* GetBookByAuthor(string bookAuthor) const;
+    Book* GetBookByTitle(string bookTitle) const;
+    Book* GetBookByGenre(string bookGenre) const;
+
     const int DUE_DATE = 60; //A user can checkout a book for up to 60 days by default.
 private:
     map<string, Book*> bookTitles;
@@ -30,6 +34,5 @@ private:
 
 
 #endif //LIBRARYSYSTEM_BOOKREPOSITORY_HPP
-
 
 
