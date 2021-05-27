@@ -8,6 +8,12 @@ BookRepository::BookRepository() {
 
 }
 
+BookRepository::BookRepository(BookRepository& bookRepository) {
+    bookRepository.bookTitles = bookRepository.bookTitles;
+    bookRepository.bookAuthors = bookRepository.bookAuthors;
+    bookRepository.bookGenres = bookRepository.bookGenres;
+    bookRepository.bookList = bookRepository.bookList;
+}
 void BookRepository::AddBookByTitle(Book* book) {
     bookTitles[book->getTitle()] = book;
 }
@@ -56,16 +62,39 @@ void BookRepository::display(Book* book) {
     cout << endl;
 }
 
-Book* BookRepository::GetBook(Book* book) {
-    map<string, Book*>::iterator it = bookTitles.find(book->getTitle());
+Book* BookRepository::GetBookByTitle(string bookTitle) const {
+    map<string, Book*>::iterator it = bookTitles.find(bookTitle);
      while (it != bookTitles.end()) {
          string title = it->first;
-         if (title == book->getTitle())
+         if (title == bookTitle)
              return it->second;
          else
              return NULL;
     }
 }
+
+Book* BookRepository::GetBookByAuthor(string bookAuthor) const {
+    map<string, Book*>::iterator it = bookAuthors.find(bookAuthor);
+    while (it != bookAuthors.end()) {
+        string author = it->first;
+        if (author == bookAuthor)
+            return it->second;
+        else
+            return NULL;
+    }
+}
+
+Book* BookRepository::GetBookByGenre(string bookGenre) const {
+    map<string, Book*>:: iterator it  = bookGenres.find(bookGenre);
+    while (it != bookGenres.end()) {
+        string genre = it->first;
+        if (genre == bookGenre)
+            return it->second;
+        else
+            return NULL;
+    }
+}
+
 
 void BookRepository::populate() {//Title | Author * Genre / ISBN
 
