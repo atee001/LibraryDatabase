@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <map>
+#include <vector>
 #include <utility>
 #include <iterator>
 #include <algorithm>
@@ -20,12 +21,13 @@ public:
     void AddBook(Book* book);
     void RemoveBook(Book* book);
     Book* GetBook(Book* book);
+    void populate(string filename);
 
 private:
-    map<string, Book> bookTitles;
-    map<string, Book> bookAuthors;
-    map<string, Book> bookGenres;
-    map<BookItem, Book> bookList;
+    map<string, vector<Book*>> bookTitles;
+    map<string, vector<Book*>> bookAuthors;
+    map<string, vector<Book*>> bookGenres;
+    map<BookItem, Book*> bookList;
 };
 
 
