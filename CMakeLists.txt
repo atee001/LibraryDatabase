@@ -13,6 +13,14 @@ ADD_EXECUTABLE(driver
 #    src/BookRepositoryTest.cpp
   
 #)
+ADD_EXECUTABLE(SearchDriver
+ 	src/SearchAND.cpp
+	src/SearchOR.cpp
+	src/SearchContains.cpp
+	src/SearchQueryTest.cpp
+
+
+)
 
 ADD_EXECUTABLE(LibrarySystem src/BookRepositoryTest.cpp src/BookRepository.cpp
         src/Book.cpp src/BookItem.cpp src/Date.cpp
