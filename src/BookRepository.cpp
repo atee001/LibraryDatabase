@@ -1,5 +1,6 @@
 
 #include "../header/BookRepository.hpp"
+#include "../book.txt"
 
 using namespace std;
 BookRepository::BookRepository() {
@@ -48,7 +49,11 @@ void BookRepository::populate() {//Title | Author * Genre / ISBN
 	int count = 0;
 	
 	ifstream infile("book.txt");
-      
+	if(infile.fail()) {
+		cout << "failed to open book.txt" << endl;
+		exit(1);
+	}        
+
 	while(infile >> word) {
 		if(word != "|" && count == 0) {
 			Title += word;
@@ -96,5 +101,5 @@ void BookRepository::populate() {//Title | Author * Genre / ISBN
 
 	}
 
-
+	infile.close();	
 }
