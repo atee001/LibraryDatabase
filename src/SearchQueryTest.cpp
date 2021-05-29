@@ -45,6 +45,12 @@ int main(){
 	lib->print_search(repo, cout);
  	SearchStrat* root = new SearchAND(new SearchContains("Author", "Jessica Dunham"), new SearchContains("Author", "Lenna Stuart"));
 	cout << "SearchBox:" << root->display() << endl;
+
+
+	//BookRepository* r = new BookRepository();
+	//r->populate();
+	//r->display();
+
 	return 0;
 
 }
