@@ -1,6 +1,5 @@
 
 #include "../header/BookRepository.hpp"
-#include "../book.txt"
 
 
 
@@ -105,7 +104,7 @@ void BookRepository::RemoveBook(Book* book) {
     bookTitles.erase(book->getTitle());
 }
 
-void BookRepository::display(Book* book) {
+void BookRepository::display() {
     std::map<BookItem*, Book *>::iterator it;
     for (it = bookList.begin(); it != bookList.end(); it++) {
         BookItem* bookItem = it->first;
@@ -164,7 +163,7 @@ void BookRepository::populate() {//Title | Author * Genre / ISBN
     string ISBN;
     string line;
 
-    ifstream infile("book.txt");
+    ifstream infile("../book.txt");
 
     if(!infile){
 	cerr << "Invalid Txt file" << endl;
