@@ -43,43 +43,35 @@ void BookRepository::AddBookByGenre(Book* book){
 
 }
 
-void displayMapTitle(){
+void BookRepository::displayMapTitle(){
 
-	for(auto& [key, value] : bookTitles){
-		
-		for(auto it : value){
-		
-			cout << it->getTitle() << endl;
+	for(map<string, vector<Book*>>::iterator it = bookTitles.begin(); it != bookTitles.end(); it++){		
+		for(auto x : it->second){
+			cout << x->getTitle() << endl;
 		}
-
-
 	}
 
 }
-void displayMapAuthors(){
+void BookRepository::displayMapAuthors(){
+	for(map<string, vector<Book*>>::iterator it = bookAuthors.begin(); it != bookAuthors.end(); it++){
 
-        for(auto& [key, value] : bookAuthors){
-		
-		for(auto it : value){
-		
-			cout << it->getAuthor() << endl;
-		}
-
-
+                for(auto x : it->second){
+                        cout << x->getAuthor() << endl;
+                }
+        
 	}
+
+
 }
 
-void displayBookGenres(){
+void BookRepository::displayBookGenres(){
+for(map<string, vector<Book*>>::iterator it = bookGenres.begin(); it != bookGenres.end(); it++){
 
-        for(auto& [key, value] : bookGenres){
-		
-		for(auto it : value){
-		
-			cout << it->getGenre() << endl;
-		}
+                for(auto x : it->second){
+                        cout << x->getGenre() << endl;
+                }
+        }
 
-
-	}
 
 }
 

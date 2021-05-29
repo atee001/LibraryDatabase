@@ -1,5 +1,5 @@
-#ifndef LIBRARYSYSTEM_BOOKREPOSITORY_HPP
-#define LIBRARYSYSTEM_BOOKREPOSITORY_HPP
+#ifndef BOOKREPOSITORY_HPP
+#define BOOKREPOSITORY_HPP
 #include <vector>
 #include <iostream>
 #include <map>
