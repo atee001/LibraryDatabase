@@ -1,9 +1,14 @@
-#include "BookComponent.hpp"
+#include "BookRepository.hpp"
+#include <vector>
+#include <algorithm>
+#include <iostream>
 #pragma once
 
 class SearchStrat{
   public:
-    virtual bool search(const BookComponent*, const string& str) = 0;
-
+    virtual vector<Book*> search(const BookRepository*) = 0;
+    virtual const string display(){
+	return "No Search Chosen"; 
+    }	
 };
 
