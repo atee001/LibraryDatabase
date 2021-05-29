@@ -16,7 +16,7 @@ class BookRepository  {
 public:
     BookRepository();
     BookRepository(BookRepository& bookRepository);
-    void display(Book* book);
+    void display();
     void AddBookByTitle(Book* book);
     void AddBookByAuthor(Book* book);
     void AddBookByGenre(Book* book);
@@ -39,7 +39,7 @@ private:
     map<string, vector<Book*>> bookAuthors;
     map<string, vector<Book*>> bookGenres;
 
-    map<BookItem, Book*> bookList;
+    map<BookItem*, Book*> bookList;
 
 };
 
