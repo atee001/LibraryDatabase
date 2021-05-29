@@ -43,6 +43,42 @@ void BookRepository::AddBookByGenre(Book* book){
 
 }
 
+void displayMapTitle(){
+
+	for(auto it : bookTitles){
+		
+		cout << it.second->getTitle() << endl;
+
+	}
+
+}
+void displayMapAuthors(){
+
+        for(auto it : bookAuthor){
+
+                cout << it.second->getAuthor() << endl;
+
+        }
+
+}
+
+void displayBookGenres(){
+
+
+
+
+        for(auto it : bookTitles){
+
+                cout << it.second->getGenres() << endl;
+
+        }
+
+}
+
+
+
+}
+
 void BookRepository::CheckOut(Book* book, Date checkOutDate) {
     BookItem *bookItem = new BookItem();
     bookItem->setCheckoutDate(checkOutDate);
