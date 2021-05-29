@@ -12,7 +12,7 @@ class SearchContains : public SearchStrat {
     vector<Book*> search(const BookRepository*);
     const string display(){
 	
-	return searchBy + ": " +  searchQuery; 
+	return " " + searchBy + ": " +  searchQuery; 
 
     }
 };

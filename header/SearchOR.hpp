@@ -16,7 +16,7 @@ class SearchOR : public SearchStrat{
     vector<Book*> search(const BookRepository*);
     const string display(){
     
-	return " OR( " + lhs->display() + " , " + rhs->display() + " ) \n";
+	return " OR(" + lhs->display() + " ," + rhs->display() + " )";
     }
 };
 

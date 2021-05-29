@@ -44,7 +44,7 @@ int main(){
  	lib->set_search(new SearchAND(new SearchContains("Author", "Jessica Dunham"), new SearchContains("Author", "Lenna Stuart")));
 	lib->print_search(repo, cout);
  	SearchStrat* root = new SearchAND(new SearchContains("Author", "Jessica Dunham"), new SearchContains("Author", "Lenna Stuart"));
-	cout << "SearchBox:" << root->display();
+	cout << "SearchBox:" << root->display() << endl;
 	return 0;
 
 }

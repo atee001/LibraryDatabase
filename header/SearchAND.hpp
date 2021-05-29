@@ -17,7 +17,7 @@ class SearchAND : public SearchStrat {
     vector<Book*> search(const BookRepository*);
     const string display(){
 
-	return  " AND( " + lhs->display() + " , " + rhs->display() + " ) \n"; 
+	return  " AND(" + lhs->display() + " ," + rhs->display() + " )"; 
     }
 };
 
