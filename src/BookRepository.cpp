@@ -173,10 +173,10 @@ void BookRepository::populate() {//Title | Author * Genre / ISBN
 	size_t two = str.find('*');
 	size_t three = str.find('/');
     
-	Title = str.substr(0,one);
-	Author = str.substr(one+1, two-one-1);
-	Genre = str.substr(two+1, three-two-1);
-	ISBN = str.substr(three+1);
+	Title = line.substr(0,one);
+	Author = line.substr(one+1, two-one-1);
+	Genre = line.substr(two+1, three-two-1);
+	ISBN = line.substr(three+1);
 
 
 
