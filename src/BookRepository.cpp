@@ -201,5 +201,5 @@ void BookRepository::populate() {//Title | Author * Genre / ISBN
    }
 
 
-	if.close();
+	infile.close();
 }
