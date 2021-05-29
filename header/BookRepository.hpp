@@ -22,6 +22,9 @@ public:
     void CheckOut(Book* book, Date checkOutDate);
     void RemoveBook(Book* book);
     void populate();
+    void displayMapTitle();
+    void displayMapAuthors();
+    void displayBookGenres();
    // Book* GetBookByAuthor(string bookAuthor) const;
     //Book* GetBookByTitle(string bookTitle) const;
    // Book* GetBookByGenre(string bookGenre) const; 
