@@ -45,12 +45,11 @@ void BookRepository::AddBookByGenre(Book* book){
 
 void displayMapTitle(){
 
-	for(auto it : bookTitles){
+	for(auto& [key, value] : bookTitles){
 		
-		for(auto jt : it.second){
-
-                	cout << jt->getTitle() << endl;
-			
+		for(auto it : value){
+		
+			cout << it->getTitle() << endl;
 		}
 
 
@@ -59,30 +58,28 @@ void displayMapTitle(){
 }
 void displayMapAuthors(){
 
-        for(auto it : bookAuthor){
-
-               for(auto jt : it.second){
-
-                	cout << jt->getAuthor() << endl;
-			
+        for(auto& [key, value] : bookAuthors){
+		
+		for(auto it : value){
+		
+			cout << it->getAuthor() << endl;
 		}
 
 
-        }
-
+	}
 }
 
 void displayBookGenres(){
 
-        for(auto it : bookGenres){
+        for(auto& [key, value] : bookGenres){
 		
-		for(auto jt : it.second){
-
-                	cout << jt->getGenre() << endl;
-			
+		for(auto it : value){
+		
+			cout << it->getAuthor() << endl;
 		}
 
-        }
+
+	}
 
 }
 
