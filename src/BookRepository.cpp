@@ -88,8 +88,6 @@ void displayBookGenres(){
 
 
 
-}
-
 void BookRepository::CheckOut(Book* book, Date checkOutDate) {
     BookItem *bookItem = new BookItem();
     bookItem->setCheckoutDate(checkOutDate);
