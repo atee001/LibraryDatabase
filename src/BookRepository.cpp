@@ -47,7 +47,12 @@ void displayMapTitle(){
 
 	for(auto it : bookTitles){
 		
-		cout << it.second->getTitle() << endl;
+		for(auto jt : it.second){
+
+                	cout << jt->getTitle() << endl;
+			
+		}
+
 
 	}
 
@@ -56,7 +61,12 @@ void displayMapAuthors(){
 
         for(auto it : bookAuthor){
 
-                cout << it.second->getAuthor() << endl;
+               for(auto jt : it.second){
+
+                	cout << jt->getAuthor() << endl;
+			
+		}
+
 
         }
 
@@ -64,20 +74,19 @@ void displayMapAuthors(){
 
 void displayBookGenres(){
 
+        for(auto it : bookGenres){
+		
+		for(auto jt : it.second){
 
-
-
-        for(auto it : bookTitles){
-
-                cout << it.second->getGenres() << endl;
+                	cout << jt->getGenre() << endl;
+			
+		}
 
         }
 
 }
 
 
-
-}
 
 void BookRepository::CheckOut(Book* book, Date checkOutDate) {
     BookItem *bookItem = new BookItem();
