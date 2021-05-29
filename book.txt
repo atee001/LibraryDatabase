@@ -25,3 +25,29 @@ Who Did It? | Ben Ten * Mystery / 0000000000022
 Mystery of The Glove | Jim Slim * Mystery / 0000000000023
 They Who Lay In The Lake | Jo Mama * Mystery / 0000000000024
 Rusted Dagger | Jo Mama * Mystery / 0000000000025
+Into Thin Air | Jon Krakauer * Biography / 0000000000026
+Into the Wild | Jon Krakauer * Biography / 0000000000027
+Between the World and Me | Ta-Nehisi Coates * Biography / 0000000000028
+The Diary Of a Young Girl | Anne Frank * Biography / 0000000000029
+I Know Why the Caged Bird Sings | Maya Angelou * Biography / 0000000000030
+Night | Elie Wiesel * Biography / 0000000000031
+A Moveable Feast | Ernest Hemingway * Biography / 0000000000032
+Steve Jobs | Walter Isaacson * Biography / 0000000000033
+Greenlights | Matthew McConaughey * Biography / 0000000000034
+World Travel: An Irreverent Guide | Anthony Bourdain * Travel Guides / 0000000000035
+Maui Revealed: The Ultimate Guidebook | Andrew Doughty * Travel Guides / 0000000000036
+Hawaii Dreamscapes Revealed - Big Island | Andrew Doughty * Travel Guides / 0000000000037
+Best of Europe | Rick Steves * Travel Guides / 0000000000038
+Rick Steve's Italy 2017 | Rick Steves * Travel Guides / 0000000000039
+Moon Route 66 Road Trip | Jessica Dunham * Travel Guides / 0000000000040
+Moon Pacific Coast Highway Road Trip | Ian Cameron * Travel Guides / 0000000000041
+Republic | Plato * Philosophy / 0000000000042
+Meditations | Marcus Aurelius * Philosophy / 0000000000043
+Apology | Plato * Philosophy / 0000000000044
+A Theory of Justice | John Rawls * Philosophy / 0000000000045
+An Essay Concerning Human Understanding | John Locke * Philosophy / 0000000000046
+On Liberty | John Mill * Philosophy / 0000000000047
+Manifesto of the Communist Party | Karl Marx * Philosophy / 0000000000048
+Beyond Good and Evil | Friedrich Nietzsche * Philosophy / 0000000000049
+Sophie's World | Jostein Gaarder * Philosophy / 0000000000050
+
