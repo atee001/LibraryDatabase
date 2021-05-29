@@ -3,6 +3,7 @@
 #include <vector>
 #include <iostream>
 #include <map>
+#include <vector>
 #include <utility>
 #include <iterator>
 #include <algorithm>
@@ -32,11 +33,14 @@ public:
     map<string, vector<Book*>> getMapTitle() const;
     map<string, vector<Book*>> getMapGenre() const;
     const int DUE_DATE = 60; //A user can checkout a book for up to 60 days by default.
+
 private:
     map<string, vector<Book*>> bookTitles;
     map<string, vector<Book*>> bookAuthors;
     map<string, vector<Book*>> bookGenres;
-    map<BookItem*, Book*> bookList;
+
+    map<BookItem, Book*> bookList;
+
 };
 
 

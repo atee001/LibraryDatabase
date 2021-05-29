@@ -1,5 +1,6 @@
 
 #include "../header/BookRepository.hpp"
+#include "../book.txt"
 
 
 
@@ -8,7 +9,9 @@ BookRepository::BookRepository() {
 
 }
 
+
 map<string, vector<Book*>> BookRepository::getMapAuthor() const{
+
 
 	return this->bookAuthors;
 }
@@ -154,12 +157,12 @@ void BookRepository::display(Book* book) {
 
 void BookRepository::populate() {//Title | Author * Genre / ISBN
 
+
     string Title;
     string Author;
     string Genre;
     string ISBN;
     string line;
-    int count = 0;
 
     ifstream infile("book.txt");
 
@@ -169,9 +172,9 @@ void BookRepository::populate() {//Title | Author * Genre / ISBN
 
     while(getline(infile,line)){
 
-	size_t one = str.find('|');
-	size_t two = str.find('*');
-	size_t three = str.find('/');
+	size_t one = line.find('|');
+	size_t two = line.find('*');
+	size_t three = line.find('/');
     
 	Title = line.substr(0,one);
 	Author = line.substr(one+1, two-one-1);
@@ -180,26 +183,28 @@ void BookRepository::populate() {//Title | Author * Genre / ISBN
 
 
 
+        Book* newBook = new Book();
+
+        newBook->setTitle(Title);
+        newBook->setAuthor(Author);
+        newBook->setGenre(Genre);
+        newBook->setISBN(ISBN);
+
+        Title = "";
+        Author = "";
+        Genre = "";
+        ISBN = "";
+        Date currDate(1,1,2021);
+        Date dueDate(3, 1, 2021);
+        BookItem* bookItem = new BookItem(currDate, dueDate);
+
+        AddBookByGenre(newBook);
+        AddBookByAuthor(newBook);
+        AddBookByTitle(newBook);
+        bookList[bookItem] = newBook;
 
 
+    }
+      infile.close();
 
-	Book* newBook = new Book();
-
-            newBook->setTitle(Title);
-            newBook->setAuthor(Author);
-            newBook->setGenre(Genre);
-            newBook->setISBN(ISBN);
-
-            Date currDate(1,1,2021);
-            Date dueDate(3, 1, 2021);
-            BookItem* bookItem = new BookItem(currDate, dueDate);
-
-            AddBookByGenre(newBook);
-            AddBookByAuthor(newBook);
-            AddBookByTitle(newBook);
-            bookList[bookItem] = newBook;
-   }
-
-
-	infile.close();
 }

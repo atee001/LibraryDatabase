@@ -26,6 +26,62 @@ int main(int argc, char* argv[]){
  Person* p = begin(f,filename);
  cout << "Welcome " << p->getName() << endl;
  delete p;
+
+string userInput = "";
+
+cout << "Please select what you wish to do" << endl;
+while(userInput != "9") {
+        cout << "\n   0.) Search by Author \n"
+        << "   1.) Search by Genre \n"
+        << "   2.) Search by Title \n"
+        << "   3.) Search Or Author/Genre/Title \n"
+        << "   4.) Search And Author/Genre/Title \n" 
+        << "   5.) Checkout Book by ISBN \n"
+        << "   6.) Check Balance \n"
+        << "   7.) Check Due Dates \n"
+        << "   8.) Pay Balance \n"
+        << "   9.) Quit"
+        << endl;
+
+        cin >> userInput;
+
+        if(userInput == "0") {
+
+        }
+        else if(userInput == "1") {
+
+        }
+        else if(userInput == "2") {
+
+        }
+        else if(userInput == "3") {
+
+        }
+        else if(userInput == "4") {
+
+        }
+        else if(userInput == "5") {
+
+        }
+        else if(userInput == "6") {
+
+        }
+        else if(userInput == "7") {
+
+        }
+        else if(userInput == "8") {
+
+        }
+        else if(userInput == "9") {}
+        else {
+          cout << "\n Invalid input \n" << endl;
+        }
+        
+
+}
+
+cout << "\n Have a nice day!" << endl;
+
  return 0;
 
 }
