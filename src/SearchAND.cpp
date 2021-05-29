@@ -7,7 +7,7 @@ vector<Book*> SearchAND::search(const BookRepository* b){
     
     for(auto it : lhs->search(b)){
         
-        if(find(rhs->search(b).begin(), rhs->search(b).end(), it) != rhs->search(b).end()){
+        if(find(rhs->search(b).begin(), rhs->search(b).end(), it) == rhs->search(b).end()){
                 
             anded.emplace_back(it);
             
