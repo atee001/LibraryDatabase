@@ -75,7 +75,7 @@ void displayBookGenres(){
 		
 		for(auto it : value){
 		
-			cout << it->getAuthor() << endl;
+			cout << it->getGenre() << endl;
 		}
 
 
