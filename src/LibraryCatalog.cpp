@@ -1,9 +1,7 @@
 #include "../header/LibraryCatalog.hpp"
 
-void LibraryCatalog::print_search(ostream& out){
-        
-        BookRepository* b = new BookRepository();
-        
+void LibraryCatalog::print_search(const BookRepository* b, ostream& out){
+               
         vector<Book*> result = strat->search(b);
         
         if(result.size() == 0) out << "No Results!" << endl;

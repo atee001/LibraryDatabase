@@ -29,14 +29,14 @@ int main() {
  // cout << "Book 1 added: The Open Road" << endl;
   bookRepository.AddBookByAuthor(book2);
  // cout << "Book 2 added: The Break of Dawn" << endl;
-  Book *retbook1 = bookRepository.GetBook(book1);
+ // Book *retbook1 = bookRepository.GetBook(book1);
  // cout << "Before listing" << endl;
-  if (book1->getTitle().compare(retbook1->getTitle()) == false){
-      cout << "Found book with title : " << book1->getTitle() << endl;
-  }
-  else {
-      cout << "Book with title " << book1->getTitle() << " not found " << endl;
-  }
+ // if (book1->getTitle().compare(retbook1->getTitle()) == false){
+   //   cout << "Found book with title : " << book1->getTitle() << endl;
+ // }
+ // else {
+  //    cout << "Book with title " << book1->getTitle() << " not found " << endl;
+ // }
 
   cout << endl;
   cout << "End of BookRepository Test" << endl;
