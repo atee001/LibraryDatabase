@@ -60,8 +60,8 @@ Biographies::Biographies() {
     type = "Biographies";
 }
 
-Science::Science() {
-    type = "Science";
+Philosophy::Philosophy() {
+    type = "Philosophy";
 }
 
 travelGuides::travelGuides() {
