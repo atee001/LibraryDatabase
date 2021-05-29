@@ -12,6 +12,7 @@ class LibraryCatalog {
 
 		void print_search(const BookRepository* ,ostream& out);
 		void set_search(SearchStrat* strat);
+		
 };
 
 

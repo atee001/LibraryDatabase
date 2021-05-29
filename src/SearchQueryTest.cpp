@@ -26,14 +26,25 @@ int main(){
 
 	book2->display();
 
+
+	Book* book3 = new Book();
+        book3->setAuthor("Jessica Dunham");
+        book3->setTitle("The Open Road: 50 Best Road Trips in the USA");
+        book3->setGenre("Travel guides");
+        book3->setISBN("9781640499300");
+        cout << "Book 3" << endl;
+        book1->display();
+
 	BookRepository* repo = new BookRepository();
 	repo->AddBookByAuthor(book1);
 	repo->AddBookByAuthor(book2);
+	repo->AddBookByAuthor(book3);
 	LibraryCatalog* lib = new LibraryCatalog();
 	
- 	lib->set_search(new SearchContains("Author", "Jessica Dunham"));
+ 	lib->set_search(new SearchAND(new SearchContains("Author", "Jessica Dunham"), new SearchContains("Author", "Lenna Stuart")));
 	lib->print_search(repo, cout);
-
+ 	SearchStrat* root = new SearchAND(new SearchContains("Author", "Jessica Dunham"), new SearchContains("Author", "Lenna Stuart"));
+	cout << "SearchBox:" << root->display();
 	return 0;
 
 }

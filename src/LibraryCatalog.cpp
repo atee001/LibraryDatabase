@@ -25,4 +25,5 @@ void LibraryCatalog::set_search(SearchStrat* strat){
         this->strat = strat;
         
 }
-    
+   
+ 
