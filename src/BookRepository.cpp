@@ -58,41 +58,26 @@ void BookRepository::populate() {//Title | Author * Genre / ISBN
       string line = "";
 
       getline(infile, line);
-      //cout << line << endl;
-
+ 
       for(int i = 0; i < line.size(); i++) {
         if(line.at(i) != '|' && count == 0) {
           Title += line.at(i); 
-          //cout << line.at(i) << " " << count << endl;
         }
-        if(line.at(i) == '|') {
-          count++;
-          i++;
-          //cout << "hi" << endl;
-        }
-        if(line.at(i) != '*' && count == 1) {
+        else if(line.at(i) != '*' && count == 1) {
           Author += line.at(i);
         } 
-        if(line.at(i) == '*') {
-          count++;
-          i++;
-          //cout << "hello" << endl;
-        }
-        if(line.at(i) != '/' && count == 2) {
+        else if(line.at(i) != '/' && count == 2) {
            Genre += line.at(i);
         } 
-        if(line.at(i) == '/') {
-          count++;
-          i++;
-          //cout << "hola" << endl;
-        }
-        if(line.at(i) != '\n' && count == 3) {
+        else if(count == 3) {
            ISBN += line.at(i);
         } 
+        else {
+          ++count;
+        }
 
-      }
-      
-      // while(infile >> word) {
+      }  
+
       //     if(word != "|" && count == 0) {
       //         Title += word + " ";
       //         //cout << Title << count << endl;

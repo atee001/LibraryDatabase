@@ -1,5 +1,3 @@
-//Title | Author * Genre / ISBN
-
 Night Outing|Robert Bask*Romance/0000000000001
 The Break of Dawn|Lenna Stuart*Romance/0000000000002
 Twilight|Ben Dover*Romance/0000000000003
