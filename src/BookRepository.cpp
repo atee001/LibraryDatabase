@@ -107,7 +107,7 @@ void BookRepository::display(Book* book) {
     for (it = bookList.begin(); it != bookList.end(); it++) {
         BookItem* bookItem = it->first;
         Book* book = (Book*)it->second;
-        bookItem->display();
+       // bookItem->display();
         book->display();
     }
     cout << endl;
@@ -154,52 +154,42 @@ void BookRepository::display(Book* book) {
 
 void BookRepository::populate() {//Title | Author * Genre / ISBN
 
-    string word = "";
-    string Title = "";
-    string Author = "";
-    string Genre = "";
-    string ISBN = "";
-
+    string Title;
+    string Author;
+    string Genre;
+    string ISBN;
+    string line;
     int count = 0;
 
     ifstream infile("book.txt");
 
-    while(infile >> word) {
-        if(word != "|" && count == 0) {
-            Title += word;
-        }
-        else {
-            count++;
-        }
-        if(count == 1 && word != "*") {
-            Author += word;
-        }
-        else {
-            count++;
-        }
-        if(count == 2 && word != "/") {
-            Genre += word;
-        }
-        else {
-            count++;
-        }
-        if(count == 3 && word != "\n") {
-            ISBN += word;
-        }
-        else {
-            count = 0;
+    if(!infile){
+	cerr << "Invalid Txt file" << endl;
+    }
 
-            Book* newBook = new Book();
+    while(getline(infile,line)){
+
+	size_t one = str.find('|');
+	size_t two = str.find('*');
+	size_t three = str.find('/');
+    
+	Title = str.substr(0,one);
+	Author = str.substr(one+1, two-one-1);
+	Genre = str.substr(two+1, three-two-1);
+	ISBN = str.substr(three+1);
+
+
+
+
+
+
+	Book* newBook = new Book();
 
             newBook->setTitle(Title);
             newBook->setAuthor(Author);
             newBook->setGenre(Genre);
             newBook->setISBN(ISBN);
 
-            Title = "";
-            Author = "";
-            Genre = "";
-            ISBN = "";
             Date currDate(1,1,2021);
             Date dueDate(3, 1, 2021);
             BookItem* bookItem = new BookItem(currDate, dueDate);
@@ -208,9 +198,8 @@ void BookRepository::populate() {//Title | Author * Genre / ISBN
             AddBookByAuthor(newBook);
             AddBookByTitle(newBook);
             bookList[bookItem] = newBook;
+   }
 
-        }
 
-    }
-
+	if.close();
 }
