@@ -21,7 +21,7 @@ public:
     void AddBook(Book* book);
     void RemoveBook(Book* book);
     Book* GetBook(Book* book);
-    void populate(string filename);
+    void populate();
 
 private:
     map<string, vector<Book*>> bookTitles;
