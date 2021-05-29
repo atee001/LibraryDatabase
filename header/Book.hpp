@@ -39,9 +39,9 @@ public:
     Biographies();
 };
 
-class Science : public NonFiction {
+class Philosophy : public NonFiction {
 public:
-    Science();
+    Philosophy();
 };
 
 class travelGuides : public NonFiction {
