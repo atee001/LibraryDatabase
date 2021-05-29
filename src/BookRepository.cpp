@@ -189,10 +189,6 @@ void BookRepository::populate() {//Title | Author * Genre / ISBN
         newBook->setGenre(Genre);
         newBook->setISBN(ISBN);
 
-        Title = "";
-        Author = "";
-        Genre = "";
-        ISBN = "";
         Date currDate(1,1,2021);
         Date dueDate(3, 1, 2021);
         BookItem* bookItem = new BookItem(currDate, dueDate);
