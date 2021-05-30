@@ -154,7 +154,7 @@ void BookRepository::display() {
 // }
 
 
-void BookRepository::populate() {//Title | Author * Genre / ISBN
+void BookRepository::populate(const string &s) {//Title | Author * Genre / ISBN
 
 
     string Title;
@@ -163,7 +163,7 @@ void BookRepository::populate() {//Title | Author * Genre / ISBN
     string ISBN;
     string line;
 
-    ifstream infile("book.txt");
+    ifstream infile(s);
 
     if(!infile){
 	cerr << "Invalid Txt file" << endl;
