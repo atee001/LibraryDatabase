@@ -4,8 +4,6 @@ Book::Book() {
 
 }
 
-Book::Book(const string& t, const string& a, const string& g, const string& i) : title(t), author(a), genre(g), isbn(i) {}
-
 Book::Book(const Book &book) {
     title = book.title;
     author = book.author;
@@ -13,6 +11,7 @@ Book::Book(const Book &book) {
     isbn = book.isbn;
 
 }
+
 void Book::display() {
     cout << "Title: " << title << endl;
     cout << "Author: " << author << endl;
@@ -34,6 +33,14 @@ void Book::setGenre(const string& aGenre) {
 
 void Book::setISBN(const string& isbnCode) {
     isbn = isbnCode;
+}
+
+bool Book::getCheckoutStatus() {
+    return setCheckoutStatus();
+}
+
+bool Book::setCheckoutStatus() {
+    return false;
 }
 
 const string Book::getTitle() {
@@ -67,23 +74,3 @@ Philosophy::Philosophy() {
 travelGuides::travelGuides() {
     type = "Travel Guides";
 }
-
-
-Fiction::Fiction() {
-    type = "Fiction";
-}
-
-Fantasy::Fantasy() {
-    type = "Fantasy";
-}
-
-Romance::Romance() {
-    type = "Romance";
-}
-
-Mystery::Mystery() {
-    type = "Mystery";
-}
-
-
-
