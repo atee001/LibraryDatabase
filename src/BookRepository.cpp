@@ -172,7 +172,7 @@ void BookRepository::populate() {//Title | Author * Genre / ISBN
     
     Book* newBook = nullptr;
     BookItem* bookItem = nullptr;
-    while(getline(infile,line)){
+    while(getline(infile,line, '\n')){
 
 	size_t one = line.find('|');
 	size_t two = line.find('*');
