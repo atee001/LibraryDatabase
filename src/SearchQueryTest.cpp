@@ -29,28 +29,31 @@ int main(){
 
 	Book* book3 = new Book();
         book3->setAuthor("Jessica Dunham");
-        book3->setTitle("The Open Road: 50 Best Road Trips in the USA");
+        book3->setTitle("The Open Road: 40 Best Road Trips in the USA");
         book3->setGenre("Travel guides");
         book3->setISBN("9781640499300");
         cout << "Book 3" << endl;
-        book1->display();
-
+        book3->display();
+	cout << "Test1";
 	BookRepository* repo = new BookRepository();
 	repo->AddBookByAuthor(book1);
 	repo->AddBookByAuthor(book2);
 	repo->AddBookByAuthor(book3);
+	cout << "Test2";
 	LibraryCatalog* lib = new LibraryCatalog();
-	
+	cout << "Test3";
  	lib->set_search(new SearchAND(new SearchContains("Author", "Jessica Dunham"), new SearchContains("Author", "Lenna Stuart")));
 	lib->print_search(repo, cout);
  	SearchStrat* root = new SearchAND(new SearchContains("Author", "Jessica Dunham"), new SearchContains("Author", "Lenna Stuart"));
 	cout << "SearchBox:" << root->display() << endl;
 
-
+	
+        delete root;	
+	delete lib;
 	//BookRepository* r = new BookRepository();
 	//r->populate();
 	//r->display();
-
+	delete repo;
 	return 0;
 
 }

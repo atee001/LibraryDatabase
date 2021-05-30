@@ -9,7 +9,7 @@ class LibraryCatalog {
 	SearchStrat* strat;
 
 	public:
-
+		~LibraryCatalog(){	delete this->strat;}
 		void print_search(const BookRepository* ,ostream& out);
 		void set_search(SearchStrat* strat);
 		

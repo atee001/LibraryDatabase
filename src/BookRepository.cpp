@@ -26,11 +26,11 @@ map<string, vector<Book*>> BookRepository::getMapGenre() const{
 	return this->bookGenres;
 }
 
-BookRepository::BookRepository(BookRepository& bookRepository) {
-    bookRepository.bookTitles = bookRepository.bookTitles;
-    bookRepository.bookAuthors = bookRepository.bookAuthors;
-    bookRepository.bookGenres = bookRepository.bookGenres;
-    bookRepository.bookList = bookRepository.bookList;
+BookRepository::BookRepository(const BookRepository& bookRepository) {
+    bookTitles = bookRepository.bookTitles;
+    bookAuthors = bookRepository.bookAuthors;
+    bookGenres = bookRepository.bookGenres;
+    bookList = bookRepository.bookList;
 }
 void BookRepository::AddBookByTitle(Book* book) {
     bookTitles[book->getTitle()].push_back(book);
@@ -163,13 +163,16 @@ void BookRepository::populate() {//Title | Author * Genre / ISBN
     string ISBN;
     string line;
 
-    ifstream infile("../book.txt");
+    ifstream infile("book.txt");
 
     if(!infile){
 	cerr << "Invalid Txt file" << endl;
     }
 
-    while(getline(infile,line)){
+    
+    Book* newBook = nullptr;
+    BookItem* bookItem = nullptr;
+    while(getline(infile,line, '\n')){
 
 	size_t one = line.find('|');
 	size_t two = line.find('*');
@@ -180,26 +183,23 @@ void BookRepository::populate() {//Title | Author * Genre / ISBN
 	Genre = line.substr(two+1, three-two-1);
 	ISBN = line.substr(three+1);
 
-
-
-        Book* newBook = new Book();
-
-        newBook->setTitle(Title);
-        newBook->setAuthor(Author);
-        newBook->setGenre(Genre);
-        newBook->setISBN(ISBN);
+        newBook = new Book(Title, Author,Genre, ISBN);
 
         Date currDate(1,1,2021);
         Date dueDate(3, 1, 2021);
-        BookItem* bookItem = new BookItem(currDate, dueDate);
+        bookItem = new BookItem(currDate, dueDate);
 
         AddBookByGenre(newBook);
         AddBookByAuthor(newBook);
         AddBookByTitle(newBook);
         bookList[bookItem] = newBook;
-
+	
+	
 
     }
+
+    
+       
       infile.close();
 
 }
