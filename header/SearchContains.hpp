@@ -8,8 +8,15 @@ class SearchContains : public SearchStrat {
 
   public:
     
-    SearchContains(const string& searchBy, const string& searchQuery) : searchBy(searchBy), searchQuery(searchQuery){}
+    SearchContains(const string& searchBy, const string& searchQuery) : SearchStrat() {
+	this->searchBy = searchBy;
+	this->searchQuery = searchQuery;
+    }
     vector<Book*> search(const BookRepository*);
+    const string display(){
+	
+	return " " + searchBy + ": " +  searchQuery; 
 
+    }
 };
 

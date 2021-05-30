@@ -2,13 +2,21 @@
 
 vector<Book*> SearchContains::search(const BookRepository* b){ //verifies it's a right searchBy && searchQuery is correct
     
-    if(searchBy == "Author" && (b->getMapAuthor().find(searchQuery) != b->getMapAuthor().end())) return b->getMapAuthor().second; 
+    if(searchBy == "Author" && (b->getMapAuthor().find(searchQuery) != b->getMapAuthor().end())){ 
+	//for(auto it : b->getMapAuthor().find(searchQuery)->second){
+	
+	//	std::cout <<  "Found!!!! "  << it->getTitle() << " ";
+
+	//}
+	return b->getMapAuthor().at(searchQuery); 
+
+    }
     
-    else if (searchBy == "Title" && (b->getMapTitle().find(searchQuery) != b->getMapTitle().end())) return b->getMapTitle().second;
+    else if (searchBy == "Title" && (b->getMapTitle().find(searchQuery) != b->getMapTitle().end())) return b->getMapTitle().at(searchQuery);
     
-    else if (searchBY == "Genre"&& (b->getMapGenre().find(searchQuery) != b->getMapGenre().end())) return b->getMapGenre().second;
+    else if (searchBy == "Genre"&& (b->getMapGenre().find(searchQuery) != b->getMapGenre().end())) return b->getMapGenre().at(searchQuery);
     
-    else return vector<string>();
+    return vector<Book*>();
         
     
 }

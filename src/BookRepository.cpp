@@ -1,30 +1,83 @@
-#include <fstream>
+
 #include "../header/BookRepository.hpp"
 
-using namespace std;
+
 
 
 BookRepository::BookRepository() {
 
 }
 
-BookRepository::BookRepository(BookRepository& bookRepository) {
-    bookRepository.bookTitles = bookRepository.bookTitles;
-    bookRepository.bookAuthors = bookRepository.bookAuthors;
-    bookRepository.bookGenres = bookRepository.bookGenres;
-    bookRepository.bookList = bookRepository.bookList;
+
+map<string, vector<Book*>> BookRepository::getMapAuthor() const{
+
+
+	return this->bookAuthors;
+}
+
+map<string, vector<Book*>> BookRepository::getMapTitle() const{
+
+	return this->bookTitles;
+
+}
+
+map<string, vector<Book*>> BookRepository::getMapGenre() const{
+
+	return this->bookGenres;
+}
+
+BookRepository::BookRepository(const BookRepository& bookRepository) {
+    bookTitles = bookRepository.bookTitles;
+    bookAuthors = bookRepository.bookAuthors;
+    bookGenres = bookRepository.bookGenres;
+    bookList = bookRepository.bookList;
 }
 void BookRepository::AddBookByTitle(Book* book) {
-    bookTitles[book->getTitle()].push_back(book;
+    bookTitles[book->getTitle()].push_back(book);
 }
 
 void BookRepository::AddBookByAuthor(Book* book) {
     bookAuthors[book->getAuthor()].push_back(book);
 }
 
-void BookRepository::AddBookByGenre(Book* book) {
-    bookGenres[book->getGenre()].push_book(book);
+void BookRepository::AddBookByGenre(Book* book){ 
+    bookGenres[book->getGenre()].push_back(book);
+
 }
+
+void BookRepository::displayMapTitle(){
+
+	for(map<string, vector<Book*>>::iterator it = bookTitles.begin(); it != bookTitles.end(); it++){		
+		for(auto x : it->second){
+			cout << x->getTitle() << endl;
+		}
+	}
+
+}
+void BookRepository::displayMapAuthors(){
+	for(map<string, vector<Book*>>::iterator it = bookAuthors.begin(); it != bookAuthors.end(); it++){
+
+                for(auto x : it->second){
+                        cout << x->getAuthor() << endl;
+                }
+        
+	}
+
+
+}
+
+void BookRepository::displayBookGenres(){
+for(map<string, vector<Book*>>::iterator it = bookGenres.begin(); it != bookGenres.end(); it++){
+
+                for(auto x : it->second){
+                        cout << x->getGenre() << endl;
+                }
+        }
+
+
+}
+
+
 
 void BookRepository::CheckOut(Book* book, Date checkOutDate) {
     BookItem *bookItem = new BookItem();
@@ -51,12 +104,12 @@ void BookRepository::RemoveBook(Book* book) {
     bookTitles.erase(book->getTitle());
 }
 
-void BookRepository::display(Book* book) {
+void BookRepository::display() {
     std::map<BookItem*, Book *>::iterator it;
     for (it = bookList.begin(); it != bookList.end(); it++) {
         BookItem* bookItem = it->first;
         Book* book = (Book*)it->second;
-        bookItem->display();
+       // bookItem->display();
         book->display();
     }
     cout << endl;
@@ -101,65 +154,52 @@ void BookRepository::display(Book* book) {
 // }
 
 
-void BookRepository::populate() {//Title | Author * Genre / ISBN
+void BookRepository::populate(const string &s) {//Title | Author * Genre / ISBN
 
-    string word = "";
-    string Title = "";
-    string Author = "";
-    string Genre = "";
-    string ISBN = "";
 
-    int count = 0;
+    string Title;
+    string Author;
+    string Genre;
+    string ISBN;
+    string line;
 
-    ifstream infile("book.txt");
+    ifstream infile(s);
 
-    while(infile >> word) {
-        if(word != "|" && count == 0) {
-            Title += word;
-        }
-        else {
-            count++;
-        }
-        if(count == 1 && word != "*") {
-            Author += word;
-        }
-        else {
-            count++;
-        }
-        if(count == 2 && word != "/") {
-            Genre += word;
-        }
-        else {
-            count++;
-        }
-        if(count == 3 && word != "\n") {
-            ISBN += word;
-        }
-        else {
-            count = 0;
+    if(!infile){
+	cerr << "Invalid Txt file" << endl;
+    }
 
-            Book* newBook = new Book();
+    
+    Book* newBook = nullptr;
+    BookItem* bookItem = nullptr;
+    while(getline(infile,line, '\n')){
 
-            newBook->setTitle(Title);
-            newBook->setAuthor(Author);
-            newBook->setGenre(Genre);
-            newBook->setISBN(ISBN);
+	size_t one = line.find('|');
+	size_t two = line.find('*');
+	size_t three = line.find('/');
+    
+	Title = line.substr(0,one);
+	Author = line.substr(one+1, two-one-1);
+	Genre = line.substr(two+1, three-two-1);
+	ISBN = line.substr(three+1);
 
-            Title = "";
-            Author = "";
-            Genre = "";
-            ISBN = "";
-            Date currDate(1,1,2021);
-            Date dueDate(3, 1, 2021);
-            BookItem* bookItem = new BookItem(currDate, dueDate);
+        newBook = new Book(Title, Author,Genre, ISBN);
 
-            AddBookByGenre(newBook);
-            AddBookByAuthor(newBook);
-            AddBookByTitle(newBook);
-            bookList[bookItem] = newBook;
+        Date currDate(1,1,2021);
+        Date dueDate(3, 1, 2021);
+        bookItem = new BookItem(currDate, dueDate);
 
-        }
+        AddBookByGenre(newBook);
+        AddBookByAuthor(newBook);
+        AddBookByTitle(newBook);
+        bookList[bookItem] = newBook;
+	
+	
 
     }
+
+    
+       
+      infile.close();
 
 }

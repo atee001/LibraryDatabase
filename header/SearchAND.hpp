@@ -13,8 +13,14 @@ class SearchAND : public SearchStrat {
         delete lhs;
         delete rhs;
     }
-    SearchAND(SearchStrat* lhs, SearchStrat* rhs) : lhs(lhs), rhs(rhs){}
+    SearchAND(SearchStrat* lhs, SearchStrat* rhs) : SearchStrat(){ 
+	this->lhs = lhs;
+	this->rhs = rhs;
+    }
     vector<Book*> search(const BookRepository*);
+    const string display(){
 
+	return  " AND(" + lhs->display() + " ," + rhs->display() + " )"; 
+    }
 };
 
