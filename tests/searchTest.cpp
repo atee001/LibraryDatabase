@@ -1,12 +1,13 @@
-#include "header/BookRepository.hpp"
-#include "header/Book.hpp"
-#include "header/Date.hpp"
-#include "header/BookItem.hpp"
-#include "header/SearchContains.hpp"
-#include "header/SearchStrat.hpp"
-#include "header/SearchAND.hpp"
-#include "header/SearchOR.hpp"
-#include "header/LibraryCatalog.hpp"
+#include "../header/BookRepository.hpp"
+#include "../header/Book.hpp"
+#include "../header/Date.hpp"
+#include "../header/BookItem.hpp"
+#include "../header/SearchContains.hpp"
+#include "../header/SearchStrat.hpp"
+#include "../header/SearchAND.hpp"
+#include "../header/SearchOR.hpp"
+#include "../header/LibraryCatalog.hpp"
+#include <sstream>
 #include "gtest/gtest.h"
 
 
@@ -14,7 +15,7 @@
 TEST(PopulateTest, twentyfive){
 
 	BookRepository* repo = new BookRepository();
-	repo->populate();
+	repo->populate("book.txt");
 	repo->display();
 
 	EXPECT_EQ(5, 5);
@@ -25,7 +26,7 @@ TEST(PopulateTest, twentyfive){
 TEST(SearchTest,mystery){
 
 	BookRepository* repo = new BookRepository();
-	repo->populate();
+	repo->populate("book.txt");
 	LibraryCatalog* cat = new LibraryCatalog();
 	SearchStrat* strat = new SearchContains("Genre", "Mystery");
 	cat->set_search(strat);
@@ -47,7 +48,7 @@ TEST(SearchTest, OR){
 
 
         BookRepository* repo = new BookRepository();
-        repo->populate();
+        repo->populate("book.txt");
         LibraryCatalog* cat = new LibraryCatalog();
         SearchStrat* strat = new SearchOR( new SearchContains("Genre", "Science" ), new SearchContains("Genre", "Mystery"));
         cat->set_search(strat);
@@ -65,7 +66,7 @@ TEST(SearchTest, OR){
 TEST(SearchContains, JK_Rowling){
 
 	BookRepository* repo = new BookRepository();
-      repo->populate();
+      repo->populate("book.txt");
 	repo->display();
         LibraryCatalog* cat = new LibraryCatalog();
         SearchStrat* strat = new SearchContains("Author", "Tom Bert" );
@@ -78,6 +79,26 @@ TEST(SearchContains, JK_Rowling){
 	delete cat;
 }
 
+TEST(AllSearch, NoResults){
+
+	stringstream ss;
+	BookRepository* repo = new BookRepository();
+        repo->populate("book.txt");
+        repo->display();
+        LibraryCatalog* cat = new LibraryCatalog();
+        SearchStrat* strat = new SearchAND(new SearchContains("Genre", "Science") , new SearchContains("Author", "J.K. Rowling" ));
+        cat->set_search(strat);
+        cout << "SearchBox: " << strat->display() << endl;
+        cat->print_search(repo, ss);
+
+        EXPECT_EQ(ss.str(),"No Results!\n");
+        delete repo;
+        delete cat;
+
+
+
+
+}
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);

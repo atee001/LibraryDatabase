@@ -166,7 +166,9 @@ void BookRepository::populate(const string &s) {//Title | Author * Genre / ISBN
     ifstream infile(s);
 
     if(!infile){
+	
 	cerr << "Invalid Txt file" << endl;
+	exit(1);
     }
 
     
