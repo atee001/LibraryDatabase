@@ -1,3 +1,7 @@
+//
+// Created by Rohan Behera on 5/8/21.
+//
+
 #ifndef LIBRARYSYSTEM_BOOK_HPP
 #define LIBRARYSYSTEM_BOOK_HPP
 
@@ -11,15 +15,15 @@ protected:
     string author;
     string genre;
     string isbn;
-protected:
     string type;
 public:
     Book();
-    Book(const string&, const string&, const string&, const string&);
     Book(const Book &book);
     void display();
     void setTitle(const string& nameOfBook);
     void setAuthor(const string& nameOfAuthor);
+    bool getCheckoutStatus();
+    bool setCheckoutStatus();
     void setGenre(const string& nameOfGenre);
     void setISBN(const string& isbnCode);
     const string getTitle();
@@ -48,28 +52,5 @@ class travelGuides : public NonFiction {
 public:
     travelGuides();
 };
-
-class Fiction : public Book {
-public: 
-    Fiction();
-};
-
-class Fantasy : public Fiction {
-public:
-    Fantasy();
-};
-
-class Romance : public Fiction {
-public: 
-    Romance();
-};
-
-class Mystery : public Fiction {
-public:
-    Mystery();
-};
-
-
-
 
 #endif //LIBRARYSYSTEM_BOOK_HPP
