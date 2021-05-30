@@ -1,7 +1,3 @@
-//
-// Created by Rohan Behera on 5/8/21.
-//
-
 #ifndef LIBRARYSYSTEM_BOOK_HPP
 #define LIBRARYSYSTEM_BOOK_HPP
 
