@@ -9,8 +9,8 @@ ADD_EXECUTABLE(driver
 
 )
 
-ADD_EXECUTABLE(test
-    test.cpp
+ADD_EXECUTABLE(searchTest
+    tests/searchTest.cpp
     src/BookRepository.cpp
     src/Book.cpp
     src/Date.cpp
@@ -20,7 +20,7 @@ ADD_EXECUTABLE(test
     src/SearchContains.cpp
     src/SearchOR.cpp
 ) 
-#)
+
 ADD_EXECUTABLE(SearchDriver
  	src/SearchAND.cpp
 	src/SearchOR.cpp
