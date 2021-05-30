@@ -154,7 +154,7 @@ void BookRepository::display() {
 // }
 
 
-void BookRepository::populate(string s) {//Title | Author * Genre / ISBN
+void BookRepository::populate(const string &s) {//Title | Author * Genre / ISBN
 
 
     string Title;
