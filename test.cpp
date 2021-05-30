@@ -18,9 +18,10 @@ TEST(PopulateTest, twentyfive){
 	repo->display();
 
 	EXPECT_EQ(5, 5);
-	delete repo;
+        delete repo;	
 }
 
+/*
 TEST(SearchTest,mystery){
 
 	BookRepository* repo = new BookRepository();
@@ -28,15 +29,13 @@ TEST(SearchTest,mystery){
 	LibraryCatalog* cat = new LibraryCatalog();
 	SearchStrat* strat = new SearchContains("Genre", "Mystery");
 	cat->set_search(strat);
+	cout << "SearchBox: " << strat->display();
 	cat->print_search(repo, cout);
 
 	EXPECT_EQ(0,0);
 
-
-	
-	
-
-
+	delete repo;
+	delete cat;
 
 } 
 
@@ -52,18 +51,33 @@ TEST(SearchTest, OR){
         LibraryCatalog* cat = new LibraryCatalog();
         SearchStrat* strat = new SearchOR( new SearchContains("Genre", "Science" ), new SearchContains("Genre", "Mystery"));
         cat->set_search(strat);
+	cout << "SearchBox: " << strat->display();
         cat->print_search(repo, cout);
 
         EXPECT_EQ(0,0);
 
-
+	delete repo;
+	delete cat;
 
 
 }
+*/
+//TEST(SearchContains, JK_Rowling){
 
+//	BookRepository* repo = new BookRepository();
+//       repo->populate();
+/*	//repo->display();
+        LibraryCatalog* cat = new LibraryCatalog();
+        SearchStrat* strat = new SearchContains("Author", "Tom Bert" );
+        cat->set_search(strat);
+        cat->print_search(repo, cout);
+	cout << "SearchBox: " << strat->display();
+        EXPECT_EQ(0,0);
+	delete repo;	
+	delete cat;
+}
 
-
-
+*/
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();

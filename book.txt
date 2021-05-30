@@ -23,12 +23,11 @@ Who Did It?|Ben Ten*Mystery/0000000000022
 Mystery of The Glove|Jim Slim*Mystery/0000000000023
 They Who Lay In The Lake|Jo Mama*Mystery/0000000000024
 Rusted Dagger|Jo Mama*Mystery/0000000000025
-Harry Potter and the Sorceror's Stone|J.K. Rowling/Fiction/0000000000026
-Harry Potter and the Chamber of Secrets|J.K. Rowling/Fiction/0000000000027
-Harry Potter and the Prisoner of Azkaban|J.K. Rowling/Fiction/0000000000028
-Harry Potter and the Goblet of Fire|J.K. Rowling/Fiction/0000000000029
-Harry Potter and the Order of the Pheonix|J.K. Rowling/Fiction/0000000000030
-Harry Potter and the Half-Blood Prince|J.K. Rowling/Fiction/0000000000031
-Harry Potter and the Deathly Hallows|J.K. Rowling/Fiction/0000000000032
-Harry Potter and the Cursed Child|J.K. Rowling/Fiction/0000000000033
-
+Harry Potter and the Sorceror's Stone|J.K. Rowling*Fiction/0000000000026
+Harry Potter and the Chamber of Secrets|J.K. Rowling*Fiction/0000000000027
+Harry Potter and the Prisoner of Azkaban|J.K. Rowling*Fiction/0000000000028
+Harry Potter and the Goblet of Fire|J.K. Rowling*Fiction/0000000000029
+Harry Potter and the Order of the Pheonix|J.K. Rowling*Fiction/0000000000030
+Harry Potter and the Half-Blood Prince|J.K. Rowling*Fiction/0000000000031
+Harry Potter and the Deathly Hallows|J.K. Rowling*Fiction/0000000000032
+Harry Potter and the Cursed Child|J.K. Rowling*Fiction/0000000000033

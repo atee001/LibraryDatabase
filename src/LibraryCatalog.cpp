@@ -16,7 +16,7 @@ void LibraryCatalog::print_search(const BookRepository* b, ostream& out){
         
         }
         
-        delete b;
+        
     
 }
     

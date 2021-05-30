@@ -14,8 +14,64 @@ using namespace std;
 
 class BookRepository  {
 public:
+    ~BookRepository(){
+
+	for(auto& it: this->bookList){
+
+		cout << "Deleting..." << it.second->getTitle() << " " << it.second->getAuthor() << " " << it.second->getGenre() << " " << it.second->getISBN() << endl;
+		delete it.second;
+		
+	}
+/*		
+	for(auto& it: this->bookTitles){
+	
+		for(auto& jt : it.second){
+
+			if(jt != nullptr){ 
+				cout << "Deleting title!!!!" << endl;
+	//			delete jt;
+
+		}		
+
+	}
+
+	for(auto& it: this->bookAuthors){
+		 for(auto& jt : it.second){
+
+                        if(jt != nullptr){ 
+			cout << "Deleting Author!!!!" << endl;
+
+			delete jt;
+			}
+
+                }
+
+	}
+
+	for(auto& it: this->bookGenres){
+
+		 for(auto& jt : it.second){
+			
+                        if(jt != nullptr){
+
+			cout << "Deleting Genre!!!" << endl;	
+//			 delete jt;
+			}
+
+                }
+	}
+
+*/
+	bookList.clear();
+	bookTitles.clear();
+	bookAuthors.clear();
+	bookGenres.clear();
+
+    }
+
+    
     BookRepository();
-    BookRepository(BookRepository& bookRepository);
+    BookRepository(const BookRepository& bookRepository);
     void display();
     void AddBookByTitle(Book* book);
     void AddBookByAuthor(Book* book);
