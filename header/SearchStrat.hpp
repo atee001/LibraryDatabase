@@ -6,9 +6,9 @@
 
 class SearchStrat{
   public:
+    virtual ~SearchStrat() = default;
     virtual vector<Book*> search(const BookRepository*) = 0;
-    virtual const string display(){
-	return "No Search Chosen"; 
-    }	
+    virtual const string display() = 0;
+	
 };
 
