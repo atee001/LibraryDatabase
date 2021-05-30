@@ -19,6 +19,7 @@ public:
 	for(auto& it: this->bookList){
 
 		cout << "Deleting..." << it.second->getTitle() << " " << it.second->getAuthor() << " " << it.second->getGenre() << " " << it.second->getISBN() << endl;
+		delete it.first;
 		delete it.second;
 		
 	}
@@ -29,7 +30,7 @@ public:
 
 			if(jt != nullptr){ 
 				cout << "Deleting title!!!!" << endl;
-	//			delete jt;
+				delete jt;
 
 		}		
 
@@ -55,7 +56,7 @@ public:
                         if(jt != nullptr){
 
 			cout << "Deleting Genre!!!" << endl;	
-//			 delete jt;
+			 delete jt;
 			}
 
                 }

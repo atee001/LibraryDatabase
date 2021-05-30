@@ -163,7 +163,7 @@ void BookRepository::populate() {//Title | Author * Genre / ISBN
     string ISBN;
     string line;
 
-    ifstream infile("../book.txt");
+    ifstream infile("book.txt");
 
     if(!infile){
 	cerr << "Invalid Txt file" << endl;
@@ -172,7 +172,7 @@ void BookRepository::populate() {//Title | Author * Genre / ISBN
     
     Book* newBook = nullptr;
     BookItem* bookItem = nullptr;
-    while(getline(infile,line)){
+    while(getline(infile,line, '\n')){
 
 	size_t one = line.find('|');
 	size_t two = line.find('*');
@@ -182,8 +182,6 @@ void BookRepository::populate() {//Title | Author * Genre / ISBN
 	Author = line.substr(one+1, two-one-1);
 	Genre = line.substr(two+1, three-two-1);
 	ISBN = line.substr(three+1);
-
-	cout << Title << " " << Author << " " << Genre << " " << ISBN << endl;
 
         newBook = new Book(Title, Author,Genre, ISBN);
 
