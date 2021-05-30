@@ -14,14 +14,15 @@ protected:
     string type;
 public:
     Book();
+    Book(const string&, const string&, const string&, const string&);
     Book(const Book &book);
     void display();
     void setTitle(const string& nameOfBook);
     void setAuthor(const string& nameOfAuthor);
-    bool getCheckoutStatus();
-    bool setCheckoutStatus();
     void setGenre(const string& nameOfGenre);
     void setISBN(const string& isbnCode);
+    bool getCheckoutStatus();
+    bool setCheckoutStatus();
     const string getTitle();
     const string getAuthor();
     const string getGenre();
