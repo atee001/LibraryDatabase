@@ -16,12 +16,13 @@ public:
     int getMonth();
     void setMonth(int month);
     int getYear();
+    void increment(); 
     void setYear(int year);
 
 private:
-    int day;
-    int month;
-    int year;
+    int day = 1;
+    int month = 1;
+    int year = 2021;
 };
 
 #endif //LIBRARYSYSTEM_DATE_HPP
