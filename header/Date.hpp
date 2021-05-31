@@ -20,9 +20,9 @@ public:
     void setYear(int year);
 
 private:
-    int day = 1;
-    int month = 1;
-    int year = 2021;
+    int day;
+    int month;
+    int year;
 };
 
 #endif //LIBRARYSYSTEM_DATE_HPP
