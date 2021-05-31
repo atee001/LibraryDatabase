@@ -26,6 +26,10 @@ map<string, vector<Book*>> BookRepository::getMapGenre() const{
 	return this->bookGenres;
 }
 
+map<string, Book*> BookRepository::getMapIsbn() const {
+    return this->bookISBNs;
+}
+
 BookRepository::BookRepository(const BookRepository& bookRepository) {
     bookTitles = bookRepository.bookTitles;
     bookAuthors = bookRepository.bookAuthors;
@@ -43,6 +47,10 @@ void BookRepository::AddBookByAuthor(Book* book) {
 void BookRepository::AddBookByGenre(Book* book){ 
     bookGenres[book->getGenre()].push_back(book);
 
+}
+
+void BookRepository::AddBookByIsbn(Book* book) {
+	bookISBN.insert(pair<string,book*>(book->getISBN(), book));
 }
 
 void BookRepository::displayMapTitle(){
@@ -192,6 +200,7 @@ void BookRepository::populate(const string &s) {//Title | Author * Genre / ISBN
         AddBookByGenre(newBook);
         AddBookByAuthor(newBook);
         AddBookByTitle(newBook);
+	AddBookByIsbn(newBook);
         bookList[bookItem] = newBook;
 	
 	
