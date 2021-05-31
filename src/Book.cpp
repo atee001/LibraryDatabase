@@ -36,6 +36,14 @@ void Book::setISBN(const string& isbnCode) {
     isbn = isbnCode;
 }
 
+bool Book::getCheckoutStatus() {
+    return setCheckoutStatus();
+}
+
+bool Book::setCheckoutStatus() {
+    return false;
+}
+
 const string Book::getTitle() {
     return title;
 }
@@ -60,8 +68,8 @@ Biographies::Biographies() {
     type = "Biographies";
 }
 
-Science::Science() {
-    type = "Science";
+Philosophy::Philosophy() {
+    type = "Philosophy";
 }
 
 travelGuides::travelGuides() {

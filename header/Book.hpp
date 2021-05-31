@@ -22,6 +22,8 @@ public:
     void setAuthor(const string& nameOfAuthor);
     void setGenre(const string& nameOfGenre);
     void setISBN(const string& isbnCode);
+   bool getCheckoutStatus();
+    bool setCheckoutStatus();
     const string getTitle();
     const string getAuthor();
     const string getGenre();
@@ -39,9 +41,9 @@ public:
     Biographies();
 };
 
-class Science : public NonFiction {
+class Philosophy : public NonFiction {
 public:
-    Science();
+    Philosophy();
 };
 
 class travelGuides : public NonFiction {
