@@ -11,7 +11,6 @@ protected:
     string author;
     string genre;
     string isbn;
-protected:
     string type;
 public:
     Book();
@@ -22,7 +21,7 @@ public:
     void setAuthor(const string& nameOfAuthor);
     void setGenre(const string& nameOfGenre);
     void setISBN(const string& isbnCode);
-   bool getCheckoutStatus();
+    bool getCheckoutStatus();
     bool setCheckoutStatus();
     const string getTitle();
     const string getAuthor();
@@ -50,28 +49,5 @@ class travelGuides : public NonFiction {
 public:
     travelGuides();
 };
-
-class Fiction : public Book {
-public: 
-    Fiction();
-};
-
-class Fantasy : public Fiction {
-public:
-    Fantasy();
-};
-
-class Romance : public Fiction {
-public: 
-    Romance();
-};
-
-class Mystery : public Fiction {
-public:
-    Mystery();
-};
-
-
-
 
 #endif //LIBRARYSYSTEM_BOOK_HPP

@@ -7,6 +7,7 @@
 #include "../header/SearchAND.hpp"
 #include "../header/SearchOR.hpp"
 #include "../header/LibraryCatalog.hpp"
+
 #include <sstream>
 #include "gtest/gtest.h"
 
@@ -43,10 +44,6 @@ TEST(SearchTest,mystery){
 
 TEST(SearchTest, OR){
 
-
-
-
-
         BookRepository* repo = new BookRepository();
         repo->populate("book.txt");
         LibraryCatalog* cat = new LibraryCatalog();
@@ -63,18 +60,18 @@ TEST(SearchTest, OR){
 
 }
 
-TEST(SearchContains, JK_Rowling){
-
+TEST(SearchContains, MispelledAuthor){
+	stringstream ss;
 	BookRepository* repo = new BookRepository();
       repo->populate("book.txt");
 	repo->display();
         LibraryCatalog* cat = new LibraryCatalog();
-        SearchStrat* strat = new SearchContains("Author", "Tom Bert" );
+        SearchStrat* strat = new SearchContains("Genre", "Tom Bert" );
         cat->set_search(strat);
 	cout << "SearchBox: " << strat->display() << endl;
-         cat->print_search(repo, cout);
+         cat->print_search(repo, ss);
 
-	EXPECT_EQ(0,0);
+	EXPECT_EQ(ss.str(),"No Results!\n");
 	delete repo;	
 	delete cat;
 }
@@ -86,7 +83,7 @@ TEST(AllSearch, NoResults){
         repo->populate("book.txt");
         repo->display();
         LibraryCatalog* cat = new LibraryCatalog();
-        SearchStrat* strat = new SearchAND(new SearchContains("Genre", "Science") , new SearchContains("Author", "J.K. Rowling" ));
+        SearchStrat* strat = new SearchAND(new SearchContains("Genre", "science") , new SearchContains("Author", "J.K. Rowling" ));
         cat->set_search(strat);
         cout << "SearchBox: " << strat->display() << endl;
         cat->print_search(repo, ss);

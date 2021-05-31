@@ -126,3 +126,28 @@ The Notebook (The Notebook, #1)|Nicholas Sparks*Fiction/0000000000125
 Winnie-the-Pooh (Winnie-the-Pooh, #1)|A.A. Milne*Fiction/0000000000126
 The Complete Stories and Poems|Edgar Allan Poe*Fiction/0000000000127
 Interview with the Vampire (The Vampire Chronicles, #1)|Anne Rice*Fiction/0000000000128
+Into Thin Air|Jon Krakauer*Biography/0000000000129
+Into the Wild|Jon Krakauer*Biography/0000000000130
+Between the World and Me|Ta-Nehisi Coates*Biography/0000000000131
+The Diary Of a Young Girl|AnneFrank*Biography/0000000000132
+I Know Why the Caged Bird Sings|Maya Angelou*Biography/0000000000133
+Night|Elie Wiesel*Biography/0000000000134
+A Moveable Feast|Ernest Hemingway*Biography/0000000000135
+Steve Jobs|Walter Isaacson*Biography/0000000000136
+Greenlights|Matthew McConaughey*Biography/0000000000137
+World Travel: An Irreverent Guide|Anthony Bourdain*Travel Guides/0000000000138
+Maui Revealed: The Ultimate Guidebook|Andrew Doughty*Travel Guides/0000000000139
+Hawaii Dreamscapes Revealed - Big Island|Andrew Doughty*Travel Guides/0000000000140
+Best of Europe|Rick Steves*Travel Guides/0000000000141
+Rick Steve's Italy 2017|Rick Steves*Travel Guides/0000000000142
+Moon Route 66 Road Trip|Jessica Dunham*Travel Guides/0000000000143
+Moon Pacific Coast Highway Road Trip|Ian Cameron*Travel Guides/0000000000144
+Republic|Plato*Philosophy/0000000000145
+Meditations|Marcus Aurelius*Philosophy/0000000000146
+Apology|Plato*Philosophy/0000000000147
+A Theory of Justice|John Rawls*Philosophy/0000000000148
+An Essay Concerning Human Understanding|John Locke*Philosophy/0000000000149
+On Liberty |John Mill*Philosophy/0000000000150
+Manifesto of the Communist Party|Karl Marx*Philosophy/0000000000151
+Beyond Good and Evil|Friedrich Nietzsche*Philosophy/0000000000152
+Sophie's World|Jostein Gaarder*Philosophy/0000000000153

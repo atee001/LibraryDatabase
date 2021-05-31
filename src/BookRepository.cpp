@@ -25,9 +25,9 @@ map<string, vector<Book*>> BookRepository::getMapGenre() const{
 	return this->bookGenres;
 }
 
-// map<string, Book*> BookRepository::getMapIsbn() const {
-//     return this->bookISBN;
-// }
+map<string, Book*> BookRepository::getMapIsbn() const {
+    return this->bookISBN;
+}
 
 BookRepository::BookRepository(const BookRepository& bookRepository) {
     bookTitles = bookRepository.bookTitles;
@@ -49,7 +49,8 @@ void BookRepository::AddBookByGenre(Book* book){
 }
 
 void BookRepository::AddBookByIsbn(Book* book) {
-    bookISBN.insert(book->getMapIsbn());
+	bookISBN.insert(pair<string,Book*>(book->getISBN(), book));
+
 }
 
 void BookRepository::displayMapTitle(){
@@ -119,45 +120,6 @@ void BookRepository::display() {
     cout << endl;
 }
 
-// <<<<<<< rbehe002/Book
-// Book* BookRepository::GetBookByTitle(string bookTitle) const {
-//     map<string, Book*>::iterator it = bookTitles.find(bookTitle);
-// =======
-// vector<Book*> BookRepository::GetBook(Book* book) {
-//     map<string, Book*>::iterator it = bookTitles.find(book->getTitle());
-// >>>>>>> master
-//      while (it != bookTitles.end()) {
-//          string title = it->first;
-//          if (title == bookTitle)
-//              return it->second;
-//          else
-//              return NULL;
-//     }
-// }
-
-// Book* BookRepository::GetBookByAuthor(string bookAuthor) const {
-//     map<string, Book*>::iterator it = bookAuthors.find(bookAuthor);
-//     while (it != bookAuthors.end()) {
-//         string author = it->first;
-//         if (author == bookAuthor)
-//             return it->second;
-//         else
-//             return NULL;
-//     }
-// }
-
-// Book* BookRepository::GetBookByGenre(string bookGenre) const {
-//     map<string, Book*>:: iterator it  = bookGenres.find(bookGenre);
-//     while (it != bookGenres.end()) {
-//         string genre = it->first;
-//         if (genre == bookGenre)
-//             return it->second;
-//         else
-//             return NULL;
-//     }
-// }
-
-
 void BookRepository::populate(const string &s) {//Title | Author * Genre / ISBN
 
 
@@ -200,13 +162,8 @@ void BookRepository::populate(const string &s) {//Title | Author * Genre / ISBN
         AddBookByTitle(newBook);
 	AddBookByIsbn(newBook);
         bookList[bookItem] = newBook;
-	
-	
 
     }
-
-    
        
       infile.close();
-
 }

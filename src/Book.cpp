@@ -13,6 +13,7 @@ Book::Book(const Book &book) {
     isbn = book.isbn;
 
 }
+
 void Book::display() {
     cout << "Title: " << title << endl;
     cout << "Author: " << author << endl;
@@ -75,23 +76,3 @@ Philosophy::Philosophy() {
 travelGuides::travelGuides() {
     type = "Travel Guides";
 }
-
-
-Fiction::Fiction() {
-    type = "Fiction";
-}
-
-Fantasy::Fantasy() {
-    type = "Fantasy";
-}
-
-Romance::Romance() {
-    type = "Romance";
-}
-
-Mystery::Mystery() {
-    type = "Mystery";
-}
-
-
-
