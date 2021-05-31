@@ -1,20 +1,27 @@
-
-#pragma once
+#ifndef LIBRARYSYSTEM_LIBRARIAN_HPP
+#define LIBRARYSYSTEM_LIBRARIAN_HPP
 
 #include "Person.hpp"
-
-#include <iostream>
-
 using namespace std;
 
-class Librarian : public Person {
-	
-	private:
-		//BookComponent* book;
+class Librarian: public Person {
+public:
+    double balance;
+    double fine = 0.10;
+    int days;
 
-	public:
-		Librarian(string name, string pass);
+    Librarian(string name, string pass);
 
+    void chargeLateFee(double totalLateFee, int daysOverdue) {
+        daysOverdue = days;
+        cout << "Enter total days overdue: " << endl;
+        cin >> days;
 
+        totalLateFee = fine * daysOverdue;
+        balance = balance + totalLateFee;
+    }
 
 };
+
+#endif //LIBRARYSYSTEM_LIBRARIAN_HPP
+
