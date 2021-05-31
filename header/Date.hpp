@@ -8,15 +8,16 @@ class Date {
 public:
 
     Date();
-    Date(int d, int m, int y);
-    Date(Date &d);
+    Date(const int& d,const int& m, const int& y);
+    Date(const Date &d);
     void printDate();
-    int getDay();
-    void setDay(int day);
-    int getMonth();
-    void setMonth(int month);
-    int getYear();
-    void setYear(int year);
+    int getDay() const;
+    void setDay(const int& day);
+    int getMonth() const;
+    void setMonth(const int& month);
+    int getYear() const;
+    void setYear(const int& year);
+    void increment(); 
 
 private:
     int day;
