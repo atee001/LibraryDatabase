@@ -25,9 +25,9 @@ map<string, vector<Book*>> BookRepository::getMapGenre() const{
 	return this->bookGenres;
 }
 
-map<string, Book*> BookRepository::getMapIsbn() const {
-    return this->bookISBN;
-}
+// map<string, Book*> BookRepository::getMapIsbn() const {
+//     return this->bookISBN;
+// }
 
 BookRepository::BookRepository(const BookRepository& bookRepository) {
     bookTitles = bookRepository.bookTitles;
