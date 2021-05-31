@@ -8,9 +8,27 @@
 #include "../header/SearchOR.hpp"
 #include "../header/LibraryCatalog.hpp"
 
+#include "../header/search_factory.hpp"
+
+
+
 #include <sstream>
 #include "gtest/gtest.h"
 
+TEST(FactoryTest, AND){
+	
+	search_factory* fact = new search_factory();
+	BookRepository* repo = new BookRepository();
+        repo->populate("book.txt");
+        LibraryCatalog* cat = new LibraryCatalog();
+	cat->set_search(fact->makeSearch());
+	cat->print_search(repo, cout);
+	EXPECT_EQ(0,0);
+        delete repo;
+        delete cat;
+	delete fact;
+
+}
 
 
 TEST(PopulateTest, twentyfive){
