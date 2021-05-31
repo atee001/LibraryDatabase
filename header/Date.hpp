@@ -17,6 +17,7 @@ public:
     void setMonth(const int& month);
     int getYear() const;
     void setYear(const int& year);
+    void increment(); 
 
 private:
     int day;
