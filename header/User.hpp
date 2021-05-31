@@ -20,6 +20,7 @@ protected:
 
     double balance;
     vector<Book*> myBooks;
+    map<BookItem*, Book*> *bookList;
 
 private:
     //user should have private variable bool checkoutstatus
@@ -48,10 +49,10 @@ public:
 
 
     Book* getBookByISBN(const string& isbn){
-        map<string, Book*> bookList;
-        for(auto it : bookList){
-            if(it.second->getISBN() == isbn){
-                return it.second; //returns Book* of the specified isbn
+        std::map<BookItem*, Book *>::iterator it;
+        for(it = bookList->begin(); it != bookList->end(); it++){
+            if(it->second->getISBN() == isbn){
+                return it->second; //returns Book* of the specified isbn
             }
         }
         return nullptr;
