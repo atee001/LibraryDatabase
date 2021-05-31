@@ -33,9 +33,10 @@ ADD_EXECUTABLE(SearchDriver
 	src/LibraryCatalog.cpp
 )
 
+
 ADD_EXECUTABLE(LibrarySystem src/BookRepositoryTest.cpp src/BookRepository.cpp
         src/Book.cpp src/BookItem.cpp src/Date.cpp
         src/LibraryCatalog.cpp )
 
-TARGET_LINK_LIBRARIES(test gtest)
-TARGET_COMPILE_DEFINITIONS(test PRIVATE gtest_disable_pthreads=ON)
+TARGET_LINK_LIBRARIES(searchTest gtest)
+TARGET_COMPILE_DEFINITIONS(searchTest PRIVATE gtest_disable_pthreads=ON)
