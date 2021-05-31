@@ -1,6 +1,16 @@
 //driver class
+#include "../header/SearchAND.hpp"
+#include "../header/SearchOR.hpp"
+#include "../header/SearchContains.hpp"
+#include "../header/SearchStrat.hpp"
+#include "../header/BookItem.hpp"
+#include "../header/BookRepository.hpp"
+#include "../header/Book.hpp"
+#include "../header/LibraryCatalog.hpp"
 #include <iostream>
 #include <fstream>
+#include "../header/search_factory.hpp"
+#include "../header/Date.hpp"
 #include "../header/Person.hpp"
 using namespace std;
 
@@ -31,22 +41,28 @@ string userInput = "";
 
 cout << "Please select what you wish to do" << endl;
 while(userInput != "9") {
-        cout << "\n   0.) Search by Author \n"
-        << "   1.) Search by Genre \n"
-        << "   2.) Search by Title \n"
-        << "   3.) Search Or Author/Genre/Title \n"
-        << "   4.) Search And Author/Genre/Title \n" 
-        << "   5.) Checkout Book by ISBN \n"
-        << "   6.) Check Balance \n"
-        << "   7.) Check Due Dates \n"
-        << "   8.) Pay Balance \n"
-        << "   9.) Quit"
+        cout << "\n   0.) Search For Books \n"
+        << "   1.) Checkout Book by ISBN \n"
+        << "   2.) Check Balance \n"
+        << "   3.) Check Due Dates \n"
+        << "   4.) Pay Balance \n"
+        << "   5.) Quit"
         << endl;
 
         cin >> userInput;
 
-        if(userInput == "0") {
-
+	
+	if(userInput == "0") {
+		BookRepository* repo = new BookRepository();
+        	repo->populate("book.txt");
+		LibraryCatalog* lib = new LibraryCatalog();		
+		search_factory* fact = new search_factory();
+		SearchStrat* search= fact->makeSearch();
+		lib->set_search(search);
+		lib->print_search(repo, cout);
+	        delete lib;
+		delete fact;	
+		delete repo;
         }
         else if(userInput == "1") {
 
@@ -61,18 +77,10 @@ while(userInput != "9") {
 
         }
         else if(userInput == "5") {
-
+	
+		//delete lib;
+		break;
         }
-        else if(userInput == "6") {
-
-        }
-        else if(userInput == "7") {
-
-        }
-        else if(userInput == "8") {
-
-        }
-        else if(userInput == "9") {}
         else {
           cout << "\n Invalid input \n" << endl;
         }
@@ -80,9 +88,9 @@ while(userInput != "9") {
 
 }
 
-cout << "\n Have a nice day!" << endl;
+	cout << "\n Have a nice day!" << endl;
 
- return 0;
+ 	return 0;
 
 }
 

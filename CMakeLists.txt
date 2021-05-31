@@ -4,9 +4,18 @@ SET(CMAKE_CXX_STANDARD 11)
 
 ADD_SUBDIRECTORY(googletest)
 
-ADD_EXECUTABLE(driver
-    src/main.cpp
 
+ADD_EXECUTABLE(driver
+src/search_factory.cpp
+src/BookRepository.cpp
+src/Book.cpp
+src/Date.cpp
+src/BookItem.cpp
+src/LibraryCatalog.cpp
+src/SearchAND.cpp
+src/SearchContains.cpp
+src/SearchOR.cpp
+src/main.cpp
 )
 
 ADD_EXECUTABLE(searchTest
@@ -19,6 +28,7 @@ ADD_EXECUTABLE(searchTest
     src/SearchAND.cpp
     src/SearchContains.cpp
     src/SearchOR.cpp
+    src/search_factory.cpp
 ) 
 
 ADD_EXECUTABLE(SearchDriver

@@ -9,8 +9,9 @@ void LibraryCatalog::print_search(const BookRepository* b, ostream& out){
         else{
             
             for(auto it : result){
-            
-                out << it->getTitle() << endl;
+            	
+		
+                out << it->getTitle() << " " << it->getAuthor() << " " << it->getISBN() <<endl;
             
             }
         

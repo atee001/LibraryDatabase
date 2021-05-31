@@ -1,8 +1,7 @@
-
+#include <fstream>
 #include "../header/BookRepository.hpp"
 
-
-
+using namespace std;
 
 BookRepository::BookRepository() {
 
@@ -51,6 +50,7 @@ void BookRepository::AddBookByGenre(Book* book){
 
 void BookRepository::AddBookByIsbn(Book* book) {
 	bookISBN.insert(pair<string,Book*>(book->getISBN(), book));
+
 }
 
 void BookRepository::displayMapTitle(){
@@ -71,17 +71,14 @@ void BookRepository::displayMapAuthors(){
         
 	}
 
-
 }
 
 void BookRepository::displayBookGenres(){
 for(map<string, vector<Book*>>::iterator it = bookGenres.begin(); it != bookGenres.end(); it++){
-
                 for(auto x : it->second){
                         cout << x->getGenre() << endl;
                 }
         }
-
 
 }
 
@@ -123,45 +120,6 @@ void BookRepository::display() {
     cout << endl;
 }
 
-// <<<<<<< rbehe002/Book
-// Book* BookRepository::GetBookByTitle(string bookTitle) const {
-//     map<string, Book*>::iterator it = bookTitles.find(bookTitle);
-// =======
-// vector<Book*> BookRepository::GetBook(Book* book) {
-//     map<string, Book*>::iterator it = bookTitles.find(book->getTitle());
-// >>>>>>> master
-//      while (it != bookTitles.end()) {
-//          string title = it->first;
-//          if (title == bookTitle)
-//              return it->second;
-//          else
-//              return NULL;
-//     }
-// }
-
-// Book* BookRepository::GetBookByAuthor(string bookAuthor) const {
-//     map<string, Book*>::iterator it = bookAuthors.find(bookAuthor);
-//     while (it != bookAuthors.end()) {
-//         string author = it->first;
-//         if (author == bookAuthor)
-//             return it->second;
-//         else
-//             return NULL;
-//     }
-// }
-
-// Book* BookRepository::GetBookByGenre(string bookGenre) const {
-//     map<string, Book*>:: iterator it  = bookGenres.find(bookGenre);
-//     while (it != bookGenres.end()) {
-//         string genre = it->first;
-//         if (genre == bookGenre)
-//             return it->second;
-//         else
-//             return NULL;
-//     }
-// }
-
-
 void BookRepository::populate(const string &s) {//Title | Author * Genre / ISBN
 
 
@@ -174,7 +132,9 @@ void BookRepository::populate(const string &s) {//Title | Author * Genre / ISBN
     ifstream infile(s);
 
     if(!infile){
+	
 	cerr << "Invalid Txt file" << endl;
+	exit(1);
     }
 
     
@@ -202,13 +162,8 @@ void BookRepository::populate(const string &s) {//Title | Author * Genre / ISBN
         AddBookByTitle(newBook);
 	AddBookByIsbn(newBook);
         bookList[bookItem] = newBook;
-	
-	
 
     }
-
-    
        
       infile.close();
-
 }
