@@ -7,7 +7,11 @@
 #include "../header/SearchAND.hpp"
 #include "../header/SearchOR.hpp"
 #include "../header/LibraryCatalog.hpp"
+
 #include "../header/search_factory.hpp"
+
+
+
 #include <sstream>
 #include "gtest/gtest.h"
 
@@ -57,10 +61,6 @@ TEST(SearchTest,mystery){
 
 
 TEST(SearchTest, OR){
-
-
-
-
 
         BookRepository* repo = new BookRepository();
         repo->populate("book.txt");
