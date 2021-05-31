@@ -16,6 +16,7 @@ public:
     int getMonth();
     void setMonth(int month);
     int getYear();
+    void increment(); 
     void setYear(int year);
 
 private:
