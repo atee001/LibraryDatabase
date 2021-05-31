@@ -64,7 +64,7 @@ void Date::increment() {
     this->setMonth(++m);
     this->setDay(1);
   }
-  else if(m == 2 && d == 28) {
+  else if(m == 2 && d == 28 && y%4 != 0) {
     this->setMonth(++m);
     this->setDay(1);
   }
