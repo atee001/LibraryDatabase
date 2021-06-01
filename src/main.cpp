@@ -44,7 +44,7 @@ string userInput = "";
 cout << "Please select what you wish to do" << endl;
 BookRepository* repo = new BookRepository();
 repo->populate("book.txt");
-while(userInput != "9") {
+while(true) {
         cout << "\n   0.) Search For Books \n"
         << "   1.) Checkout Book by ISBN \n"
         << "   2.) Check Balance \n"
