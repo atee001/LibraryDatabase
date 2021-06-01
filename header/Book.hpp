@@ -1,6 +1,5 @@
 #ifndef LIBRARYSYSTEM_BOOK_HPP
 #define LIBRARYSYSTEM_BOOK_HPP
-
 #include <iostream>
 #include <string>
 using namespace std;
@@ -12,8 +11,10 @@ protected:
     string genre;
     string isbn;
     string type;
+    
+   
 public:
-    Book();
+    Book() : title(""), author(""), genre(""), isbn(""), type(""){}
     Book(const string&, const string&, const string&, const string&);
     Book(const Book &book);
     void display();
@@ -21,6 +22,7 @@ public:
     void setAuthor(const string& nameOfAuthor);
     void setGenre(const string& nameOfGenre);
     void setISBN(const string& isbnCode);
+         
     bool getCheckoutStatus();
     bool setCheckoutStatus();
     const string getTitle();

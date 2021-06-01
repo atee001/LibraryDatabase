@@ -1,9 +1,10 @@
 #ifndef LIBRARYSYSTEM_BOOKITEM_HPP
 #define LIBRARYSYSTEM_BOOKITEM_HPP
 #include "Date.hpp"
-#include "Book.hpp"
 
-class BookItem : public Book {
+
+//class BookItem : public Book {
+class BookItem {
 private:
     Date checkoutDate;
     Date dueDate;

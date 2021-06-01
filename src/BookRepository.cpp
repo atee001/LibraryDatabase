@@ -98,26 +98,26 @@ void BookRepository::CheckOut(Book* book, Date checkOutDate) {
         Date *dueDate = new Date(checkOutDate.getDay(), dueMonth, checkOutDate.getYear());
         bookItem->setCheckoutDate(*dueDate);
     }
-    bookItem->setTitle(book->getTitle());
-    bookItem->setAuthor(book->getAuthor());
-    bookItem->setGenre(book->getGenre());
-    bookItem->setISBN(book->getISBN());
-    bookList[bookItem] = book;
+    bookList[book] = bookItem;
 }
 
 void BookRepository::RemoveBook(Book* book) {
     bookTitles.erase(book->getTitle());
 }
-
 void BookRepository::display() {
-    std::map<BookItem*, Book *>::iterator it;
+    std::map<Book *, BookItem*>::iterator it;
     for (it = bookList.begin(); it != bookList.end(); it++) {
-        BookItem* bookItem = it->first;
-        Book* book = (Book*)it->second;
+        BookItem* bookItem = it->second;
+        it->first->display();
        // bookItem->display();
-        book->display();
+       
     }
     cout << endl;
+}
+Book* BookRepository::getBookByISBN(const string& isbn){
+    
+	return (bookISBN.find(isbn) != bookISBN.end()) ? bookISBN.at(isbn) : nullptr;
+
 }
 
 void BookRepository::populate(const string &s) {//Title | Author * Genre / ISBN
@@ -161,8 +161,8 @@ void BookRepository::populate(const string &s) {//Title | Author * Genre / ISBN
         AddBookByAuthor(newBook);
         AddBookByTitle(newBook);
 	AddBookByIsbn(newBook);
-        bookList[bookItem] = newBook;
-
+        bookList[newBook] = bookItem;
+	
     }
        
       infile.close();

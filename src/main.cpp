@@ -120,7 +120,7 @@ Person* begin(fstream& f, const string& filename){
     string corrPass = "";
     cout << "Enter your name: " << endl;
     getline(cin, name, '\n');
-
+     
     while(!corr_name(f, filename, name, corrPass) && tries > 0){
 
       --tries;
@@ -134,9 +134,10 @@ Person* begin(fstream& f, const string& filename){
       }
 
       cout << "Enter your name: " << endl;
+      
       getline(cin, name, '\n');
-
-
+      f.clear();
+      f.seekg(0);
     }
 
     tries = 3;

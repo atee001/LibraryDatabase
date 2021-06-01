@@ -48,27 +48,19 @@ public:
     }
 
 
-    Book* getBookByISBN(const string& isbn){
-        std::map<BookItem*, Book *>::iterator it;
-        for(it = bookList->begin(); it != bookList->end(); it++){
-            if(it->second->getISBN() == isbn){
-                return it->second; //returns Book* of the specified isbn
+
+    bool checkout(Book* bk, const Date& today,const BookRepository*& b){
+            
+            if(!bk->getCheckoutStatus()) {
+                myBooks.push_back(bk);
+                bkBook* bk->setCheckoutStatus(true); 
+		return true;
             }
-        }
-        return nullptr;
+              
+		return false;
+	    
+
     }
-
-        void checkout(const string& isbn){
-            Book* mybook = getBookByISBN(isbn); //iterate through bookLists
-            if(mybook->getCheckoutStatus() == false) {
-                myBooks.push_back(mybook);
-                mybook->setCheckoutStatus() == true;
-            }
-            else {
-                cout << "Already Checked out!";
-            }
-
-        }
 
 };
 #endif //LIBRARYSYSTEM_USER_HPP

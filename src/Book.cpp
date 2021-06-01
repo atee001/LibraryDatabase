@@ -1,10 +1,7 @@
 #include "../header/Book.hpp"
 
-Book::Book() {
 
-}
-
-Book::Book(const string& t, const string& a, const string& g, const string& i) : title(t), author(a), genre(g), isbn(i) {}
+Book::Book(const string& t, const string& a, const string& g, const string& i) : title(t), author(a), genre(g), isbn(i){}
 
 Book::Book(const Book &book) {
     title = book.title;
