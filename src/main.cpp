@@ -36,7 +36,6 @@ int main(int argc, char* argv[]){
  if(p->getAdminStatus()) cout << "Welcome Librarian: " << p->getName() << endl;
  else cout << "Welcome " << p->getName() << endl;
 
- delete p;
 
 
 string userInput = "";
@@ -74,10 +73,11 @@ while(true) {
 			cout << "No Book for " << isbn  << " found!" << endl;
 			cout << "Enter an ISBN Code: " << endl;
 			cin >> isbn;
+			bk = repo->getBookByISBN(isbn);
 		}
 		cout << "Book Chosen: " << endl;
 		bk->display();
-		
+		 				
 
         }
         else if(userInput == "2") {
@@ -90,7 +90,7 @@ while(true) {
 
         }
         else if(userInput == "5") {
-	
+		delete p;	
 		delete repo;
 		break;
         }
