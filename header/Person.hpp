@@ -8,10 +8,10 @@ using namespace std;
 class Person{
 
 protected:
-    string name, pass, personType;
-
+    string name, pass; 
 public:
-    Person();
+    Person() {}
+    virtual bool getAdminStatus() = 0;
     Person(const string& name, const string& pass) : name(name), pass(pass){}
     string getName() const{ return name;}
     void setName(const string& name){ this->name = name;}

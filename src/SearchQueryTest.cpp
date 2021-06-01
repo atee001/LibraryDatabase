@@ -11,15 +11,7 @@ int main(){
 	BookRepository* repo = new BookRepository();
 	repo->populate("book.txt");
 	LibraryCatalog* lib= new LibraryCatalog();
-	SearchStrat* strat = new SearchOR( new SearchContains("Title", "Back To The Future"), new SearchContains("Author", "J.K. Rowling"));
-	lib->set_search(strat);
-	cout << "SearchBox: " << strat->display() << endl;
-	lib->print_search(repo,cout);
-
-	delete repo;
-	delete lib;
-
-
+	cout << repo->getBookByISBN("0000000000100")->getTitle() << endl;
 
 	return 0;
 

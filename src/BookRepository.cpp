@@ -98,28 +98,37 @@ void BookRepository::CheckOut(Book* book, Date checkOutDate) {
         Date *dueDate = new Date(checkOutDate.getDay(), dueMonth, checkOutDate.getYear());
         bookItem->setCheckoutDate(*dueDate);
     }
-    bookItem->setTitle(book->getTitle());
-    bookItem->setAuthor(book->getAuthor());
-    bookItem->setGenre(book->getGenre());
-    bookItem->setISBN(book->getISBN());
-    bookList[bookItem] = book;
+    bookList[book] = bookItem;
 }
 
 void BookRepository::RemoveBook(Book* book) {
     bookTitles.erase(book->getTitle());
 }
-
 void BookRepository::display() {
-    std::map<BookItem*, Book *>::iterator it;
+    std::map<Book *, BookItem*>::iterator it;
     for (it = bookList.begin(); it != bookList.end(); it++) {
-        BookItem* bookItem = it->first;
-        Book* book = (Book*)it->second;
+        BookItem* bookItem = it->second;
+        it->first->display();
        // bookItem->display();
-        book->display();
+       
     }
     cout << endl;
 }
+Book* BookRepository::getBookByISBN(const string& isbn){
+   	
+	string zero = "0000000000000";
+	string temp =to_string(stoi(isbn));
+	zero.resize(13-temp.size());
+	string result = zero + temp;
+	//cout << "ISBN " << result << endl;
+	return (bookISBN.find(result) != bookISBN.end()) ? bookISBN.at(result) : nullptr;
 
+}
+map<Book*, BookItem*> BookRepository::getBookList() const{
+	
+	return this->bookList;
+
+}
 void BookRepository::populate(const string &s) {//Title | Author * Genre / ISBN
 
 
@@ -151,8 +160,8 @@ void BookRepository::populate(const string &s) {//Title | Author * Genre / ISBN
 	Genre = line.substr(two+1, three-two-1);
 	ISBN = line.substr(three+1);
 
-        newBook = new Book(Title, Author,Genre, ISBN);
-
+        newBook = new Book(Title, Author,Genre, ISBN, false);
+//com
         Date currDate(1,1,2021);
         Date dueDate(3, 1, 2021);
         bookItem = new BookItem(currDate, dueDate);
@@ -161,8 +170,8 @@ void BookRepository::populate(const string &s) {//Title | Author * Genre / ISBN
         AddBookByAuthor(newBook);
         AddBookByTitle(newBook);
 	AddBookByIsbn(newBook);
-        bookList[bookItem] = newBook;
-
+        bookList[newBook] = bookItem;
+	
     }
        
       infile.close();
