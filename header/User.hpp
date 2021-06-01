@@ -59,14 +59,14 @@ public:
             
             if(!bk->getCheckoutStatus()) {
                 myBooks.push_back(bk);
-                bkBook* bk->setCheckoutStatus(true); 
+                bk->setCheckoutStatus(true); 
 			
 		BookItem* biPtr = b->getBookList().at(bk);
 		
 		biPtr->setCheckoutDate(today);
 		Date* dueDate = new Date(today);
 		dueDate->increment();
-		biPtr->setDueDate(dueDate);
+		biPtr->setDueDate(*dueDate);
 
 		
 		delete dueDate;
@@ -81,7 +81,7 @@ public:
 
     }
 
-void return(Book* mybook, const Date& c, const BookRepository*& b) {
+void returnBook(Book* mybook, const Date& c, const BookRepository*& b) {
    // Book* mybook = getBookByISBN(isbn); //iterate through bookLists
     
     if(mybook->getCheckoutStatus() == true) {
@@ -90,7 +90,7 @@ void return(Book* mybook, const Date& c, const BookRepository*& b) {
       vector<Book*>::iterator new_end;
       new_end = remove(myBooks.begin(), myBooks.end(), mybook);
 
-      BookItem* dd = b->getBookList().at(bk);
+      BookItem* dd = b->getBookList().at(mybook);
       Date* d = new Date(dd->getDueDate());			
 
       const int daysPerMonth[12] = { 31, 28, 31, 30, 31, 30,
@@ -106,7 +106,7 @@ void return(Book* mybook, const Date& c, const BookRepository*& b) {
       for (int i = 0; i < c.getMonth() - 1; i++)
         numDays1 += daysPerMonth[i];
 
-      for (int i = 0; i < d.getMonth() - 1; i++)
+      for (int i = 0; i < d->getMonth() - 1; i++)
         numDays2 += daysPerMonth[i];
 
       int years = c.getYear();
