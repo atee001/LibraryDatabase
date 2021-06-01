@@ -9,7 +9,7 @@ SearchStrat* search_factory::createField(){
 	int field;
 	string searchQuery;
 	cin.ignore();
-	cout << "Enter a keyword (Ex: Harry Potter): " << endl;
+	cout << "Enter a keyword (Ex: J.K. Rowling): " << endl;
 	getline(cin, searchQuery);
 	//cout << "TEST!!!!!!!!" << endl;	
 	cout << "Searchby: Title(1), Author(2), Genre(3), All fields(4): " << endl;
