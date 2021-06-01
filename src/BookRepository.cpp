@@ -120,7 +120,7 @@ Book* BookRepository::getBookByISBN(const string& isbn){
 	string temp =to_string(stoi(isbn));
 	zero.resize(13-temp.size());
 	string result = zero + temp;
-	cout << "ISBN " << result << endl;
+	//cout << "ISBN " << result << endl;
 	return (bookISBN.find(result) != bookISBN.end()) ? bookISBN.at(result) : nullptr;
 
 }
