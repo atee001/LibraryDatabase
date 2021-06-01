@@ -292,6 +292,40 @@ TEST(OR, NightORApology){
 
 }
 
+TEST(All, ANDOR){
+
+	BookRepository* repo = new BookRepository();
+        repo->populate("book4.txt");
+        SearchStrat* strat = new SearchAND( new SearchContains("title", "not") ,new SearchOR(new SearchContains("Title", "Night"), new SearchContains("Title", "Apology")));
+        LibraryCatalog* cat = new LibraryCatalog();
+        cat->set_search(strat);
+        stringstream ss;
+        cat->print_search(repo, ss);
+        string ans = "No Results!\n";
+        EXPECT_EQ(ss.str(), ans);
+        delete repo;
+        delete cat;
+
+}
+
+TEST(All, ORAND){
+
+	BookRepository* repo = new BookRepository();
+        repo->populate("book5.txt");
+        SearchStrat* strat = new SearchAND( new SearchContains("Author", "Brian Catling") ,new SearchOR(new SearchContains("Title", "Night"), new SearchContains("Title", "Apology")));
+        LibraryCatalog* cat = new LibraryCatalog();
+        cat->set_search(strat);
+        stringstream ss;
+        cat->print_search(repo, ss);
+        string ans = "No Results!\n";
+        EXPECT_EQ(ss.str(), ans);
+        delete repo;
+        delete cat;
+
+}
+
+
+
 
 
 int main(int argc, char **argv) {

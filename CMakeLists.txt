@@ -31,22 +31,24 @@ ADD_EXECUTABLE(searchTest
     src/search_factory.cpp
 ) 
 
-ADD_EXECUTABLE(SearchDriver
- 	src/SearchAND.cpp
-	src/SearchOR.cpp
-	src/SearchContains.cpp
-	src/SearchQueryTest.cpp
-	src/BookRepository.cpp
-	src/Date.cpp
-	src/BookItem.cpp
-	src/Book.cpp
-	src/LibraryCatalog.cpp
+ADD_EXECUTABLE(BoxTest
+    tests/searchBoxTest.cpp
+    src/BookRepository.cpp
+    src/Book.cpp
+    src/SearchAND.cpp
+    src/SearchContains.cpp
+    src/SearchOR.cpp
+    src/BookRepository.cpp
+    src/Book.cpp
+    src/Date.cpp
+    src/BookItem.cpp
+
 )
 
 
-ADD_EXECUTABLE(LibrarySystem src/BookRepositoryTest.cpp src/BookRepository.cpp
-        src/Book.cpp src/BookItem.cpp src/Date.cpp
-        src/LibraryCatalog.cpp )
-
+	
 TARGET_LINK_LIBRARIES(searchTest gtest)
+TARGET_LINK_LIBRARIES(BoxTest gtest)
 TARGET_COMPILE_DEFINITIONS(searchTest PRIVATE gtest_disable_pthreads=ON)
+TARGET_COMPILE_DEFINITIONS(BoxTest PRIVATE gtest_disable_pthreads=ON)
+
