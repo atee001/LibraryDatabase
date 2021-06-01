@@ -29,7 +29,9 @@
  ## Screenshots
   Screenshots of the input/output after running your application
  ## Installation/Usage
-  Instructions on installing and running your application
+  Click master branch. Click code and then under clone and HTTPS copy the link. Open a terminal window on your computer and type the command git clone --recursive then a space and then paste the link. Type cd final-project-rbehe002_atee001_-ctsai081 to get into the directory. Type cmake3 . and then make to compile. Then type ./driver book.txt to run the program.
+
  ## Testing
   How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+  Our project was test/validated with the GoogleTest C++ framework and by writing driver cpp test files.
  
