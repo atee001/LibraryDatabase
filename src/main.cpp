@@ -12,11 +12,9 @@
 #include "../header/search_factory.hpp"
 #include "../header/Date.hpp"
 #include "../header/Person.hpp"
+#include "../header/person_factory.hpp"
 using namespace std;
 
-Person* begin(fstream &, const string&);
-bool corr_name(fstream&, const string&, const string&, string&);
-bool corr_pass(fstream&, const string&, string&);
 
 int main(int argc, char* argv[]){
 
@@ -33,13 +31,16 @@ int main(int argc, char* argv[]){
  }
  
  string filename = argv[1];
- Person* p = begin(f,filename);
+ person_factory* pfact;
+ Person* p = pfact->begin(f,filename);
  cout << "Welcome " << p->getName() << endl;
  delete p;
 
 string userInput = "";
 
 cout << "Please select what you wish to do" << endl;
+BookRepository* repo = new BookRepository();
+repo->populate("book.txt");
 while(userInput != "9") {
         cout << "\n   0.) Search For Books \n"
         << "   1.) Checkout Book by ISBN \n"
@@ -53,8 +54,6 @@ while(userInput != "9") {
 
 	
 	if(userInput == "0") {
-		BookRepository* repo = new BookRepository();
-        	repo->populate("book.txt");
 		LibraryCatalog* lib = new LibraryCatalog();		
 		search_factory* fact = new search_factory();
 		SearchStrat* search= fact->makeSearch();
@@ -62,9 +61,20 @@ while(userInput != "9") {
 		lib->print_search(repo, cout);
 	        delete lib;
 		delete fact;	
-		delete repo;
         }
         else if(userInput == "1") {
+		string isbn;
+		cout << "Enter an ISBN Code: " << endl;
+		cin >> isbn;
+		Book* bk = repo->getBookByISBN(isbn);
+		while(!bk){ 
+			cout << "No Book for " << isbn  << " found!" << endl;
+			cout << "Enter an ISBN Code: " << endl;
+			cin >> isbn;
+		}
+		cout << "Book Chosen: " << endl;
+		bk->display();
+		
 
         }
         else if(userInput == "2") {
@@ -78,7 +88,7 @@ while(userInput != "9") {
         }
         else if(userInput == "5") {
 	
-		//delete lib;
+		delete repo;
 		break;
         }
         else {
@@ -95,96 +105,3 @@ while(userInput != "9") {
 }
 
 
-Person* begin(fstream& f, const string& filename){
-
-  string name, ans, pass;
-  int tries = 3;
-  pass = " ";
-  cout << "Welcome to our Library System!" << endl;
-  cout << "Are you a new user? (Y/N)" << endl;
-  cin >> ans;
-  cin.ignore();
-
-  if(ans == "Y" ||  ans == "y" || ans == "YES" || ans == "Yes"){
-    
-    cout << "Enter your full name with first and last seperated by a space: ";
-    getline(cin, name);
-    cout << "Enter a password: ";
-    getline(cin, pass);
-    f << name << "|" << pass << endl;
-
-}
-
-  else{
-
-    string corrPass = "";
-    cout << "Enter your name: " << endl;
-    getline(cin, name, '\n');
-     
-    while(!corr_name(f, filename, name, corrPass) && tries > 0){
-
-      --tries;
-      cout << "No users found! " << tries << " attempts remaining!" << endl;
-
-      if(tries == 0){
-
-        cout << "Too many attempts! Exiting..." << endl;
-        exit(1);
-
-      }
-
-      cout << "Enter your name: " << endl;
-      
-      getline(cin, name, '\n');
-      f.clear();
-      f.seekg(0);
-    }
-
-    tries = 3;
-
-    cout << "Enter your password: " << endl;
-
-    getline(cin, pass, '\n');
-
-    while(tries > 0 && corrPass != pass){
-
-      --tries;
-      cout << "Incorrect Password! " << tries << " attempts remaining!" << endl;
-
-      if(tries == 0){
-
-        cout << "Too many attempts! Exiting..." << endl;
-        exit(1);
-
-      }
-
-      cout << "Enter your password: " << endl;
-      getline(cin, pass, '\n');
-
-    }
-
-  }
-
-  f.close();
-  return new Person(name,pass);
-
-}
-
-bool corr_name(fstream& f, const string& filename, const string& name, string& corrPass){
-
-  string user;
-
-  while(getline(f, user)){
-
-    if(name == user.substr(0,user.find('|'))){
-
-      corrPass = user.substr(user.find('|')+1, user.size()-user.find('|'));
-      return true;
-
-    }
-
-}
-
-return false;
-
-}
