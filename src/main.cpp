@@ -75,6 +75,7 @@ while(true) {
 			cin >> isbn;
 			bk = repo->getBookByISBN(isbn);
 		}
+		BookItem* item = repo->getBookList().at(bk);
 		cout << "Book Chosen: " << endl;
 		bk->display();
 		 				
