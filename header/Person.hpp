@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include "Book.hpp"
+#include "BookRepository.hpp"
 
 using namespace std;
 #pragma once
@@ -22,29 +23,11 @@ public:
     string getPass() const{ return pass;}
     void setPass(const string& pass){ this->pass = pass;}
 
-    void checkout(Book* bk, Date& today, BookRepository*& b){
-
-           if(!bk->getCheckoutStatus()) {
-                myBooks.push_back(bk);
-                bk->setCheckoutStatus(true);
-
-                BookItem* biPtr = b->getBookList().at(bk);
-
-                biPtr->setCheckoutDate(today);
-                Date* dueDate = new Date(today);
-                dueDate->increment();
-                biPtr->setDueDate(*dueDate);
-
-                delete dueDate;
-
-            }
-            else {
-                cout << "Book already checked out" << endl;
-            }
+    virtual void checkout(Book* bk, Date& today, BookRepository*& b);
 
 
 
-    }
+
 
 };
 
