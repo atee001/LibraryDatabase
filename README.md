@@ -17,19 +17,9 @@
   * What are the two design patterns you will be using? For each design pattern you must explain in 4-5 sentences:
     * We will use strategy and composite for the searchQuery. The composite pattern is the searchOR and searchAND which contains an aggregate of the interface SearchStrat. The strategy pattern is the searchByAuthor, searchByGenre, and searchByTitle. The SearchAND and SearchOR is considered a composite since the class is a composite of Search interface pointers. The leafs are the SearchByAuthor, SearchByGenre, and SearchByTitle. The strategy pattern is allowing the user to dynamically choose which searchStrategy they want. 
 
-  ## Phase II
 ## Class Diagram
-[Final Project New (2).pdf](https://github.com/cs100/final-project-rbehe002_atee001_-ctsai081/files/6499256/Final.Project.New.2.pdf)
+[Final Project Diagram.pdf](https://github.com/cs100/final-project-rbehe002_atee001_-ctsai081/files/6574695/Final.Project.Diagram.pdf)
  
-## Phase III
-  You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
-   Before the meeting you should perform a sprint plan like you did in Phase II
-   In the meeting with your TA you will discuss: 
-    - How effective your last sprint was (each member should talk about what they did)
-    - Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
-    - Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
-    - What tasks you are planning for this next sprint.
-
   ## Final deliverable
   All group members will give a demo to the TA during lab time. The TA will check the demo and the project GitHub repository and ask a few questions to all the team members. 
   Before the demo, you should do the following:
@@ -39,7 +29,8 @@
  ## Screenshots
   Screenshots of the input/output after running your application
  ## Installation/Usage
-  Instructions on installing and running your application
+  Click master branch. Click code and then under clone and HTTPS copy the link. Open a terminal window on your computer and type the command git clone --recursive then a space and then paste the link. Type cd final-project-rbehe002_atee001_-ctsai081 to get into the directory. Type cmake3 . and then make to compile. Then type ./driver user.txt to run the program.
+
  ## Testing
-  How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+  Our project was test/validated with the GoogleTest C++ framework and by writing driver cpp test files.
  
