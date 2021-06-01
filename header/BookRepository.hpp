@@ -39,7 +39,6 @@ public:
     void AddBookByAuthor(Book* book);
     void AddBookByGenre(Book* book);
     void AddBookByIsbn(Book* book);
-    void CheckOut(Book* book, Date checkOutDate);
     void RemoveBook(Book* book);
     void populate(const string &s);
     void displayMapTitle();
