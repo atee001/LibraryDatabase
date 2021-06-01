@@ -39,5 +39,5 @@ SearchBox:
   Click master branch. Click code and then under clone and HTTPS copy the link. Open a terminal window on your computer and type the command git clone --recursive then a space and then paste the link. Type cd final-project-rbehe002_atee001_-ctsai081 to get into the directory. Type cmake3 . and then make to compile. Then type ./driver user.txt to run the program.
 
  ## Testing
-  Our project was test/validated with the GoogleTest C++ framework and by writing driver cpp test files.
+  Our project was test/validated with the GoogleTest C++ framework.
  
