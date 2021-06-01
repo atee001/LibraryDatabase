@@ -46,7 +46,8 @@ while(userInput != "9") {
         << "   2.) Check Balance \n"
         << "   3.) Check Due Dates \n"
         << "   4.) Pay Balance \n"
-        << "   5.) Quit"
+	<< "   5.) Return Book by ISBN \n"
+        << "   6.) Quit"
         << endl;
 
         cin >> userInput;
@@ -76,7 +77,10 @@ while(userInput != "9") {
         else if(userInput == "4") {
 
         }
-        else if(userInput == "5") {
+	else if (userInput == "5") {
+		
+	}
+        else if(userInput == "6") {
 	
 		//delete lib;
 		break;
@@ -120,7 +124,7 @@ Person* begin(fstream& f, const string& filename){
     string corrPass = "";
     cout << "Enter your name: " << endl;
     getline(cin, name, '\n');
-     
+
     while(!corr_name(f, filename, name, corrPass) && tries > 0){
 
       --tries;
@@ -134,10 +138,9 @@ Person* begin(fstream& f, const string& filename){
       }
 
       cout << "Enter your name: " << endl;
-      
       getline(cin, name, '\n');
-      f.clear();
-      f.seekg(0);
+
+
     }
 
     tries = 3;
