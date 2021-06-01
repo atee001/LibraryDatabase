@@ -151,7 +151,7 @@ void BookRepository::populate(const string &s) {//Title | Author * Genre / ISBN
 	Genre = line.substr(two+1, three-two-1);
 	ISBN = line.substr(three+1);
 
-        newBook = new Book(Title, Author,Genre, ISBN);
+        newBook = new Book(Title, Author,Genre, ISBN, false);
 
         Date currDate(1,1,2021);
         Date dueDate(3, 1, 2021);
