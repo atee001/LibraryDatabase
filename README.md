@@ -31,6 +31,8 @@ Librarian Interface:
 ![Screenshot (391)](https://user-images.githubusercontent.com/80326381/120368679-347fc000-c2c7-11eb-92e9-8fd172c728d8.png)
 SearchBox:
 ![Screenshot (394)](https://user-images.githubusercontent.com/80326381/120369369-02229280-c2c8-11eb-839a-c7329e156832.png)
+Removing Book from Library
+![Screenshot (396)](https://user-images.githubusercontent.com/80326381/120371895-554a1480-c2cb-11eb-9a94-3bf8b7c3b3d2.png)
 
 
 
