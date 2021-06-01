@@ -49,7 +49,8 @@ while(true) {
         << "   2.) Check Balance \n"
         << "   3.) Check Due Dates \n"
         << "   4.) Pay Balance \n"
-        << "   5.) Quit"
+	<< "   5.) Return Book by ISBN \n"
+        << "   6.) Quit"
         << endl;
 
         cin >> userInput;
@@ -90,7 +91,13 @@ while(true) {
         else if(userInput == "4") {
 
         }
-        else if(userInput == "5") {
+	
+	 else if(userInput == "5") {
+		
+        }
+		
+	
+        else if(userInput == "6") {
 		delete p;	
 		delete repo;
 		break;

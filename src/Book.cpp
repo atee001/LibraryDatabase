@@ -43,6 +43,7 @@ void Book::setCheckoutStatus(const bool& checkout) {
     this->checkout = checkout;
 }
 
+
 const string Book::getTitle() {
     return title;
 }
