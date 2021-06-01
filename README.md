@@ -21,12 +21,17 @@
 [Final Project New (3).pdf](https://github.com/cs100/final-project-rbehe002_atee001_-ctsai081/files/6577845/Final.Project.New.3.pdf)
  
  ## Screenshots
+ User Interface:
  ![Screen Shot 2021-06-01 at 10 04 09 AM](https://user-images.githubusercontent.com/65427904/120363277-cd5f0d00-c2c0-11eb-9e46-d43f0cd0cf04.png)
 ![Screen Shot 2021-06-01 at 10 06 08 AM](https://user-images.githubusercontent.com/65427904/120363453-05fee680-c2c1-11eb-92b6-5bbcf4dcc316.png)
 ![Screen Shot 2021-06-01 at 10 22 19 AM](https://user-images.githubusercontent.com/65427904/120365429-47909100-c2c3-11eb-8e82-2a2702cae7ce.png)
 ![Screen Shot 2021-06-01 at 10 25 16 AM](https://user-images.githubusercontent.com/65427904/120365739-ab1abe80-c2c3-11eb-9506-86190227bb67.png)
 ![Screen Shot 2021-06-01 at 10 29 03 AM](https://user-images.githubusercontent.com/65427904/120366168-31cf9b80-c2c4-11eb-9338-507954319a58.png)
-![Screen Shot 2021-06-01 at 10 48 25 AM](https://user-images.githubusercontent.com/65427904/120368441-ebc80700-c2c6-11eb-95ad-96c58fe9a828.png)
+Librarian Interface:
+![Screenshot (391)](https://user-images.githubusercontent.com/80326381/120368679-347fc000-c2c7-11eb-92e9-8fd172c728d8.png)
+SearchBox:
+![Screenshot (394)](https://user-images.githubusercontent.com/80326381/120369369-02229280-c2c8-11eb-839a-c7329e156832.png)
+
 
 
   
@@ -34,5 +39,5 @@
   Click master branch. Click code and then under clone and HTTPS copy the link. Open a terminal window on your computer and type the command git clone --recursive then a space and then paste the link. Type cd final-project-rbehe002_atee001_-ctsai081 to get into the directory. Type cmake3 . and then make to compile. Then type ./driver user.txt to run the program.
 
  ## Testing
-  Our project was test/validated with the GoogleTest C++ framework and by writing driver cpp test files. Several stress tests were developed to make sure searching by genre, title, and author as well as SearchAND and SearchOR were working as expected.
+  Our project was test/validated with the GoogleTest C++ framework.
  
