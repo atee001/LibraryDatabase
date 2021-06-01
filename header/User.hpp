@@ -43,10 +43,8 @@ public:
     }
 
     ~User() {
-	for(auto& it : myBooks){
-  		if(it) { delete it;}
-	}
-
+  	  
+	
 	myBooks.clear();
     }
     double getBalance() {
