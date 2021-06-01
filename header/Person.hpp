@@ -14,6 +14,7 @@ class Person{
 protected:
     string name, pass; 
 public:
+    virtual ~Person() = default;
     Person() {}
     virtual bool getAdminStatus() = 0;
     virtual vector<Book*> getVec() = 0;

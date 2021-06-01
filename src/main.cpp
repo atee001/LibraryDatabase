@@ -34,10 +34,14 @@ Date currDate(1, 1, 2000);
 
  string filename = argv[1];
  person_factory* pfact;
+
+// if(p->getAdminStatus()) cout << "Welcome Librarian: " << p->getName() << endl;
+
 // Person* p = pfact->begin(f,filename);
 Person* p = new User("Cameron", "0");
  
 if(p->getAdminStatus()) cout << "Welcome Librarian: " << p->getName() << endl;
+
  else cout << "Welcome " << p->getName() << endl;
 
 
@@ -134,7 +138,7 @@ while(true) {
                 }
 		
 	
-
+		p->returnBook(bk, currDate, repo);
 
 
 
