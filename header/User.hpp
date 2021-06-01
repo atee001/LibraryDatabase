@@ -26,12 +26,8 @@ private:
      bool getAdminStatus(){ return false;} 
  
     //user should have private variable bool checkoutstatus
-    bool getCheckoutStatus() {
-        return setCheckoutStatus();
-    }
-    bool setCheckoutStatus() {
-        return false;
-    }
+    bool checkoutS = false;
+ 
     const double lateFee = 0.15;
 
 public:
@@ -157,6 +153,14 @@ void returnBook(Book* mybook, Date& c, BookRepository*& b) {
     }
 
 }
+
+    bool getCheckoutStatus() {
+        return checkoutS;
+    }
+    void setCheckoutStatus(bool b) {
+        checkoutS = b;
+    }
+
 
 vector<Book*> getMyBooks() {return myBooks;}
 

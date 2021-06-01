@@ -29,7 +29,7 @@ TEST(incrementTest, multOfHundredNotFourHundred) {
 	EXPECT_EQ(currDate.getDay(), checkDate.getDay());
 }
 
-TEST(increment, thirty) {
+TEST(incrementTest, thirty) {
 	Date currDate(30, 6, 2000);
 	currDate.increment();
 
@@ -38,7 +38,7 @@ TEST(increment, thirty) {
 	EXPECT_EQ(currDate.getDay(), checkDate.getDay());
 }
 
-TEST(increment, thirtyOne) {
+TEST(incrementTest, thirtyOne) {
 	Date currDate(31, 1, 2000);
 	currDate.increment();
 	
@@ -47,7 +47,7 @@ TEST(increment, thirtyOne) {
 	EXPECT_EQ(currDate.getDay(), checkDate.getDay());
 }
 
-TEST(increment, endOfYear) {
+TEST(incrementTest, endOfYear) {
 	Date currDate(31, 12, 2000);
 	currDate.increment();
 
