@@ -63,11 +63,11 @@ void Date::increment() {
     this->setMonth(++m);
     this->setDay(1);
   }
-  else if(m == 2 && y%4 == 0 && d == 29) {
+  else if(m == 2 && y%4 == 0 && (y%100 != 0 || y%400 == 0) && d == 29) {
     this->setMonth(++m);
     this->setDay(1);
   }
-  else if(m == 2 && d == 28 && y%4 != 0) {
+  else if(m == 2 && d == 28 && y%100 == 0 && y%400 != 0 || y%4 != 0) {
     this->setMonth(++m);
     this->setDay(1);
   }
