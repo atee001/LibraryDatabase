@@ -33,8 +33,11 @@ int main(int argc, char* argv[]){
  string filename = argv[1];
  person_factory* pfact;
  Person* p = pfact->begin(f,filename);
- cout << "Welcome " << p->getName() << endl;
+ if(p->getAdminStatus()) cout << "Welcome Librarian: " << p->getName() << endl;
+ else cout << "Welcome " << p->getName() << endl;
+
  delete p;
+
 
 string userInput = "";
 
