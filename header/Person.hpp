@@ -9,7 +9,6 @@ class Person{
 
 protected:
     string name, pass; 
-    bool admin;
 public:
     Person() {}
     virtual bool getAdminStatus() = 0;
