@@ -18,6 +18,16 @@ src/SearchOR.cpp
 src/main.cpp
 )
 
+ADD_EXECUTABLE(bookRepoTest
+  src/BookRepositoryTest.cpp
+src/BookRepository.cpp
+src/Book.cpp
+src/Date.cpp
+src/BookItem.cpp
+src/LibraryCatalog.cpp
+)
+
+
 ADD_EXECUTABLE(searchTest
     tests/searchTest.cpp
     src/BookRepository.cpp
