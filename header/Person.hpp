@@ -15,6 +15,7 @@ protected:
     string name, pass; 
 public:
     Person() {}
+    virtual ~Person() {} 
     virtual bool getAdminStatus() = 0;
     virtual vector<Book*> getVec() = 0;
     Person(const string& name, const string& pass) : name(name), pass(pass){}

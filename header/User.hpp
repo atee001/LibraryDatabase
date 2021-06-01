@@ -44,7 +44,7 @@ public:
 
     ~User() {
 	for(auto& it : myBooks){
-  		if(it) { delete it;}
+  		delete it;
 	}
 
 	myBooks.clear();
