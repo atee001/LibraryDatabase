@@ -324,8 +324,111 @@ TEST(All, ORAND){
 
 }
 
+TEST(SearchTest, PrideAndPrejudice){
+	BookRepository* repo = new BookRepository();
+	repo->populate("book.txt");
+	SearchStrat* strat = new SearchContains("Title", "Pride and Prejudice");
+	LibraryCatalog* cat = new LibraryCatalog();
+	cat->set_search(strat);
+	stringstream ss;
+	cat->print_search(repo,ss);
+	string as = "Pride and Prejudice Jane Austen 0000000000036 Checkout Status: False\n";
+	EXPECT_EQ(ss.str(), as);
+	delete repo;
+	delete cat;
+}
+
+TEST(SearchTest, TheCast){
+
+	BookRepository* repo = new BookRepository();
+        repo->populate("book.txt");
+        SearchStrat* strat = new SearchContains("Title", "The Cast");
+        LibraryCatalog* cat = new LibraryCatalog();
+        cat->set_search(strat);
+        stringstream ss;
+        cat->print_search(repo,ss);
+        string as = "The Cast Danielle Steel 0000000000230 Checkout Status: False\n";
+        EXPECT_EQ(ss.str(), as);
+        delete repo;
+        delete cat;
 
 
+}
+
+TEST(SearchTest, TheOutside){
+
+
+	BookRepository* repo = new BookRepository();
+        repo->populate("book.txt");
+        SearchStrat* strat = new SearchContains("Title", "The Outsider");
+        LibraryCatalog* cat = new LibraryCatalog();
+        cat->set_search(strat);
+        stringstream ss;
+        cat->print_search(repo,ss);
+        string as = "The Outsider Stephen King 0000000000231 Checkout Status: False\n";
+        EXPECT_EQ(ss.str(), as);
+        delete repo;
+        delete cat;
+
+
+}
+
+TEST(SearchTest, LethalWhite){
+
+
+	BookRepository* repo = new BookRepository();
+        repo->populate("book.txt");
+        SearchStrat* strat = new SearchContains("Title", "Lethal White");
+        LibraryCatalog* cat = new LibraryCatalog();
+        cat->set_search(strat);
+        stringstream ss;
+        cat->print_search(repo,ss);
+        string as = "Lethal White Robert Galbraith 0000000000237 Checkout Status: False\n";
+        EXPECT_EQ(ss.str(), as);
+        delete repo;
+        delete cat;
+
+
+}
+
+TEST(SearchTest, CrazyRichAsians){
+
+	
+        BookRepository* repo = new BookRepository();
+        repo->populate("book.txt");
+        SearchStrat* strat = new SearchContains("Title", "Crazy Rich Asians");
+        LibraryCatalog* cat = new LibraryCatalog();
+        cat->set_search(strat);
+        stringstream ss;
+        cat->print_search(repo,ss);
+        string as = "Crazy Rich Asians Kevin Kwan 0000000000235 Checkout Status: False\n";
+        EXPECT_EQ(ss.str(), as);
+        delete repo;
+        delete cat;
+
+}
+
+TEST(SearchTest, AndyMcNab){
+
+	BookRepository* repo = new BookRepository();
+        repo->populate("book.txt");
+        SearchStrat* strat = new SearchContains("Author", "Andy McNab");
+        LibraryCatalog* cat = new LibraryCatalog();
+        cat->set_search(strat);
+        stringstream ss;
+        cat->print_search(repo,ss);
+        string as = "Seven Troop Andy McNab 0000000000222 Checkout Status: False\nSpoken From the Front Andy McNab 0000000000224 Checkout Status: False\n";
+        EXPECT_EQ(ss.str(), as);
+        delete repo;
+        delete cat;
+
+
+
+
+
+
+
+}
 
 
 int main(int argc, char **argv) {

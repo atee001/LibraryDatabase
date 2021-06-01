@@ -82,26 +82,10 @@ for(map<string, vector<Book*>>::iterator it = bookGenres.begin(); it != bookGenr
 
 }
 
-
-
-void BookRepository::CheckOut(Book* book, Date checkOutDate) {
-    BookItem *bookItem = new BookItem();
-    bookItem->setCheckoutDate(checkOutDate);
-    int dueMonth = checkOutDate.getMonth() + 2;
-    if (dueMonth > 12) {
-        int newDueMonth = dueMonth - 12;
-        bookItem->getDueDate().setMonth(newDueMonth);
-        int newDueYear = bookItem->getDueDate().getYear();
-        Date* dueDate = new Date(checkOutDate.getDay(), newDueMonth, newDueYear);
-        bookItem->setDueDate(*dueDate);
-    } else {
-        Date *dueDate = new Date(checkOutDate.getDay(), dueMonth, checkOutDate.getYear());
-        bookItem->setCheckoutDate(*dueDate);
-    }
-    bookList[book] = bookItem;
-}
-
 void BookRepository::RemoveBook(Book* book) {
+    bookGenres.erase(book->getGenre());
+    bookAuthors.erase(book->getAuthor());
+    bookList.erase(book);
     bookTitles.erase(book->getTitle());
 }
 void BookRepository::display() {
