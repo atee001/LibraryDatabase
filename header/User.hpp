@@ -17,7 +17,7 @@ using namespace std;
 class User: public Person {
 
 protected:
-    string name, pass;
+    //string name, pass;
     double balance;
     vector<Book*> myBooks;
     map<BookItem*, Book*> *bookList;
@@ -35,7 +35,9 @@ private:
 
 public:
 
-    User(string name, string pass) : Person(),  name(name), pass(pass) {
+    User(const string& name, const string& pass) : Person(){
+	this->name = name;
+	this->pass = pass;
 	admin = false;
     }
 
