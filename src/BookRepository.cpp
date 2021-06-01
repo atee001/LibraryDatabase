@@ -83,10 +83,47 @@ for(map<string, vector<Book*>>::iterator it = bookGenres.begin(); it != bookGenr
 }
 
 void BookRepository::RemoveBook(Book* book) {
-    bookGenres.erase(book->getGenre());
-    bookAuthors.erase(book->getAuthor());
+   if(!book->getCheckoutStatus()){
+   
+    for(auto it = bookGenres.at(book->getGenre()).begin(); it != bookGenres.at(book->getGenre()).end(); it++){
+	if((*it)->getISBN() == book->getISBN()){
+ 		bookGenres.at(book->getGenre()).erase(it);
+ 		break;
+
+	}
+    }
+   
+    for(auto it = bookAuthors.at(book->getAuthor()).begin(); it != bookAuthors.at(book->getAuthor()).end(); it++){
+	if((*it)->getISBN() ==  book->getISBN()){
+ 		bookAuthors.at(book->getAuthor()).erase(it);
+ 		break;
+	}
+    }	
+    for(auto it = bookTitles.at(book->getTitle()).begin(); it != bookTitles.at(book->getTitle()).end(); it++){
+	if((*it)->getISBN() ==  book->getISBN()){
+                bookTitles.at(book->getTitle()).erase(it);
+                break;
+        }
+
+    }
+    for(auto it : bookISBN){
+	if(it.first == book->getISBN()){
+		bookISBN.erase(it.first);
+		break;
+	}
+
+
+
+    } 
+    delete bookList.at(book);
     bookList.erase(book);
-    bookTitles.erase(book->getTitle());
+    
+    delete book;
+}
+else{
+
+	cout << "Cannot Remove a book that's checked out!" << endl;
+}
 }
 void BookRepository::display() {
     std::map<Book *, BookItem*>::iterator it;
