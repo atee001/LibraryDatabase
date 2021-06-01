@@ -92,7 +92,7 @@ while(true) {
 
         }
         else if(userInput == "2") {
-		cout << p->getBalance() << endl;
+		cout << "Current Balance: " <<  p->getBalance() << endl;
         }
         else if(userInput == "3") {
 
@@ -122,7 +122,8 @@ while(true) {
 		string isbn;
                 cout << "Enter an ISBN Code: " << endl;
                 cin >> isbn;
-	
+		
+		
 		Book* bk = repo->getBookByISBN(isbn);		
 
                 while(!bk){
@@ -132,8 +133,10 @@ while(true) {
                         bk = repo->getBookByISBN(isbn);
                 }
 		
-		p->returnBook(bk, currDate, repo);	
-		
+	
+
+
+
 
         }
 		

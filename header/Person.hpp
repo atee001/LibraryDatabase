@@ -27,7 +27,7 @@ public:
     virtual void returnBook(Book* mybook, Date& c, BookRepository*& b) {}
     virtual double getBalance() {}
     virtual void payBalance(double m) {}
-
+    virtual vector<Book*> getMyBooks() {return vector<Book*>();}
 
 
 

@@ -20,7 +20,7 @@ protected:
     //string name, pass;
     double balance = 0.0;
     vector<Book*> myBooks;
-    map<BookItem*, Book*> *bookList;
+   
 
 private:
      bool getAdminStatus(){ return false;} 
@@ -35,12 +35,20 @@ private:
     const double lateFee = 0.15;
 
 public:
+//    vector<Book*> myBooks;
 
     User(const string& name, const string& pass) : Person(){
 	this->name = name;
 	this->pass = pass;
     }
 
+    ~User() {
+	for(auto& it : myBooks){
+  		if(it) { delete it;}
+	}
+
+	myBooks.clear();
+    }
     double getBalance() {
         return balance;
     }
@@ -89,9 +97,20 @@ void returnBook(Book* mybook, Date& c, BookRepository*& b) {
     if(mybook->getCheckoutStatus() == true) {
       mybook->setCheckoutStatus(false);
 
-      vector<Book*>::iterator new_end;
-      new_end = remove(myBooks.begin(), myBooks.end(), mybook);
+      //vector<Book*>::iterator new_end;
+      //new_end = remove(myBooks.begin(), myBooks.end(), mybook);
 
+      for(vector<Book*>::iterator it = myBooks.begin(); it != myBooks.end(); it++){
+
+	if((*it)->getISBN() == mybook->getISBN()){
+ 		myBooks.erase(it);
+ 		break;
+
+		}
+
+
+
+	}
       BookItem* dd = b->getBookList().at(mybook);
       Date* d = new Date(dd->getDueDate());			
 
@@ -142,6 +161,8 @@ void returnBook(Book* mybook, Date& c, BookRepository*& b) {
     }
 
 }
+
+vector<Book*> getMyBooks() {return myBooks;}
 
 };
 #endif //LIBRARYSYSTEM_USER_HPP
