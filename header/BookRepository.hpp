@@ -19,7 +19,7 @@ public:
 
 	for(auto& it: this->bookList){
 
-		cout << "Deleting..." << it.first->getTitle() << " " << it.first->getAuthor() << " " << it.first->getGenre() << " " << it.first->getISBN() << endl;
+//		cout << "Deleting..." << it.first->getTitle() << " " << it.first->getAuthor() << " " << it.first->getGenre() << " " << it.first->getISBN() << endl;
 		delete it.first;
 		delete it.second;
 		
