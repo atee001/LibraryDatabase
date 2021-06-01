@@ -327,7 +327,7 @@ Digital Fortress|Dan Brown*Thriller/0000000000326
 The Da Vinci Code|Dan Brown*Thriller/0000000000327
 The Pilgrim's Progress|John Bunyan*Thriller/0000000000328
 A Clockwork Orange|Anthony Burgess*Fiction/0000000000329
-The Secret Garden|Frances Hodgson Burnett*Fiction/0000000000330
+Where The Crawdads Sing|Delia Owens*Fiction/0000000000330
 The Melancholy Death of Oyster Boy & Other Stories|Tim Burton*Fiction/0000000000331
 The Secret|Rhonda Byrne*Fiction/0000000000332
 The Fall|Albert Camus*Fiction/0000000000333
