@@ -18,7 +18,7 @@ class User: public Person {
 
 protected:
     //string name, pass;
-    double balance;
+    double balance = 0.0;
     vector<Book*> myBooks;
     map<BookItem*, Book*> *bookList;
 
@@ -55,7 +55,7 @@ public:
 
 
 
-    void checkout(Book* bk, const Date& today,const BookRepository*& b){
+    void checkout(Book* bk, Date& today, BookRepository*& b){
             
             if(!bk->getCheckoutStatus()) {
                 myBooks.push_back(bk);
@@ -81,7 +81,7 @@ public:
 
     }
 
-void returnBook(Book* mybook, const Date& c, const BookRepository*& b) {
+void returnBook(Book* mybook, Date& c, BookRepository*& b) {
    // Book* mybook = getBookByISBN(isbn); //iterate through bookLists
     
     if(mybook->getCheckoutStatus() == true) {
