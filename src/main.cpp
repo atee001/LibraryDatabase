@@ -91,9 +91,13 @@ while(true) {
         else if(userInput == "4") {
 
         }
+	
+	 else if(userInput == "5") {
+		
+        }
 		
 	
-        else if(userInput == "5") {
+        else if(userInput == "6") {
 		delete p;	
 		delete repo;
 		break;
