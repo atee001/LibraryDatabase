@@ -47,6 +47,7 @@ public:
     void displayBookGenres();
     map<Book*, BookItem*> getBookList() const;
 
+    void AddBookList(Book* b, BookItem* d){ bookList[b] = d; }
         
 
 

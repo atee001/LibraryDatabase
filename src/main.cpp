@@ -35,14 +35,11 @@ Date currDate(1, 1, 2000);
  string filename = argv[1];
  person_factory* pfact;
 
-// if(p->getAdminStatus()) cout << "Welcome Librarian: " << p->getName() << endl;
-
-// Person* p = pfact->begin(f,filename);
-Person* p = new User("Cameron", "0");
+Person* p = pfact->begin(f,filename);
  
 if(p->getAdminStatus()) cout << "Welcome Librarian: " << p->getName() << endl;
 
- else cout << "Welcome " << p->getName() << endl;
+ else cout << "Welcome User: " << p->getName() << endl;
 
 
 
@@ -51,6 +48,7 @@ string userInput = "";
 cout << "Please select what you wish to do" << endl;
 BookRepository* repo = new BookRepository();
 repo->populate("book.txt");
+if(!p->getAdminStatus()){
 while(true) {
         cout << "\n   0.) Search For Books \n"
         << "   1.) Checkout Book by ISBN \n"
@@ -158,6 +156,110 @@ while(true) {
           cout << "\n Invalid input \n" << endl;
         }
         
+
+}
+}
+else{
+
+while(true){
+ cout << "\n   0.) Search For Books \n"
+        << "   1.) Display All Books\n"
+        << "   2.) Remove a Book by ISBN\n"
+        << "   3.) Add a Book \n"
+        << "   4.) Quit"
+        << endl;
+
+
+	cin >> userInput;
+	string new_isbn= "382";
+	if(userInput == "0"){
+
+		LibraryCatalog* lib = new LibraryCatalog();
+                search_factory* fact = new search_factory();
+                SearchStrat* search= fact->makeSearch();
+                lib->set_search(search);
+                lib->print_search(repo, cout);
+                delete lib;
+                delete fact;
+
+
+	}
+	else if(userInput == "1"){
+
+		repo->display();
+
+	}
+	else if(userInput == "2"){
+
+		string isbn;
+                cout << "Enter an ISBN Code: " << endl;
+                cin >> isbn;
+
+
+                Book* bk = repo->getBookByISBN(isbn);
+
+                while(!bk){
+                        cout << "No Book for " << isbn  << " found!" << endl;
+                        cout << "Enter an ISBN Code: " << endl;
+                        cin >> isbn;
+                        bk = repo->getBookByISBN(isbn);
+                }
+	
+		repo->RemoveBook(bk);
+		
+
+	}
+	else if(userInput == "3"){
+		string result, Title, author, genre;
+		cin.ignore();
+		Book* newBook = nullptr;
+		cout << "Enter the Title of The Book: " << endl;
+		getline(cin, Title);
+		cout << "Enter the Author of the Book: " << endl;
+		
+		getline(cin, author);
+		cout << "Enter the genre of the Book: " << endl;
+		getline(cin, genre);
+                
+		string zero = "0000000000000";
+		zero.resize(zero.size()-new_isbn.size());
+                result = zero + to_string(stoi(new_isbn)+1);
+		cout << "ISBN: " << result << endl;
+                //Book* bk = repo->getBookByISBN(result);
+                //while(bk){
+                  //      cout << "ISBN Code Already Exists! " << endl;
+                    ///    cout << "Enter an ISBN Code: " << endl;
+                       // cin >> isbn;
+                      //  bk = repo->getBookByISBN(isbn);
+                //}
+
+		newBook = new Book(Title, author, genre, result, false);
+		repo->AddBookByGenre(newBook);
+		repo->AddBookByAuthor(newBook);
+               	repo->AddBookByTitle(newBook);
+		repo->AddBookByIsbn(newBook);
+		Date dueDate(3, 1, 2021);
+		BookItem* temp = new BookItem(currDate,dueDate);
+		repo->AddBookList(newBook,temp);	
+
+	}
+
+	else if(userInput == "4"){
+		
+		delete p;
+		delete repo;
+		break;
+
+	}
+	else{
+
+		cout << "\n Invalid input \n" << endl;
+
+	}
+
+}
+
+
 
 }
 
