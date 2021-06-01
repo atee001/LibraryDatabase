@@ -15,10 +15,11 @@
     * Output: Account information, displaying books, availibility of books.
   
   * What are the two design patterns you will be using? For each design pattern you must explain in 4-5 sentences:
-    * We will use strategy and composite for the searchQuery. The composite pattern is the searchOR and searchAND which contains an aggregate of the interface SearchStrat. The strategy pattern is the searchByAuthor, searchByGenre, and searchByTitle. The SearchAND and SearchOR is considered a composite since the class is a composite of Search interface pointers. The leafs are the SearchByAuthor, SearchByGenre, and SearchByTitle. The strategy pattern is allowing the user to dynamically choose which searchStrategy they want. 
+    * We will use strategy and composite for the searchQuery. The composite pattern is the searchOR and searchAND which contains an aggregate of the interface SearchStrat. The strategy pattern is the searchByAuthor, searchByGenre, and searchByTitle. The SearchAND and SearchOR is considered a composite since the class is a composite of Search interface pointers. The leafs are the SearchByAuthor, SearchByGenre, and SearchByTitle. The strategy pattern is allowing the user to dynamically choose which searchStrategy they want. The factory pattern is used to display the search interface to the user and the conditions for an invalid search query.
 
 ## Class Diagram
-[Final Project Diagram.pdf](https://github.com/cs100/final-project-rbehe002_atee001_-ctsai081/files/6574695/Final.Project.Diagram.pdf)
+[Final Project New (3).pdf](https://github.com/cs100/final-project-rbehe002_atee001_-ctsai081/files/6577845/Final.Project.New.3.pdf)
+
  
   ## Final deliverable
   All group members will give a demo to the TA during lab time. The TA will check the demo and the project GitHub repository and ask a few questions to all the team members. 
