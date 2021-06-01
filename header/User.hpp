@@ -59,12 +59,12 @@ public:
 
 
 
-   void checkout(Book* bk, Date& today, BookRepository*& b){
+   void checkout(Book* bk, const Date& today, BookRepository*& b){
             
            if(!bk->getCheckoutStatus()) {
                 myBooks.push_back(bk);
-                bk->setCheckoutStatus(true); 
-			
+		bk->setCheckoutStatus(true); 
+				
 		BookItem* biPtr = b->getBookList().at(bk);
 		
 		biPtr->setCheckoutDate(today);

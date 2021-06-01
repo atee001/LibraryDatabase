@@ -30,12 +30,14 @@ int main(int argc, char* argv[]){
    exit(1);
  }
 
-Date* currDate = new Date(1, 1, 2000); 
+Date currDate(1, 1, 2000); 
 
  string filename = argv[1];
  person_factory* pfact;
- Person* p = pfact->begin(f,filename);
- if(p->getAdminStatus()) cout << "Welcome Librarian: " << p->getName() << endl;
+// Person* p = pfact->begin(f,filename);
+Person* p = new User("Cameron", "0");
+ 
+if(p->getAdminStatus()) cout << "Welcome Librarian: " << p->getName() << endl;
  else cout << "Welcome " << p->getName() << endl;
 
 
@@ -79,7 +81,10 @@ while(true) {
 			bk = repo->getBookByISBN(isbn);
 		}
 		//BookItem* item = repo->getBookList().at(bk);
-		p->checkout(bk, currDate, repo);		
+		p->checkout(bk, currDate, repo);	
+		currDate.increment();
+		currDate.increment();
+	
 
 		//cout << "Book Chosen: " << endl;
 		//bk->display();
@@ -87,7 +92,7 @@ while(true) {
 
         }
         else if(userInput == "2") {
-
+		cout << p->getBalance() << endl;
         }
         else if(userInput == "3") {
 
@@ -101,20 +106,40 @@ while(true) {
 			cout << "Title: " << myB.at(i)->getTitle() << endl;
 			cout << "ISBN: " << myB.at(i)->getISBN() << endl;
 			biPtr->getDueDate().printDate();
+			cout << endl;
 		}			
         }
         else if(userInput == "4") {
-
+		double amount = 0.0;
+		cout << "How much would you like to pay?" << endl;
+		cin >> amount;
+			
+		p->payBalance(amount); 
+		cout << "Current Balance: " << p->getBalance() << endl;
         }
 	
 	 else if(userInput == "5") {
+		string isbn;
+                cout << "Enter an ISBN Code: " << endl;
+                cin >> isbn;
+	
+		Book* bk = repo->getBookByISBN(isbn);		
+
+                while(!bk){
+                        cout << "No Book for " << isbn  << " found!" << endl;
+                        cout << "Enter an ISBN Code: " << endl;
+                        cin >> isbn;
+                        bk = repo->getBookByISBN(isbn);
+                }
 		
+		p->returnBook(bk, currDate, repo);	
+		
+
         }
 		
 	
         else if(userInput == "6") {
 		delete p;	
-		delete currDate;
 		delete repo;
 		break;
         }

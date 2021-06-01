@@ -23,8 +23,10 @@ public:
     string getPass() const{ return pass;}
     void setPass(const string& pass){ this->pass = pass;}
 
-    virtual void checkout(Book* bk, Date& today, BookRepository*& b);
-
+    virtual void checkout(Book* bk, const Date& today, BookRepository*& b) {}
+    virtual void returnBook(Book* mybook, Date& c, BookRepository*& b) {}
+    virtual double getBalance() {}
+    virtual void payBalance(double m) {}
 
 
 
