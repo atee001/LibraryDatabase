@@ -18,7 +18,8 @@ public:
         
 }
 
-    
+    vector<Book*> getVec() {return vector<Book*>();}
+
     void chargeLateFee(double totalLateFee, int daysOverdue) {
         daysOverdue = days;
         cout << "Enter total days overdue: " << endl;
