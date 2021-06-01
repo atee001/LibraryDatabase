@@ -5,7 +5,6 @@ using namespace std;
 
 class Librarian: public Person {
 private:
-    string name, pass;
     double balance;
     double fine = 0.10;
     int days;
@@ -13,7 +12,7 @@ public:
 
      bool getAdminStatus() {return true;} 
 
-    Librarian(string name, string pass) : Person() { 
+    Librarian(const string& name, const string& pass) : Person() { 
 	this-> name= name; 
 	this->pass = pass;
         admin = true;
