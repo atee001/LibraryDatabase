@@ -211,7 +211,7 @@ TEST(GenreTest, Thriller){
         delete strat;
 }
 
-TEST(
+//TEST(
 
 
 
