@@ -11,11 +11,11 @@ protected:
     string genre;
     string isbn;
     string type;
-    
+    bool checkout; 
    
 public:
-    Book() : title(""), author(""), genre(""), isbn(""), type(""){}
-    Book(const string&, const string&, const string&, const string&);
+    Book() : title(""), author(""), genre(""), isbn(""), type(""), checkout(false) {}
+    Book(const string&, const string&, const string&, const string&, const bool&);
     Book(const Book &book);
     void display();
     void setTitle(const string& nameOfBook);
@@ -24,7 +24,7 @@ public:
     void setISBN(const string& isbnCode);
          
     bool getCheckoutStatus();
-    bool setCheckoutStatus();
+    void setCheckoutStatus(const bool& checkout);
     const string getTitle();
     const string getAuthor();
     const string getGenre();
