@@ -19,16 +19,16 @@
 
 ## Class Diagram
 [Final Project New (3).pdf](https://github.com/cs100/final-project-rbehe002_atee001_-ctsai081/files/6577845/Final.Project.New.3.pdf)
-
- 
-  ## Final deliverable
-  All group members will give a demo to the TA during lab time. The TA will check the demo and the project GitHub repository and ask a few questions to all the team members. 
-  Before the demo, you should do the following:
-  * Complete the sections below (i.e. Screenshots, Installation/Usage, Testing)
-  * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Kanban board. 
  
  ## Screenshots
-  Screenshots of the input/output after running your application
+ ![Screen Shot 2021-06-01 at 10 04 09 AM](https://user-images.githubusercontent.com/65427904/120363277-cd5f0d00-c2c0-11eb-9e46-d43f0cd0cf04.png)
+![Screen Shot 2021-06-01 at 10 06 08 AM](https://user-images.githubusercontent.com/65427904/120363453-05fee680-c2c1-11eb-92b6-5bbcf4dcc316.png)
+![Screen Shot 2021-06-01 at 10 22 19 AM](https://user-images.githubusercontent.com/65427904/120365429-47909100-c2c3-11eb-8e82-2a2702cae7ce.png)
+![Screen Shot 2021-06-01 at 10 25 16 AM](https://user-images.githubusercontent.com/65427904/120365739-ab1abe80-c2c3-11eb-9506-86190227bb67.png)
+![Screen Shot 2021-06-01 at 10 29 03 AM](https://user-images.githubusercontent.com/65427904/120366168-31cf9b80-c2c4-11eb-9338-507954319a58.png)
+
+
+  
  ## Installation/Usage
   Click master branch. Click code and then under clone and HTTPS copy the link. Open a terminal window on your computer and type the command git clone --recursive then a space and then paste the link. Type cd final-project-rbehe002_atee001_-ctsai081 to get into the directory. Type cmake3 . and then make to compile. Then type ./driver user.txt to run the program.
 
