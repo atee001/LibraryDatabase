@@ -29,7 +29,9 @@ int main(int argc, char* argv[]){
    cerr << "Input file not found" << endl;
    exit(1);
  }
- 
+
+Date currDate = new Date(1, 1, 2000); 
+
  string filename = argv[1];
  person_factory* pfact;
  Person* p = pfact->begin(f,filename);
@@ -76,9 +78,11 @@ while(true) {
 			cin >> isbn;
 			bk = repo->getBookByISBN(isbn);
 		}
-		BookItem* item = repo->getBookList().at(bk);
-		cout << "Book Chosen: " << endl;
-		bk->display();
+		//BookItem* item = repo->getBookList().at(bk);
+		p->checkout(bk, currDate, repo);		
+
+		//cout << "Book Chosen: " << endl;
+		//bk->display();
 		 				
 
         }
@@ -86,14 +90,18 @@ while(true) {
 
         }
         else if(userInput == "3") {
+
 		vector<Book*> myB = p->getVec();
-		for(int i = 0;  i < myB.size() - 1; i++) {
+		if(myB.size() == 0) {
+			cout << "You have no books checked out." << endl;
+		}
+		for(int i = 0;  i < myB.size(); i++) {
 			BookItem* biPtr = repo->getBookList().at(myB.at(i));
 			
 			cout << "Title: " << myB.at(i)->getTitle() << endl;
 			cout << "ISBN: " << myB.at(i)->getISBN() << endl;
-			cout << "Due Date: " << biPtr->getDueDate() << endl;
-		{			
+			biPtr->getDueDate().printDate();
+		}			
         }
         else if(userInput == "4") {
 
@@ -106,6 +114,7 @@ while(true) {
 	
         else if(userInput == "6") {
 		delete p;	
+		delete currDate;
 		delete repo;
 		break;
         }
