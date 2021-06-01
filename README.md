@@ -26,6 +26,7 @@
 ![Screen Shot 2021-06-01 at 10 22 19 AM](https://user-images.githubusercontent.com/65427904/120365429-47909100-c2c3-11eb-8e82-2a2702cae7ce.png)
 ![Screen Shot 2021-06-01 at 10 25 16 AM](https://user-images.githubusercontent.com/65427904/120365739-ab1abe80-c2c3-11eb-9506-86190227bb67.png)
 ![Screen Shot 2021-06-01 at 10 29 03 AM](https://user-images.githubusercontent.com/65427904/120366168-31cf9b80-c2c4-11eb-9338-507954319a58.png)
+![Screen Shot 2021-06-01 at 10 48 25 AM](https://user-images.githubusercontent.com/65427904/120368441-ebc80700-c2c6-11eb-95ad-96c58fe9a828.png)
 
 
   
@@ -33,5 +34,5 @@
   Click master branch. Click code and then under clone and HTTPS copy the link. Open a terminal window on your computer and type the command git clone --recursive then a space and then paste the link. Type cd final-project-rbehe002_atee001_-ctsai081 to get into the directory. Type cmake3 . and then make to compile. Then type ./driver user.txt to run the program.
 
  ## Testing
-  Our project was test/validated with the GoogleTest C++ framework and by writing driver cpp test files.
+  Our project was test/validated with the GoogleTest C++ framework and by writing driver cpp test files. Several stress tests were developed to make sure searching by genre, title, and author as well as SearchAND and SearchOR were working as expected.
  
