@@ -21,7 +21,7 @@ public:
     void setName(const string& name){ this->name = name;}
     string getPass() const{ return pass;}
     void setPass(const string& pass){ this->pass = pass;}
-
+    void checkout(Book* bk, Date& today, BookRepository*& b);
 };
 
 #endif //LIBRARYSYSTEM_PERSON_HPP

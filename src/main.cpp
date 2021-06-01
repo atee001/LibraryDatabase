@@ -30,7 +30,7 @@ int main(int argc, char* argv[]){
    exit(1);
  }
 
-Date currDate = new Date(1, 1, 2000); 
+Date* currDate = new Date(1, 1, 2000); 
 
  string filename = argv[1];
  person_factory* pfact;

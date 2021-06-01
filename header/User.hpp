@@ -59,31 +59,31 @@ public:
 
 
 
-    void checkout(Book* bk, Date& today, BookRepository*& b){
+    //void checkout(Book* bk, Date& today, BookRepository*& b){
             
-            if(!bk->getCheckoutStatus()) {
-                myBooks.push_back(bk);
-                bk->setCheckoutStatus(true); 
+      //      if(!bk->getCheckoutStatus()) {
+    //            myBooks.push_back(bk);
+  //              bk->setCheckoutStatus(true); 
 			
-		BookItem* biPtr = b->getBookList().at(bk);
+//		BookItem* biPtr = b->getBookList().at(bk);
 		
-		biPtr->setCheckoutDate(today);
-		Date* dueDate = new Date(today);
-		dueDate->increment();
-		biPtr->setDueDate(*dueDate);
+//		biPtr->setCheckoutDate(today);
+//		Date* dueDate = new Date(today);
+//		dueDate->increment();
+//		biPtr->setDueDate(*dueDate);
 
 		
-		delete dueDate;
+//		delete dueDate;
             
-	    }
-	    else {
-		cout << "Book already checked out" << endl;
-	    }
+//	    }
+//	    else {
+//		cout << "Book already checked out" << endl;
+//	    }
               
 		
 	    
 
-    }
+//    }
 
 void returnBook(Book* mybook, Date& c, BookRepository*& b) {
    // Book* mybook = getBookByISBN(isbn); //iterate through bookLists
