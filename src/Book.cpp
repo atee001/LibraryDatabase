@@ -34,13 +34,14 @@ void Book::setISBN(const string& isbnCode) {
     isbn = isbnCode;
 }
 
-bool Book::getCheckoutStatus() {
-    return setCheckoutStatus();
+bool Book::isCheckedOut() {
+    return checkOutFlag;
 }
 
-bool Book::setCheckoutStatus() {
-    return false;
+void Book::setCheckoutFlag(bool chFlag) {
+    checkOutFlag = chFlag;
 }
+
 
 const string Book::getTitle() {
     return title;

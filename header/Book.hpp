@@ -11,7 +11,7 @@ protected:
     string genre;
     string isbn;
     string type;
-    
+    bool checkOutFlag = false;    
    
 public:
     Book() : title(""), author(""), genre(""), isbn(""), type(""){}
@@ -22,9 +22,8 @@ public:
     void setAuthor(const string& nameOfAuthor);
     void setGenre(const string& nameOfGenre);
     void setISBN(const string& isbnCode);
-         
-    bool getCheckoutStatus();
-    bool setCheckoutStatus();
+    bool isCheckedOut();
+    void setCheckoutFlag(bool);
     const string getTitle();
     const string getAuthor();
     const string getGenre();
