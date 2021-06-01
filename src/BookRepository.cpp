@@ -115,8 +115,13 @@ void BookRepository::display() {
     cout << endl;
 }
 Book* BookRepository::getBookByISBN(const string& isbn){
-    
-	return (bookISBN.find(isbn) != bookISBN.end()) ? bookISBN.at(isbn) : nullptr;
+   	
+	string zero = "0000000000000";
+	string temp =to_string(stoi(isbn));
+	zero.resize(13-temp.size());
+	string result = zero + temp;
+	cout << "ISBN " << result << endl;
+	return (bookISBN.find(result) != bookISBN.end()) ? bookISBN.at(result) : nullptr;
 
 }
 map<Book*, BookItem*> BookRepository::getBookList() const{
