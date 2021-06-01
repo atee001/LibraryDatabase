@@ -8,6 +8,7 @@
 #include <iterator>
 #include <algorithm>
 #include <string>
+#include "Book.hpp"
 #include "BookItem.hpp"
 #include <fstream>
 using namespace std;
@@ -18,51 +19,11 @@ public:
 
 	for(auto& it: this->bookList){
 
-		cout << "Deleting..." << it.second->getTitle() << " " << it.second->getAuthor() << " " << it.second->getGenre() << " " << it.second->getISBN() << endl;
+		cout << "Deleting..." << it.first->getTitle() << " " << it.first->getAuthor() << " " << it.first->getGenre() << " " << it.first->getISBN() << endl;
 		delete it.first;
 		delete it.second;
 		
 	}
-/*		
-	for(auto& it: this->bookTitles){
-	
-		for(auto& jt : it.second){
-
-			if(jt != nullptr){ 
-				cout << "Deleting title!!!!" << endl;
-				delete jt;
-
-		}		
-
-	}
-
-	for(auto& it: this->bookAuthors){
-		 for(auto& jt : it.second){
-
-                        if(jt != nullptr){ 
-			cout << "Deleting Author!!!!" << endl;
-
-			delete jt;
-			}
-
-                }
-
-	}
-
-	for(auto& it: this->bookGenres){
-
-		 for(auto& jt : it.second){
-			
-                        if(jt != nullptr){
-
-			cout << "Deleting Genre!!!" << endl;	
-			 delete jt;
-			}
-
-                }
-	}
-
-*/
 	bookList.clear();
 	bookTitles.clear();
 	bookAuthors.clear();
@@ -83,6 +44,7 @@ public:
     void populate(const string &s);
     void displayMapTitle();
     void displayMapAuthors();
+    Book* getBookByISBN(const string&);
     void displayBookGenres();
    // Book* GetBookByAuthor(string bookAuthor) const;
     //Book* GetBookByTitle(string bookTitle) const;
@@ -98,7 +60,7 @@ private:
     map<string, vector<Book*>> bookAuthors;
     map<string, vector<Book*>> bookGenres;
     map<string, Book*> bookISBN;
-    map<BookItem*, Book*> bookList;
+    map<Book*, BookItem*> bookList;
 
 };
 
