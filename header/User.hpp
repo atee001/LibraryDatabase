@@ -59,11 +59,11 @@ public:
 
 
 
-    //void checkout(Book* bk, Date& today, BookRepository*& b){
+//   void checkout(Book* bk, Date& today, BookRepository*& b){
             
-      //      if(!bk->getCheckoutStatus()) {
-    //            myBooks.push_back(bk);
-  //              bk->setCheckoutStatus(true); 
+//           if(!bk->getCheckoutStatus()) {
+//                myBooks.push_back(bk);
+//                bk->setCheckoutStatus(true); 
 			
 //		BookItem* biPtr = b->getBookList().at(bk);
 		
@@ -71,18 +71,16 @@ public:
 //		Date* dueDate = new Date(today);
 //		dueDate->increment();
 //		biPtr->setDueDate(*dueDate);
-
-		
+	
 //		delete dueDate;
             
 //	    }
 //	    else {
 //		cout << "Book already checked out" << endl;
 //	    }
-              
-		
-	    
-
+             
+	
+    
 //    }
 
 void returnBook(Book* mybook, Date& c, BookRepository*& b) {
