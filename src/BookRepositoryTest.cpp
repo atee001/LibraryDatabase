@@ -24,19 +24,34 @@ int main() {
 
     book2->display();
 
-  BookRepository bookRepository;
-  bookRepository.AddBookByTitle(book1);
- // cout << "Book 1 added: The Open Road" << endl;
-  bookRepository.AddBookByAuthor(book2);
- // cout << "Book 2 added: The Break of Dawn" << endl;
- // Book *retbook1 = bookRepository.GetBook(book1);
- // cout << "Before listing" << endl;
- // if (book1->getTitle().compare(retbook1->getTitle()) == false){
-   //   cout << "Found book with title : " << book1->getTitle() << endl;
- // }
- // else {
-  //    cout << "Book with title " << book1->getTitle() << " not found " << endl;
- // }
+Book *book3 = new Book();
+    book3->setAuthor("Jostein Gaarder");
+    book3->setTitle("Sophie's World");
+    book3->setGenre("Romance");
+    book3->setISBN("0000000000002");
+    cout << endl;
+    cout << "Book 3" << endl;
+    book3->display();
+
+    Book *book4 = new Book();
+    book4->setAuthor("Karl Marx");
+    book4->setTitle("Manifesto of the Communist Party");
+    book4->setGenre("Philosophy");
+    book4->setISBN("0000000000003");
+    cout << endl;
+    cout << "Book 4" << endl;
+    book4->display();
+
+    cout << endl;
+    BookRepository bookRepository;
+    bookRepository.AddBookByTitle(book1);
+    cout << "Add book by title: book 1" << endl;
+    bookRepository.AddBookByAuthor(book2);
+    cout << "Add book by author: book 2" << endl;
+    bookRepository.AddBookByGenre(book3);
+    cout << "Add book by genre: book 3" << endl;
+    bookRepository.AddBookByIsbn(book4);
+    cout << "Add book by isbn: book 4" << endl;
 
   cout << endl;
   cout << "End of BookRepository Test" << endl;
