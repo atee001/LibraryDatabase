@@ -6,4 +6,5 @@ Makefile
 test
 SearchDriver
 LibrarySystem
+BoxTest
 searchTest

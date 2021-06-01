@@ -257,6 +257,77 @@ TEST(SearchTest, RomanceBook5){
 
 }
 
+TEST(SearchTest, SecretGarden){
+
+	BookRepository* repo = new BookRepository();
+        repo->populate("book.txt");
+        SearchStrat* strat = new SearchContains("Title", "The Secret Garden");
+        LibraryCatalog* cat = new LibraryCatalog();
+        cat->set_search(strat);
+        stringstream ss;
+        cat->print_search(repo, ss);
+        string ans = "The Secret Garden Frances Hodgson Burnett 0000000000075 Checkout Status: False\n";
+        EXPECT_EQ(ss.str(), ans);
+        delete repo;
+        delete cat;
+
+}
+
+TEST(OR, NightORApology){
+
+
+
+	BookRepository* repo = new BookRepository();
+        repo->populate("book4.txt");
+        SearchStrat* strat = new SearchOR(new SearchContains("Title", "Night"), new SearchContains("Title", "Apology"));
+        LibraryCatalog* cat = new LibraryCatalog();
+        cat->set_search(strat);
+        stringstream ss;
+        cat->print_search(repo, ss);
+        string ans = "Night Elie Wiesel 0000000000134 Checkout Status: False\nApology Plato 0000000000147 Checkout Status: False\n";
+        EXPECT_EQ(ss.str(), ans);
+        delete repo;
+        delete cat;
+
+
+}
+
+TEST(All, ANDOR){
+
+	BookRepository* repo = new BookRepository();
+        repo->populate("book4.txt");
+        SearchStrat* strat = new SearchAND( new SearchContains("title", "not") ,new SearchOR(new SearchContains("Title", "Night"), new SearchContains("Title", "Apology")));
+        LibraryCatalog* cat = new LibraryCatalog();
+        cat->set_search(strat);
+        stringstream ss;
+        cat->print_search(repo, ss);
+        string ans = "No Results!\n";
+        EXPECT_EQ(ss.str(), ans);
+        delete repo;
+        delete cat;
+
+}
+
+TEST(All, ORAND){
+
+	BookRepository* repo = new BookRepository();
+        repo->populate("book5.txt");
+        SearchStrat* strat = new SearchAND( new SearchContains("Author", "Brian Catling") ,new SearchOR(new SearchContains("Title", "Night"), new SearchContains("Title", "Apology")));
+        LibraryCatalog* cat = new LibraryCatalog();
+        cat->set_search(strat);
+        stringstream ss;
+        cat->print_search(repo, ss);
+        string ans = "No Results!\n";
+        EXPECT_EQ(ss.str(), ans);
+        delete repo;
+        delete cat;
+
+}
+
+
+
+
+
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();
