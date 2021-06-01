@@ -16,6 +16,7 @@ void Book::display() {
     cout << "Author: " << author << endl;
     cout << "Genre: " << genre << endl;
     cout << "ISBN: " << isbn << endl;
+    cout << "Checkout Status: " << (checkout ? "True" : "False") << endl;    
 }
 
 void Book::setTitle(const string& aTitle) {
