@@ -157,24 +157,44 @@ The Battle for God|Karen Armstrong*Nonfiction/0000000000156
 The Age of Wonder|Richard Holmes*Nonfiction/0000000000157
 The Lost City of Z|David Grann*Nonfiction/0000000000158
 Hat Box|Stephen Sondheim*Nonfiction/0000000000159
-The Immortal Life of Henrietta Lacks|Rebecca Skloot
-The Master Switch|Tim Wu*Nonfiction/0000000000160
-The Warmth of Other Suns|Isabel Wilkerson*Nonfiction/0000000000161
-The Information|James Gleick*Nonfiction/0000000000162
-Behind the Beautiful Forevers|Katherine Boo*Nonfiction/0000000000163
-The Old Ways|Robert Macfarlane*Nonfiction/0000000000164
-Going Clear|Lawrence Wright*Nonfiction/0000000000165
-Wave|Sonali Deraniyagala*Nonfiction/0000000000166
-Barbarian Days|William Finnegan*Nonfiction/0000000000167
-Negroland|Margo Jefferson*Nonfiction/0000000000168
-How to Survive a Plague|David France*Nonfiction/0000000000169
-Lab Girl|Hope Jahren*Nonfiction/0000000000170
-One Day|Gene Weingarten*Nonfiction/0000000000171
-In Cold Blood|Truman Capote*Nonfiction/0000000000172
-When Breath Becomes Air|Paul Kalanithi*Nonfiction/0000000000173
-I Know Why the Caged Bird Sings|Maya Angelou*Nonfiction/0000000000174
-Hiroshima|John Hersey*Nonfiction/0000000000175
-The Diary Of a Young Girl|Anne Frank*Nonfiction/0000000000176
-I'll Be Gone in the Dark|Michelle McNamara*Nonfiction/0000000000177
-Three Women|Lisa Taddeo*Nonfiction/0000000000178
-H Is for Hawk|Helen Macdonald*Nonfiction/0000000000179
+The Immortal Life of Henrietta Lacks|Rebecca Skloot/0000000000160
+The Master Switch|Tim Wu*Nonfiction/0000000000161
+The Warmth of Other Suns|Isabel Wilkerson*Nonfiction/0000000000162
+The Information|James Gleick*Nonfiction/0000000000163
+Behind the Beautiful Forevers|Katherine Boo*Nonfiction/0000000000164
+The Old Ways|Robert Macfarlane*Nonfiction/0000000000165
+Going Clear|Lawrence Wright*Nonfiction/0000000000166
+Wave|Sonali Deraniyagala*Nonfiction/0000000000167
+Barbarian Days|William Finnegan*Nonfiction/0000000000168
+Negroland|Margo Jefferson*Nonfiction/0000000000169
+How to Survive a Plague|David France*Nonfiction/0000000000170
+Lab Girl|Hope Jahren*Nonfiction/0000000000171
+One Day|Gene Weingarten*Nonfiction/0000000000172
+In Cold Blood|Truman Capote*Nonfiction/0000000000173
+When Breath Becomes Air|Paul Kalanithi*Nonfiction/0000000000174
+I Know Why the Caged Bird Sings|Maya Angelou*Nonfiction/0000000000175
+Hiroshima|John Hersey*Nonfiction/0000000000176
+The Diary Of a Young Girl|Anne Frank*Nonfiction/0000000000177
+I'll Be Gone in the Dark|Michelle McNamara*Nonfiction/0000000000178
+Three Women|Lisa Taddeo*Nonfiction/0000000000179
+H Is for Hawk|Helen Macdonald*Nonfiction/0000000000180
+1984|George Orwell*Fiction/0000000000181
+Don Quijote|Miguel de Cervantes*Fiction/0000000000182
+Moby Dick|Herman Melville*Fiction/0000000000183
+Gravity's Rainbow|Thomas Pynchon*Fiction/0000000000184
+Up From Slavery|Booker T. Washington*Nonfiction/0000000000185
+Pilgrim at Tinker Creek|Annie Dillard*Nonfiction/0000000000186
+Against Interpretation|Susan Sontag*Nonfiction/0000000000187
+The Making of the English Working Class|E.P Thompson*Nonfiction/0000000000188
+Out of Africa|Karen Blixen*Nonfiction/0000000000189
+Dispatches|Michael Herr*Nonfiction/0000000000190
+Notes of a Native Son|James Baldwin*Nonfiction/0000000000191
+The Feminine Mystique|Betty Frieden*Nonfiction/0000000000192
+The Structure of Scientific Revolutions|Thomas Kuhn*Nonfiction/0000000000193
+The Guns of August|Barbara Tuchman*Nonfiction/0000000000194
+Homage to Catalonia|George Orwell*Nonfiction/0000000000195
+The Year of Magical Thinking|Joan Didion*Nonfiction/0000000000196
+A Room of One's Own|Virginia Woolf*Nonfiction/0000000000197
+Silent Spring|Rachel Carson*Nonfiction/0000000000198
+Hiroshima|John Hersey*Nonfiction/0000000000199
+The Elements of Style|William Strunk Jr*Nonfiction/0000000000200
