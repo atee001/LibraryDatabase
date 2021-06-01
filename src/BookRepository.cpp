@@ -119,7 +119,11 @@ Book* BookRepository::getBookByISBN(const string& isbn){
 	return (bookISBN.find(isbn) != bookISBN.end()) ? bookISBN.at(isbn) : nullptr;
 
 }
+map<Book*, BookItem*> BookRepository::getBookList() const{
+	
+	return this->bookList;
 
+}
 void BookRepository::populate(const string &s) {//Title | Author * Genre / ISBN
 
 
