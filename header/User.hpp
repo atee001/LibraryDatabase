@@ -38,7 +38,6 @@ public:
     User(const string& name, const string& pass) : Person(){
 	this->name = name;
 	this->pass = pass;
-	admin = false;
     }
 
     double getBalance() {
