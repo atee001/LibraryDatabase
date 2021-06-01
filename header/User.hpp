@@ -44,6 +44,10 @@ public:
     double getBalance() {
         return balance;
     }
+    
+    vector<Book*> getVec() {
+	return myBooks;
+    }
 
     void setBalance(double amount) {
         balance = amount;
