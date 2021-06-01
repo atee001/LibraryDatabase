@@ -86,7 +86,14 @@ while(true) {
 
         }
         else if(userInput == "3") {
-
+		vector<Book*> myB = p->getVec();
+		for(int i = 0;  i < myB.size() - 1; i++) {
+			BookItem* biPtr = repo->getBookList().at(myB.at(i));
+			
+			cout << "Title: " << myB.at(i)->getTitle() << endl;
+			cout << "ISBN: " << myB.at(i)->getISBN() << endl;
+			cout << "Due Date: " << biPtr->getDueDate() << endl;
+		{			
         }
         else if(userInput == "4") {
 
