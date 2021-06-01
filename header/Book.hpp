@@ -32,24 +32,5 @@ public:
 
 };
 
-class NonFiction : public Book {
-public:
-    NonFiction();
-};
-
-class Biographies : public NonFiction {
-public:
-    Biographies();
-};
-
-class Philosophy : public NonFiction {
-public:
-    Philosophy();
-};
-
-class travelGuides : public NonFiction {
-public:
-    travelGuides();
-};
 
 #endif //LIBRARYSYSTEM_BOOK_HPP

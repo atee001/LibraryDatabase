@@ -43,8 +43,6 @@ public:
     }
 
     ~User() {
-  	  
-	
 	myBooks.clear();
     }
     double getBalance() {
