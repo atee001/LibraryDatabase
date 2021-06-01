@@ -11,7 +11,7 @@ void LibraryCatalog::print_search(const BookRepository* b, ostream& out){
             for(auto it : result){
             	
 		
-                out << it->getTitle() << " " << it->getAuthor() << " " << it->getISBN() << " Checkout Status: " << (it->getCheckoutStatus()) ? "True" : "False\n";
+                out << it->getTitle() << " " << it->getAuthor() << " " << it->getISBN() << " Checkout Status: " << ((it->getCheckoutStatus()) ? "True" : "False\n");
             
             }
         
