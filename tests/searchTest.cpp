@@ -211,9 +211,51 @@ TEST(GenreTest, Thriller){
         delete strat;
 }
 
-//TEST(
+TEST(SearchTest, JK_Rowling){
+	BookRepository* repo = new BookRepository();
+	repo->populate("book1.txt");
+	SearchStrat* strat = new SearchContains("Author", "J.K. Rowling");
+	LibraryCatalog* cat = new LibraryCatalog();
+	cat->set_search(strat);
+	stringstream ss;
+	cat->print_search(repo, ss);
+	string ans = "Harry Potter and the Sorceror's Stone J.K. Rowling 0000000000026 Checkout Status: False\nHarry Potter and the Chamber of Secrets J.K. Rowling 0000000000027 Checkout Status: False\nHarry Potter and the Prisoner of Azkaban J.K. Rowling 0000000000028 Checkout Status: False\nHarry Potter and the Goblet of Fire J.K. Rowling 0000000000029 Checkout Status: False\nHarry Potter and the Order of the Pheonix J.K. Rowling 0000000000030 Checkout Status: False\nHarry Potter and the Half-Blood Prince J.K. Rowling 0000000000031 Checkout Status: False\nHarry Potter and the Deathly Hallows J.K. Rowling 0000000000032 Checkout Status: False\nHarry Potter and the Cursed Child J.K. Rowling 0000000000033 Checkout Status: False\n";
+	EXPECT_EQ(ss.str(), ans);
+	delete repo;
+	delete cat;
 
+}
 
+TEST(SearchTest, RachelCarson){
+	BookRepository* repo = new BookRepository();
+        repo->populate("book5.txt");
+        SearchStrat* strat = new SearchContains("Author", "Rachel Carson");
+        LibraryCatalog* cat = new LibraryCatalog();
+        cat->set_search(strat);
+        stringstream ss;
+        cat->print_search(repo, ss);
+	string ans = "Silent Spring Rachel Carson 0000000000198 Checkout Status: False\n";
+	EXPECT_EQ(ss.str(), ans);
+	delete repo;
+	delete cat;
+}
+
+TEST(SearchTest, RomanceBook5){
+
+	BookRepository* repo = new BookRepository();
+        repo->populate("book5.txt");
+        SearchStrat* strat = new SearchContains("Genre", "Romance");
+        LibraryCatalog* cat = new LibraryCatalog();
+        cat->set_search(strat);
+        stringstream ss;
+        cat->print_search(repo, ss);
+        string ans = "No Results!\n";
+        EXPECT_EQ(ss.str(), ans);
+        delete repo;
+        delete cat;
+	
+
+}
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
