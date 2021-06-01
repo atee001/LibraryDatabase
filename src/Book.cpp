@@ -60,18 +60,3 @@ const string Book:: getISBN() {
     return isbn;
 }
 
-NonFiction::NonFiction() {
-    type = "Nonfiction";
-}
-
-Biographies::Biographies() {
-    type = "Biographies";
-}
-
-Philosophy::Philosophy() {
-    type = "Philosophy";
-}
-
-travelGuides::travelGuides() {
-    type = "Travel Guides";
-}
