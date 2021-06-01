@@ -48,8 +48,8 @@ Person* begin(fstream& f, const string& filename){
       cout << "Enter your name: " << endl;
 
       getline(cin, name, '\n');
-      f.clear();
-      f.seekg(0);
+      
+     
     }
 
     tries = 3;
@@ -78,7 +78,6 @@ Person* begin(fstream& f, const string& filename){
   }
 
   f.close();
-
  if(admin){
 	me = new Librarian(name,pass);
 	return me;
@@ -91,18 +90,19 @@ return me;
 }
 
 bool corr_name(fstream& f, const string& filename, const string& name, string& corrPass,bool& admin){
-
+  f.clear();
+  f.seekg(0);
   string user;
   string realName;
   while(getline(f, user)){
     
-    if(name == user.substr(1,user.find('|'))){
+    if(name == user.substr(1,user.find('|')-1)){
+      //cout << user.substr(1,user.find('|'));
       if(user.at(0) == '@') admin = true;
       corrPass = user.substr(user.find('|')+1, user.size()-user.find('|'));
       return true;
 
     }
-
 }
 
 return false;
