@@ -17,12 +17,14 @@ using namespace std;
 class User: public Person {
 
 protected:
-
+    string name, pass;
     double balance;
     vector<Book*> myBooks;
     map<BookItem*, Book*> *bookList;
 
 private:
+     bool getAdminStatus(){ return false;} 
+ 
     //user should have private variable bool checkoutstatus
     bool getCheckoutStatus() {
         return setCheckoutStatus();
@@ -33,7 +35,9 @@ private:
 
 public:
 
-    User(string name, string pass);
+    User(string name, string pass) : Person(),  name(name), pass(pass) {
+	admin = false;
+    }
 
     double getBalance() {
         return balance;
@@ -52,8 +56,8 @@ public:
     bool checkout(Book* bk, const Date& today,const BookRepository*& b){
             
             if(!bk->getCheckoutStatus()) {
-                myBooks.push_back(bk);
-                bkBook* bk->setCheckoutStatus(true); 
+                bk->setCheckoutStatus(true);
+		myBooks.push_back(bk);
 		return true;
             }
               
