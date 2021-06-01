@@ -1,14 +1,14 @@
 #include "../header/Book.hpp"
 
 
-Book::Book(const string& t, const string& a, const string& g, const string& i) : title(t), author(a), genre(g), isbn(i){}
+Book::Book(const string& t, const string& a, const string& g, const string& i, const bool& c) : title(t), author(a), genre(g), isbn(i), checkout(c){}
 
 Book::Book(const Book &book) {
     title = book.title;
     author = book.author;
     genre = book.genre;
     isbn = book.isbn;
-
+    checkout = book.checkout;
 }
 
 void Book::display() {
@@ -16,6 +16,7 @@ void Book::display() {
     cout << "Author: " << author << endl;
     cout << "Genre: " << genre << endl;
     cout << "ISBN: " << isbn << endl;
+    cout << "Checkout Status: " << (checkout ? "True" : "False") << endl;    
 }
 
 void Book::setTitle(const string& aTitle) {
@@ -34,12 +35,12 @@ void Book::setISBN(const string& isbnCode) {
     isbn = isbnCode;
 }
 
-bool Book::isCheckedOut() {
-    return checkOutFlag;
+bool Book::getCheckoutStatus() {
+    return checkout;
 }
 
-void Book::setCheckoutFlag(bool chFlag) {
-    checkOutFlag = chFlag;
+void Book::setCheckoutStatus(const bool& checkout) {
+    this->checkout = checkout;
 }
 
 

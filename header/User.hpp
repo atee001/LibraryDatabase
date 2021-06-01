@@ -17,12 +17,14 @@ using namespace std;
 class User: public Person {
 
 protected:
-
+    //string name, pass;
     double balance;
     vector<Book*> myBooks;
     map<BookItem*, Book*> *bookList;
 
 private:
+     bool getAdminStatus(){ return false;} 
+ 
     //user should have private variable bool checkoutstatus
     bool getCheckoutStatus() {
         return setCheckoutStatus();
@@ -34,7 +36,10 @@ private:
 
 public:
 
-    User(string name, string pass);
+    User(const string& name, const string& pass) : Person(){
+	this->name = name;
+	this->pass = pass;
+    }
 
     double getBalance() {
         return balance;

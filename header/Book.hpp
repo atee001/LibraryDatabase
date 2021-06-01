@@ -11,19 +11,20 @@ protected:
     string genre;
     string isbn;
     string type;
-    bool checkOutFlag = false;    
+    bool checkout; 
    
 public:
-    Book() : title(""), author(""), genre(""), isbn(""), type(""){}
-    Book(const string&, const string&, const string&, const string&);
+    Book() : title(""), author(""), genre(""), isbn(""), type(""), checkout(false) {}
+    Book(const string&, const string&, const string&, const string&, const bool&);
     Book(const Book &book);
     void display();
     void setTitle(const string& nameOfBook);
     void setAuthor(const string& nameOfAuthor);
     void setGenre(const string& nameOfGenre);
     void setISBN(const string& isbnCode);
-    bool isCheckedOut();
-    void setCheckoutFlag(bool);
+         
+    bool getCheckoutStatus();
+    void setCheckoutStatus(const bool& checkout);
     const string getTitle();
     const string getAuthor();
     const string getGenre();

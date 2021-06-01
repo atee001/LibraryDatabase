@@ -115,11 +115,20 @@ void BookRepository::display() {
     cout << endl;
 }
 Book* BookRepository::getBookByISBN(const string& isbn){
-    
-	return (bookISBN.find(isbn) != bookISBN.end()) ? bookISBN.at(isbn) : nullptr;
+   	
+	string zero = "0000000000000";
+	string temp =to_string(stoi(isbn));
+	zero.resize(13-temp.size());
+	string result = zero + temp;
+	//cout << "ISBN " << result << endl;
+	return (bookISBN.find(result) != bookISBN.end()) ? bookISBN.at(result) : nullptr;
 
 }
+map<Book*, BookItem*> BookRepository::getBookList() const{
+	
+	return this->bookList;
 
+}
 void BookRepository::populate(const string &s) {//Title | Author * Genre / ISBN
 
 
@@ -151,8 +160,8 @@ void BookRepository::populate(const string &s) {//Title | Author * Genre / ISBN
 	Genre = line.substr(two+1, three-two-1);
 	ISBN = line.substr(three+1);
 
-        newBook = new Book(Title, Author,Genre, ISBN);
-
+        newBook = new Book(Title, Author,Genre, ISBN, false);
+//com
         Date currDate(1,1,2021);
         Date dueDate(3, 1, 2021);
         bookItem = new BookItem(currDate, dueDate);

@@ -46,6 +46,12 @@ public:
     void displayMapAuthors();
     Book* getBookByISBN(const string&);
     void displayBookGenres();
+    map<Book*, BookItem*> getBookList() const;
+
+        
+
+
+
    // Book* GetBookByAuthor(string bookAuthor) const;
     //Book* GetBookByTitle(string bookTitle) const;
    // Book* GetBookByGenre(string bookGenre) const; 
