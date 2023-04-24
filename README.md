@@ -5,7 +5,7 @@
    
 ## Project Description
   * Why is it important or interesting to you?
-    * The ability to catagorize thousands of books is interesting as we are able to track a huge amount of data. This is a real life application of how software can benefit someone's life. A typical library catalog allows users to search for books by title, author, publisher, etc. For our project we will be developing a simple library database where the user can checkout books, find new books based on recommendations, and manage their account balance. 
+    * The ability to catagorize thousands of books is interesting as we are able to track a huge amount of data. This is a real life application of how software can benefit someone's life. A typical library catalog allows users to search for books by title, author, publisher, etc. For our project we will be developing a simple library database where the user can checkout books, find new books, and manage their account balance. 
   
   * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
     * We plan to use C++, vim as a text editor, and Linux as the Operating System. The user will be able to interact with the program through a terminal window using a set of predefined commands.
